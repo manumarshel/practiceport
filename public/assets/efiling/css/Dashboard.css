@@ -1,0 +1,158 @@
+.container {
+    height: fit-content;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.subContainerTwo {
+    display: flex;
+}
+
+.dashContainer {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    list-style-type: none;
+}
+
+.subContainerOne {
+    background-color: white;
+    border: 1px solid grey;
+    height: fit-content;
+    padding: 1.5rem 1rem;
+    padding-bottom: 0;
+    font-size: 0.8rem;
+}
+
+.subContainerOne h3 {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.infoHeading {
+    color: grey;
+    display: inline;
+    width: 0.2rem;
+}
+
+.subContainerOne span {
+    text-transform: uppercase;
+}
+
+.dataHolderTop {
+    display: flex;
+}
+
+.dataHolderTop a {
+    margin: 0;
+}
+
+.dataHolderTop img {
+    height: 5rem;
+    margin: auto 0;
+    margin-right: 0.8rem;
+}
+
+.dataHolderTop ul li {
+    margin: 0.3rem 0;
+    padding-left: 0.4rem;
+}
+
+.subContainerOne div ul {
+    list-style-type: none;
+}
+
+.dataHolderBottom {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+}
+
+.dataHolderBottom div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dataHolderBottom a {
+    color: #2A3A8D;
+}
+
+.dataHolderBottom div h3 {
+    width: 50%;
+}
+
+.taxCalender {
+    height: 2.125rem;
+}
+
+.taxButton {
+    background-color: white;
+    margin-top: 1rem;
+    border: 1px solid grey;
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.controlContainer {
+    background-color: white;
+    margin-top: 1rem;
+    border: 1px solid grey;
+    padding: 1rem;
+}
+
+.controlContainer h2 {
+    border-bottom: 1px solid grey;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.controlContainer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controlContainer div p {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.controlContainer h3 {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.borderBottom {
+    border-bottom: 1px solid grey;
+    padding-bottom: 0.5rem;
+}
+
+.formField {
+    background-color: white;
+    width: 70%;
+    height: max-content;
+    padding: 1rem;
+    margin-left: 1rem;
+    border: 1px solid grey;
+    font-weight: 500;
+}
+
+.footer {
+    background-color: #EEEEF6;
+    color: #C2BFC3;
+}
+
+.upperSection span p {
+ display: none;   
+}
+
+.profile {
+    display: flex;
+}
+

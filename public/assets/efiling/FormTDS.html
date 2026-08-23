@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/FormTDS.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>Form</title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+  <div class="container">
+
+    <p class="heading">Dashboard > Income Tax Forms >Form TDS</p>
+    <div class="mainContainer">
+
+      <div>
+
+        <div class="containerOne containerSpecific">
+          <div class="topContainer">
+            <p>Please Select Form</p>
+            <select name="Form" id="Form">
+              <option>Select</option>
+              <option value="24Q">24Q (Salary)</option>
+              <option value="26Q">26Q (Other than salary)</option>
+              <option value="27Q">27Q (Non Resident-Other than Saley)</option>
+              <option value="27EQ">27EQ (TCS)</option>
+            </select>
+          </div>
+          <div id="24Q" class="sideContainer">
+            <p class="boldText">
+              <span>24Q</span>
+              <span>(Salary) </span>
+              <span>Quarterly statement of deduction of tax under sub-section (3) of section 200 of the Income-tax Act, 1961 in respect of salary for the quarter ended…(June/September/December/March) … (Financial year)</span>
+            </p>
+          </div>
+          <div id="26Q" class="sideContainer">
+            <p class="boldText">
+              <span>26Q</span>
+              <span>(Other than Salary)</span> 
+              <span>Quarterly statement of deduction of tax under sub-section (3) of section 200 of the Income-tax Act, 1961 in respect of payments other than salary for the quarter ended… (June/September/December/March) …(Financial year)</span>
+            </p>
+          </div>
+          <div id="27Q" class="sideContainer">
+            <p class="boldText">
+              <span>27Q</span> 
+              <span>(Non- Resident - Other than Salary)</span> 
+              <span>Quarterly statement of deduction of tax under sub-section (3) of section 200 of the Income-tax Act, 1961 in respect of payments other than Salary made to non-residents for the quarter ended… June/September/December/March …(Financial year)</span>
+            </p>
+          </div>
+          <div id="27EQ" class="sideContainer">
+            <p class="boldText">
+              <span>27EQ</span> 
+              <span>(TCS)</span> 
+              <span>Quarterly statement of collection of tax at Source under section 206C of Income-tax Act, 1961 for the quarter ended… June/September/December/March …(Financial year)</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="containerOne">
+          <p>TAN</p>
+          <p>CHNL01440F</p>
+          <div>
+            <p>Select Financial Year and Quarter*</p>
+  
+            <select name="year" id="years">
+              <option>Select</option>
+              <option value="2021">2021-2022</option>
+              <option value="2022-">2022-2023</option>
+              <option value="2023">2023-2024</option>
+            </select>
+
+            <select class="marginLeft" name="Quater" id="Year">
+              <option>Select Quarter</option>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select>
+            
+            <div class="noError leftAlign">Error : Please select an option from the drop down menu.</div>
+            <!-- change class to error from noError to show error message -->
+
+            <p>Upload type</p>
+            <form class="radioButtons">
+              <input type="radio" id="Regular" name="Type" value="Regular">
+              <label for="Regular" class="regular">Regular</label>
+              <input type="radio" id="Correction" name="Type" value="Correction">
+              <label for="Correction">Correction</label>
+
+              <div class="noError leftAlign extraMargin">Error : Please choose an option</div>
+              <!-- change class to error from noError to show error message -->
+
+              <div id="correctionDiv" class="correctionDiv">
+                <div class="inputHolder">
+                  <label for="originalRRR">Original RRR No*</label>
+                  <input class="extraMargin inputPadding" type="text" id="originalRRR">
+                </div>
+                <div class="inputHolder">
+                  <label for="previousRRR">Previous RRR No*</label>
+                  <input class="extraMargin inputPadding" type="text" id="previousRRR">
+                </div>
+              </div>
+            </form>           
+          </div>
+        </div>
+
+        <div class="containerTwo">
+          <div>
+            <label for="myfile">Upload TDS(zip) File</label>
+            <span class="upload-btn-wrapper">        
+              <button class="btn"> <img class="attachIcon" src="images/icons8-paperclip-48.png"> Attach file</button>
+              <input type="file" name="myfile"  />
+            </span>
+          </div>
+
+          <p class="marginBottom">FVU version ( 8.4 )</p>
+
+          <h5>Note:</h5>
+
+          <p class="marginControl">
+            1, If “Proceed to e-Verify” is not getting enabled even after filling
+            all the mandatory details, please check if your profile is completely
+            updated. Basic details, Contact details, key person Details etc need to
+            be updated mandatoriliy for the “E-verification” functionality to get
+            enabled.
+          </p>
+
+          <p class="marginControl">
+            2, After filing TDS return, please check processing status of TDS return
+            in “view filed forms” service after two days. If the TDS return gets
+            rejected for any reason at E-filing/ CPC-TDS, same may be checked then
+            and the TDS return can be filed again.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="backButton" id="instructionScreen">< Back</button>
+    <button class="continueButton" id="eVerify">Proceed to e-Verify</button>
+
+  </div>
+
+  <div class="footer">
+    <div class="credit">
+        <div>
+          <img src="images/emblem_coloured.svg" alt="logo">
+            <p>
+                Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</div>
+  <script src="js/navigationBar.js" ></script>
+  <script src="js/formTDS.js"></script>
+  </body>
+</html>

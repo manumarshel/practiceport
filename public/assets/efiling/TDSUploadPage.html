@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/TDSUploadPage.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>TDS Upload</title>
+</head>
+<body>
+
+    <nav>
+
+        <div class="upperSection">
+          <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+  
+            <span>
+                <ul>
+                    <li>Call Us</li>
+                    <span>|</span>
+                    <li>English</li>
+                    <span>|</span>
+                    <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                    <span>|</span>
+                    <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                    <li class="profile">
+                        <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                        <div>
+                            <span style="font-weight:600;">licny</span>
+                            <span>tds</span>
+                        </div>
+                    </li>
+                </ul>
+                <p>Do not have an account? <a href="#">Register</a> </p>
+            </span>
+        </div>
+  
+        <div class="menuWidthControl">
+            <ul class="menu">
+                <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+                <li class="dropDown">e-File
+                    <ul class="submenu">
+                        <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                        <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                        <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                    </ul>
+                </li>
+                <li>Authorised Partners</li>
+                <li>Services</li>
+                <li>Pending Actions</li>
+                <li>Grievances</li>
+                <li>Help</li>
+                <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    
+    <div class="container">
+
+       <div class="mainContainer">
+        <form>
+            <p class="note"><span class="noteBold">Note:</span> Kindly select appropriate mode of verification as prescribed iin rule 12(3) of IT rules.</p>
+
+            <h4 class="detailHeader">How do you want to e-verify?</h4>
+
+            <div class="radioHolder margin1rem">
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">I would like to verify using OTP on mobile number registerd with Adhaar</label>
+                </div>
+
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">I would like to verify using Digital Signature Certificate(DSC)</label>
+                </div>
+            </div>
+
+            <div class="radioHolder margin1rem">
+                <h3 class="detailHeaderTwo">Generate electronic verification code(EVC)</h3>
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">Through Bank Account</label>
+                </div>
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">I would like to verify using Digital Signature Certificate(DSC)</label>
+                </div>
+
+            </div>
+
+            <div class=" margin1rem">
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">I alredy have an Electric Verification Code (EVC)</label>
+                </div>
+
+                <div class="margin1rem">
+                    <input type="radio"/>
+                    <label class="detailTitle">I already have an OTP on Mobile number registered with Aadhaar</label>
+                </div>
+
+            </div>
+        </form>
+
+       </div>
+
+        <div class="buttonHolder">
+            <button class="backBtn" id="backBtn">< Back</button>
+            <button class="continueBtn" id="succesTDS">Continue ></button>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="credit">
+            <div>
+                <img src="images/emblem_coloured.svg" alt="logo">
+
+                <p>
+                    Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navigationBar.js" ></script>
+    <script>
+        document.getElementById("backBtn").onclick = function () {
+            location.href = "FormTDS.html";
+        };
+
+        document.getElementById("succesTDS").onclick = function () {
+            location.href = "TDSUploadSuccessPage.html";
+        };
+
+    </script>
+</body>
+</html>

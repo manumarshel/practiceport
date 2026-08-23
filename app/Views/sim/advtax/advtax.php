@@ -1,0 +1,67 @@
+<?= $this->extend('sim/layouts/main'); ?>
+
+<?= $this->section('main_content'); ?>
+<div class="content-wrapper">
+    <div class="container">
+        <div class="mypage">
+            <!-- breadcrumbs -->
+            <div class="row" data-ng-controller="transctrl" data-ng-init="init('services')">
+                <div class="col-xs-10">
+                    <div data-breadcrumb="" data-path="//www.gst.gov.in/" data-name="Home">
+                        <ol class="breadcrumb" data-ng-controller="crumbCtrl">
+                            <li><a target="" href="javascript:void(0)" data-ng-bind="name">Dashboard</a></li>
+                            <li><a target="" href="javascript:void(0)" data-ng-bind="name">Returns</a></li>
+                            <li><a target="" href="javascript:void(0)" data-ng-bind="name">GSTR-1/IFF</a></li>
+                            <li data-ng-repeat="breadcrumb in breadcrumbs.getAll()">
+                                <ng-switch on="$last"><span ng-switch-when="true"> Tax Liability (Advances Received)</span></ng-switch>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- breadcrumbs ends -->
+            <div class="row invsumm">
+                <div class="col-xs-12 col-sm-12 taxp">
+                    <h4>Tax Liability (Advance Received) - Summary</h4>
+                    <button class="btn btn-primary btn-circle btn-sm pull-right" data-toggle="tooltip" title="Refresh" data-ng-click="refresh()" data-ng-disabled="refbtn" style="
+                          margin-top: 0px;"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="tabpane">
+            <?php if (!isset($current_details)): ?>
+                <div class="alert alert-msg alert-info" data-ng-show="noinvflag" data-ng-bind="trans.ERR_NO_INV">
+                    There are no invoices to be displayed.
+                </div>
+            <?php else: ?>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>POS</th>
+                        <th>Supply type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($current_details as $detail):
+                        $pos = $detail['pos'];
+                        ?>
+                        <tr>
+                            <td><?php echo $pos_list[$pos]; ?></td>
+                            <td><?php echo $detail['supply_type']; ?></td>
+                        </tr>
+
+                    <?php endforeach;
+                    ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+            <div class="btn-toolbar">
+                <a href="advtax-liability-add" class="btn btn-primary pull-right">Add State wise Details</a>
+                <button type="button" class="btn btn-default pull-right">Back</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<?= $this->endSection(); ?>

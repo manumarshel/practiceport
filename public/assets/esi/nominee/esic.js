@@ -1,0 +1,546 @@
+function validateNumeric(evt) {
+    evt = (evt) ? evt : window.event
+
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+
+    if ((charCode != 31 && (charCode < 48 || charCode > 57) && (charCode < 35 || charCode > 41)) && (charCode != 46) && (charCode != 8) && (charCode != 9)) {
+        status = "This field accepts numbers only.";
+        return false
+    }
+    status = ""
+    return true
+}
+
+function validateNumericMobile(evt) {
+    evt = (evt) ? evt : window.event
+
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    alert(charCode);
+    if ((charCode < 47 || charCode > 58)) {
+        status = "This field accepts numbers only.";
+        return false
+    }
+    status = ""
+    return true
+}
+function check_fut_Date(sender, args) {
+
+
+    var fuData = document.getElementById(sender._id.substr(0, sender._id.lastIndexOf('_')) + '_hdndate').value;
+    var stri = fuData.split(' ');
+    if (sender._selectedDate > new Date(stri[0], stri[1] - 1, stri[2])) {
+        alert("Future Date can't be selected !");
+        sender._textbox._element.value = '';
+
+    }
+}
+function check_pas_Date(sender, args) {
+
+
+    var fuData = document.getElementById('ctl00_hdnhmedate').value;
+
+    var stri = fuData.split(' ');
+
+    if (sender._selectedDate < new Date(stri[0], stri[1] - 1, stri[2])) {
+        alert("Past Date can't be selected !");
+        sender._textbox._element.value = '';
+
+    }
+}
+
+function checkDate(sender, args) {
+
+    var fuData = document.getElementById('ctl00_hdnhmedate').value;
+
+    var stri = fuData.split(' ');
+    if (sender._selectedDate > new Date(stri[0], stri[1] - 1, stri[2])) {
+        alert("Future Date can't be selected !");
+        sender._textbox._element.value = '';
+
+    }
+}
+
+
+function getdate() {
+    var varTime = new Date();
+    var fuData = "";
+    var varDay;
+    if (document.getElementById('ctl00_hdnhmedate').value == null || document.getElementById('ctl00_hdnhmedate').value == '') {
+        varDay = new Date();
+    }
+    else {
+        fuData = document.getElementById('ctl00_hdnhmedate').value;
+        var stri = fuData.split(' ');
+        varDay = new Date(stri[0], stri[1] - 1, stri[2]);
+
+    }
+
+    var varweek = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    var varMonth = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+    c_year = varDay.getFullYear();
+    if (c_year < 1000)
+        c_year += 1900;
+
+    c_weekday = varweek[varDay.getDay()] + " ";
+    c_month = varMonth[varDay.getMonth()] + " ";
+    c_day = varDay.getDate() + " ";
+    c_hour = varTime.getHours();
+    c_minute = varTime.getMinutes();
+    c_second = varTime.getSeconds();
+    if (c_hour >= 12) {
+        c_part = " PM";
+    } else {
+        c_part = " AM";
+    }
+    if (c_hour > 12) {
+        c_hour -= 12;
+    }
+    if (c_hour == 0) {
+        c_hour = 12;
+    }
+    if (c_minute < 10) {
+        c_minute = "0" + c_minute;
+    }
+    if (c_second < 10) {
+        c_second = "0" + c_second;
+    }
+    var e = document.getElementById("raw");
+
+    if (e != null || e != undefined) {
+        var e1 = document.getElementById("raw").firstChild;
+
+        if (e1 != null || e1 != undefined) {
+            document.getElementById("raw").firstChild.nodeValue = c_weekday + c_day + c_month + c_year + ", " + c_hour + ":" + c_minute + ":" + c_second + c_part;
+
+            document.write = c_weekday + c_day + c_month + c_year + ", " + c_hour + ":" + c_minute + ":" + c_second + c_part;
+
+            setTimeout('godate ();', 1000);
+        }
+    }
+}
+
+
+
+
+
+function validateNumerOnly(field) {
+    var numSet = /^[0-9]*$/;
+    if (!numSet.test(field.value)) {
+        field.value = field.value.replace(/[^0-9-'.']/g, "");
+    }
+}
+
+function validateNumericOnly(field) {
+    var numSet = /^[0-9]*$/;
+    if (!numSet.test(field.value)) {
+        field.value = field.value.replace(/[^0-9-'.']/g, "");
+    }
+}
+
+
+function validateAlphabets(evt) {
+    evt = (evt) ? evt : window.event
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) ||
+    (charCode == 32) || (charCode == 8) || (charCode == 9) || (charCode == 127) || (charCode >= 37 && charCode <= 40) || (charCode == 8) || (charCode == 46)) {
+        status = ""
+        return true
+    }
+    status = "This field accepts alphabets only."
+    return false
+}
+function validateAlphabets1(evt) {
+    evt = (evt) ? evt : window.event
+
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode == 8 || charCode == 37 || charCode == 39 || charCode == 46) {
+        status = ""
+        return true
+    }
+    else
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 32) {
+        status = ""
+        return true
+    }
+    status = "This field accepts alphabets only."
+    return false
+}
+function validateDate(dateObj, msgcontrol) {
+    var actDate = new Date();
+    var dPart = dateObj.value.split("/");
+    if (dPart.length == 3) {
+        var ftrDate = new Date(dPart[2], dPart[1] - 1, dPart[0]);
+        if (!isNaN(ftrDate) && ftrDate.getDate() == dPart[0] &&
+                  ftrDate.getMonth() == dPart[1] - 1 && ftrDate < actDate) {
+            document.getElementById(msgcontrol).innerHTML = '';
+            return true;
+        }
+
+
+    }
+    document.getElementById(msgcontrol).innerHTML = '<font color="RED"> Please Enter Date Till Current Date in Format (dd/mm/yyyy) </font>';
+    //dateObj.select();
+    //  dateObj.focus();
+
+    return false;
+}
+
+function validateDateValid(oSrc, args) {
+    var today = new Date();
+    var SysDate = today.getDate();
+    var SysMonth = today.getMonth() + 1; //January is 0!
+    var SysYear = today.getFullYear();
+    var dateOfBirth = args.Value;
+    alert(dateOfBirth);
+    var ArrDob = dateOfBirth.split("/");
+    if (ArrDob.length == 3) {
+        var DobMonth = ArrDob[0];
+        var DobDate = ArrDob[1];
+        var DobYear = ArrDob[2];
+        alert("DobYear=" + DobYear + "SysYear =" + SysYear + "DobMonth=" + DobMonth + "SysMonth=" + SysMonth + "DobDate=" + DobDate + "SysDate=" + SysDate);
+        if (DobYear > SysYear) {
+            args.IsValid = false;
+            return;
+        }
+        else if ((DobYear == SysYear) && (DobDate > SysMonth)) {
+            // this will check mm/dd/yyyy else if ((DobYear == SysYear) && (DobMonth > SysMonth)) { 
+            args.IsValid = false;
+            return;
+        }
+        else if ((DobYear == SysYear) && (DobDate == SysMonth) && (DobMonth > SysDate)) {
+            // this will check mm/dd/yyyy  else if ((DobYear == SysYear) && (DobMonth == SysMonth) && (DobDate > SysDate)) 
+            {
+                args.IsValid = false;
+                return;
+            }
+            args.IsValid = true;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
+function validateMaxLimitValue(field, maxlimit) {
+
+    var remainingChars = maxlimit - field.value.length;
+    if (remainingChars <= 0) {
+        field.value = field.value.substring(maxlimit, 0);
+        document.getElementById('valErrorMsg').style.display = "block";
+        return false;
+
+    }
+    else {
+        document.getElementById('valErrorMsg').style.display = "none";
+        return true;
+    }
+}
+
+function validatetextboxMultilineMaxNumber(txt, maxLen, evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (txt.value.length > (maxLen - 1)) {
+        if (charCode == 08 || charCode == 127) {
+            return true;
+        }
+
+        else {
+
+            return false;
+
+        }
+
+        return false;
+
+    }
+
+}
+
+
+
+function validatelimitLength(obj, maxchar) {
+
+    if (this.id) { obj = this; }
+
+    var remaningChar = maxchar - trimEnter(obj.value).length;
+
+    if (remaningChar <= 0) {
+
+        obj.value = obj.value.substring(maxchar, 0);
+
+        return false;
+
+    }
+
+    else {
+
+        return true;
+
+    }
+
+}
+
+function trimEnterValue(dataStr) {
+
+    return dataStr.replace(/(\r\n|\r|\n)/g, "");
+
+}
+
+
+
+
+function performClick(field, event) {
+
+    var key;
+
+    if (window.event) {
+
+        //alert("IE Fix");
+
+        key = window.event.keyCode;
+
+    }
+
+    else {
+
+        //alert("Firefox Fix");
+
+        key = event.which;
+
+    }
+
+    if (key == 13) {
+
+        var btn = document.getElementById(field);
+
+        btn.click();
+
+    }
+
+    return false;
+
+}
+
+function check_futDate(sender, args) {
+    if (sender._selectedDate > new Date()) {
+        alert("Future Date can not be selected !");
+        sender._textbox._element.value = '';
+    }
+}
+
+//MRID-2166
+function SelectSingleRadiobutton(rdbtnid) {
+
+    var rdBtn = document.getElementById(rdbtnid);
+    var rdBtnList = document.getElementsByTagName("input");
+    for (i = 0; i < rdBtnList.length; i++) {
+        if (rdBtnList[i].type == "radio" && rdBtnList[i].id != rdBtn.id) {
+            rdBtnList[i].checked = false;
+
+        }
+    }
+}
+function Validate_ExcessButton(e) {
+    var rdBtnListChecked = 0;
+    var rdBtnList = document.getElementsByTagName("input");
+    for (i = 0; i < rdBtnList.length; i++) {
+        if (rdBtnList[i].type == "radio" && rdBtnList[i].id.indexOf('rbn_SelectExcessAmt') > 0) {
+            if (rdBtnList[i].checked) {
+                rdBtnListChecked++;
+            }
+        }
+    }
+    if (parseInt(rdBtnListChecked) == 0) {
+        alert('Please select atleast one radio button to submit the excess payment information');
+        $find('MP_Excess').show();
+    }
+}
+
+
+function Validate_ClearButton(lblId) {
+    var rdBtnList = document.getElementsByTagName("input");
+
+    var chkBox = document.getElementById('ctl00_HomePageContent_chkBxConsent');
+
+    if (chkBox.checked) {
+        document.getElementById('ctl00_HomePageContent_chkBxConsent').checked = false;
+        document.getElementById('ctl00_HomePageContent_chkBxConsent').disabled = true;
+        document.getElementById("ctl00_HomePageContent_panel_IpConsent").style.display = "none";
+        document.getElementById("ctl00_HomePageContent_panel_totalPayable").style.display = "none";
+
+    }
+
+
+
+
+    var lblExecessAmount = "";
+    for (i = 0; i < rdBtnList.length; i++) {
+        if (rdBtnList[i].type == "radio" && rdBtnList[i].id.indexOf('rbn_SelectExcessAmt') > 0) {
+
+            if (rdBtnList[i].checked)
+                rdBtnList[i].checked = false;
+        }
+    }
+    document.getElementById(lblId).innerHTML = "";
+
+    if (document.getElementById(lblId).innerHTML == "") {
+        document.getElementById('ctl00_HomePageContent_chkBxConsent').checked = false;
+        document.getElementById('ctl00_HomePageContent_chkBxConsent').disabled = true;
+        document.getElementById("ctl00_HomePageContent_panel_IpConsent").style.display = "none";
+        document.getElementById("ctl00_HomePageContent_panel_totalPayable").style.display = "none";
+
+    }
+}
+//MRID-2166
+
+
+//MRID-2428 by vineela
+function checkTextAreaMaxLengthRemove(textBox, mLen) {
+    if (textBox.value.length > mLen - 1)
+        textBox.value = textBox.value.substr(0, mLen - 1);
+
+}
+function checkTextAreaMaxLength(textBox, e, mLen) {
+
+    var maxLength = parseInt(mLen);
+    if (!checkSpecialKeys(e)) {
+        if (e.ctrlKey == true && String.fromCharCode(e.keyCode || e.charCode) == 'c') {
+            return true;
+        }
+        else {
+            if (textBox.value.length > maxLength - 1) {
+                if (window.event)//IE
+                {
+                    e.returnValue = false;
+                    return false;
+                }
+                else//Firefox
+                    e.preventDefault();
+            }
+        }
+    }
+}
+
+function checkSpecialKeys(e) {
+    if (e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 35 && e.keyCode != 36 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40)
+        return false;
+    else
+        return true;
+}
+// END of MRID-2428 by vineela
+
+// Added by AKHIL - Aadhaar Authentication
+//--- Checks for 12-Digit/Numeric/Not starting with 0 and valid Aadhaar Number----
+// MRID - 2379
+function CheckSum(id) {
+    var Aadhaar = document.getElementById(id).value;
+    if (isNaN(Aadhaar) == true) {
+        document.getElementById(id).value = '';
+        alert('Please enter a valid numeric value for Aadhaar-ID');
+        return;
+    }
+    if (Aadhaar.length == 12 && Aadhaar.charAt(0) != '0') {
+        var result = ValidateAadhaarNumber(Aadhaar);
+        if (result != "1") {
+            document.getElementById(id).value = '';
+            alert('Please enter a valid Aadhaar-ID');
+        }
+        else {
+            return true;
+        }
+    }
+    //    else {
+    //        document.getElementById(id).value = '';
+    //        alert('Please enter a valid 12 digit Aadhaar-ID');
+    //    }
+    //document.getElementById(id).value = '15151';
+}
+
+// MRID 2857 Checking Valid Aadhaar Number
+function AadhaarCheckSum(id) {
+    var Aadhaar = document.getElementById(id).value;
+    Aadhaar = Aadhaar.replace(/[/]+/g, '');
+    if(Aadhaar == "")
+        return;
+    if (isNaN(Aadhaar) == true) {
+        document.getElementById(id).value = '';
+        alert('Please enter a valid numeric value for Aadhaar-ID');
+        return;
+    }
+    if (Aadhaar.length == 12 && Aadhaar.charAt(0) != '0') {
+        var result = ValidateAadhaarNumber(Aadhaar);
+        if (result != "1") {
+            document.getElementById(id).value = '';
+            alert('Please enter a valid Aadhaar-ID');
+        }
+        else {
+            return true;
+        }
+    }
+    else{
+        document.getElementById(id).value = '';
+         alert('Please enter a valid Aadhaar-ID');
+         return;
+    }
+}
+
+function ValidateAadhaarNumber(Aadhaar) {
+    var Result;
+    switch (true) {
+        case Aadhaar == "":
+            Result = "0";
+            break;
+        case AadhaarCheck(Aadhaar, 0) == 0:
+            Result = "1";
+            break;
+        default:
+            Result = "0";
+    }
+    return Result;
+}
+function AadhaarCheck(Aadhaar, OffVal) {
+
+    var d = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+           [1, 2, 3, 4, 0, 6, 7, 8, 9, 5],
+           [2, 3, 4, 0, 1, 7, 8, 9, 5, 6],
+           [3, 4, 0, 1, 2, 8, 9, 5, 6, 7],
+           [4, 0, 1, 2, 3, 9, 5, 6, 7, 8],
+           [5, 9, 8, 7, 6, 0, 4, 3, 2, 1],
+           [6, 5, 9, 8, 7, 1, 0, 4, 3, 2],
+           [7, 6, 5, 9, 8, 2, 1, 0, 4, 3],
+           [8, 7, 6, 5, 9, 3, 2, 1, 0, 4],
+           [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]];
+
+    var p = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+           [1, 5, 7, 6, 2, 8, 3, 0, 9, 4],
+           [5, 8, 0, 3, 7, 9, 6, 1, 4, 2],
+           [8, 9, 1, 6, 0, 4, 3, 5, 2, 7],
+           [9, 4, 5, 3, 1, 2, 6, 8, 7, 0],
+           [4, 2, 8, 6, 5, 7, 3, 9, 0, 1],
+           [2, 7, 9, 3, 8, 0, 6, 4, 1, 5],
+           [7, 0, 4, 6, 9, 1, 3, 2, 5, 8]];
+
+    var flag = 0;
+    for (i = Aadhaar.length - 1; i >= 0; i = i - 1) {
+        flag = d[flag][p[(Aadhaar.length - 1 - i + OffVal) % 8][parseInt(Aadhaar.substr(i, 1))]];
+    }
+    return flag;
+}
+//END :- Aadhaar Authentication
+
+
+//MRID: 2479 Removal of White Space in textbox     
+function RestrictSpace(controlID) {
+
+
+    var sender = document.getElementById(controlID.id);
+    var value1 = sender.value;
+
+    var resvalue = value1.replace(/(^\s*)|(\s*$)/gi, "");
+
+    resvalue = resvalue.replace(/[ ]{2,}/gi, " ");
+    resvalue = resvalue.replace(/\n /, "\n");
+    sender.value = resvalue.trim();
+}
+//END 2479
+

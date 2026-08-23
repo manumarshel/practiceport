@@ -1,0 +1,107 @@
+ /******** Contact Us***********/
+ /* Section title */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+ 
+.section-title p {
+    color :#4A4A4A;
+    font-size:20px;
+}
+
+/* Card styles */
+.contact-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f28c18;
+    padding: 25px;
+}
+
+.contact-side-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f28c18;
+    padding: 20px;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    background: #f4f4f4;
+    border: none;
+    padding: 10px;
+}
+
+/* Button */
+.btn-orange {
+    background-color: #f28c18;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+}
+.btn-orange:hover {
+    background-color: #e67e00;
+}
+
+/* Icon box */
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #fff3e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f28c18;
+    font-size: 18px;
+}
+
+/* spacing */
+.mt-40 {
+    margin-top: 40px;
+}
+
+.support-box {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.support-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.bg-orange {
+    background-color: #ff7a00;
+}
+
+.cta-support {
+    background: linear-gradient(90deg, #ff8a00, #ff6a00);
+    border-radius: 16px;
+    color: #fff;
+}
+.fs-20 {
+    font-size: 20px;
+}
+
+/******Pricing********/
+.course-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}

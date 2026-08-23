@@ -1,0 +1,175 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.mainContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.containerSpecific{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sideContainer {
+    width: 25rem;
+    border: 1px solid lightgray;
+    padding: 1rem;
+    display: none;
+    padding-bottom: 0.5rem;
+}
+
+.boldText span {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.containerOne {
+    padding: 1rem;
+    border-bottom: 1px solid grey;
+}
+
+.containerOne p {
+    margin: 0.6rem 0;
+}
+
+.containerOne select {
+    margin-bottom: 1rem;
+}
+
+select {
+    padding: 0.6rem;
+}
+
+.regular {
+    margin-right: 0.3rem;
+}
+
+.containerTwo {
+    padding: 1rem;
+}
+
+.containerTwo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerTwo div label {
+    margin-bottom: 0.6rem;
+}
+
+.containerTwo h5 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.marginBottom {
+    margin-bottom: 0.6rem;
+}
+
+.marginControl{
+    margin-bottom: 0.4rem;
+}
+
+.backButton{
+    background-color: #F6F7FB;
+    margin-top: 1rem;
+}
+
+.continueButton {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    background-color: #2a3a8d;
+    color: white;
+    border: none;
+    float: right;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.displayModifier {
+    display: block;
+}
+
+form{
+    display: block;
+}
+
+.extraMargin {
+    margin-top: 0.5rem;
+}
+
+.correctionDiv {
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.inputHolder {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.8rem;
+    width: 30%;
+}
+
+.inputPadding {
+    padding: 0.4rem;
+}
+
+.marginLeft {
+    margin-left: 4rem;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+.btn {
+    border: 1px solid #2a3a8d;
+    color: #2a3a8d;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+}
+  
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.attachIcon {
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+/* .btn:hover {
+    find background color
+} */

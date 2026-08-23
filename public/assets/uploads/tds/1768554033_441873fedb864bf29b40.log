@@ -1,0 +1,287 @@
+The part added gets called returns true for value Protean RPU 5.7
+BATCH VALIDATION STARTED
+countOfBatch1
+isFinYrGrtrthn:- true
+ PersonResponsilblePAN :: NCRPG6582Y
+PersonResponsilblePAN.trim().length() ::10
+END TIME : Fri Jan 16 14:19:37 IST 2026
+the errorFileNameSAM is C:\Users\DELL\Documents\26QRQ3.err
+---UPPER---
+before state changed called
+Re-Initializing
+inside ANNE_TAB_INDEX2
+Form Number26Q
+before state changed called
+Re-Initializing
+Type of statement: Regular
+File type:R
+Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: Invalid index
+	at javax.swing.DefaultRowSorter.convertRowIndexToModel(Unknown Source)
+	at sun.swing.FilePane$SortableListModel.getElementAt(Unknown Source)
+	at javax.swing.JList.getSelectedValue(Unknown Source)
+	at javax.swing.plaf.basic.BasicFileChooserUI$Handler.valueChanged(Unknown Source)
+	at javax.swing.JList.fireSelectionValueChanged(Unknown Source)
+	at javax.swing.JList$ListSelectionHandler.valueChanged(Unknown Source)
+	at javax.swing.DefaultListSelectionModel.fireValueChanged(Unknown Source)
+	at javax.swing.DefaultListSelectionModel.fireValueChanged(Unknown Source)
+	at javax.swing.DefaultListSelectionModel.setValueIsAdjusting(Unknown Source)
+	at javax.swing.JList.setValueIsAdjusting(Unknown Source)
+	at javax.swing.plaf.basic.BasicListUI$Handler.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.WaitDispatchSupport$2.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(Unknown Source)
+	at java.awt.Dialog.show(Unknown Source)
+	at javax.swing.JFileChooser.showDialog(Unknown Source)
+	at javax.swing.JFileChooser.showOpenDialog(Unknown Source)
+	at com.tin.etbaf.rpu.xj.actionPerformed(z:2069)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.WaitDispatchSupport$2.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(Unknown Source)
+	at java.awt.Dialog.show(Unknown Source)
+	at java.awt.Component.show(Unknown Source)
+	at java.awt.Component.setVisible(Unknown Source)
+	at java.awt.Window.setVisible(Unknown Source)
+	at java.awt.Dialog.setVisible(Unknown Source)
+	at com.tin.etbaf.rpu.GRPUMain.z(z:2855)
+	at com.tin.a.b.u.z(io:2565)
+	at com.tin.a.b.u.j(io:705)
+	at com.tin.etbaf.rpu.wm.h(sc:15054)
+	at com.tin.etbaf.rpu.wm.d(sc:18020)
+	at com.tin.etbaf.rpu.sh.actionPerformed(sc:41393)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+array length is27
+filled rows are 25
+Column Count in AnneI: 38
+AnnI value:0^7^DD^1^1^--Select--^3584800^02/11/2023^86489^94C^4460.00^0.00^0.00^4460.00^1^^^HBVPT2157O^Madhu Mohan^27/10/2023^45000.00^450.00^0.00^0.00^450.00^^450.00^^27/10/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 220
+Column Count in AnneI: 38
+AnnI value:0^8^DD^1^1^--Select--^3584800^02/11/2023^86489^94C^4460.00^0.00^0.00^4460.00^2^^^NBECE5150Q^Moheena Catering Services Ltd.^28/10/2023^60400.00^1208.00^0.00^0.00^1208.00^^1208.00^^28/10/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 242
+Column Count in AnneI: 38
+AnnI value:0^9^DD^1^1^--Select--^3584800^02/11/2023^86489^94C^4460.00^0.00^0.00^4460.00^3^^^EQWFB4853W^Nasar Housekeepers^29/10/2023^37800.00^756.00^0.00^0.00^756.00^^756.00^^29/10/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 227
+Column Count in AnneI: 38
+AnnI value:0^10^DD^1^1^--Select--^3584800^02/11/2023^86489^94C^4460.00^0.00^0.00^4460.00^4^^^MZWCW5484Q^Meghna Cleaning Services Ltd.^29/10/2023^65400.00^1308.00^0.00^0.00^1308.00^^1308.00^^29/10/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 242
+Column Count in AnneI: 38
+AnnI value:0^11^DD^1^1^--Select--^3584800^02/11/2023^86489^94C^4460.00^0.00^0.00^4460.00^5^^^EDAPE0452N^Ashish Verma^30/10/2023^73800.00^738.00^0.00^0.00^738.00^^738.00^^30/10/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 222
+Column Count in AnneI: 38
+AnnI value:0^12^DD^1^2^--Select--^3584800^04/12/2023^35585^94C^4556.00^0.00^0.00^4556.00^1^^^HBVPT2157O^Madhu Mohan^27/11/2023^45000.00^450.00^0.00^0.00^450.00^^450.00^^27/11/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 221
+Column Count in AnneI: 38
+AnnI value:0^13^DD^1^2^--Select--^3584800^04/12/2023^35585^94C^4556.00^0.00^0.00^4556.00^2^^^NBECE5150Q^Moheena Catering Services Ltd.^28/11/2023^60400.00^1208.00^0.00^0.00^1208.00^^1208.00^^28/11/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 243
+Column Count in AnneI: 38
+AnnI value:0^14^DD^1^2^--Select--^3584800^04/12/2023^35585^94C^4556.00^0.00^0.00^4556.00^3^^^CBWFG0583S^Qureshi Cleansing Agency^29/11/2023^42600.00^852.00^0.00^0.00^852.00^^852.00^^29/11/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 234
+Column Count in AnneI: 38
+AnnI value:0^15^DD^1^2^--Select--^3584800^04/12/2023^35585^94C^4556.00^0.00^0.00^4556.00^4^^^MZWCW5484Q^Meghna Cleaning Services Ltd.^29/11/2023^65400.00^1308.00^0.00^0.00^1308.00^^1308.00^^29/11/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 242
+Column Count in AnneI: 38
+AnnI value:0^16^DD^1^2^--Select--^3584800^04/12/2023^35585^94C^4556.00^0.00^0.00^4556.00^5^^^EDAPE0452N^Ashish Verma^30/11/2023^73800.00^738.00^0.00^0.00^738.00^^738.00^^30/11/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 222
+Column Count in AnneI: 38
+AnnI value:0^17^DD^1^3^--Select--^3584800^04/12/2023^35417^4JA^14700.00^0.00^0.00^14700.00^1^^^BCYFN2483P^Shivansh Technologies^27/11/2023^36000.00^720.00^0.00^0.00^720.00^^720.00^^27/11/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 233
+Column Count in AnneI: 38
+AnnI value:0^18^DD^1^3^--Select--^3584800^04/12/2023^35417^4JB^14700.00^0.00^0.00^14700.00^2^^^MEIFV1561H^Kokila Sisters & Firm^28/11/2023^58200.00^5820.00^0.00^0.00^5820.00^^5820.00^^28/11/2023^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 237
+Column Count in AnneI: 38
+AnnI value:0^19^DD^1^3^--Select--^3584800^04/12/2023^35417^4JB^14700.00^0.00^0.00^14700.00^3^^^SYEFB1570E^Anju Legal Services^28/11/2023^61700.00^6170.00^0.00^0.00^6170.00^^6170.00^^28/11/2023^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 235
+Column Count in AnneI: 38
+AnnI value:0^20^DD^1^3^--Select--^3584800^04/12/2023^35417^4JA^14700.00^0.00^0.00^14700.00^4^^^DVGFB5823D^Sagar Associates^29/11/2023^51000.00^1020.00^0.00^0.00^1020.00^^1020.00^^29/11/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 231
+Column Count in AnneI: 38
+AnnI value:0^21^DD^1^3^--Select--^3584800^04/12/2023^35417^4JA^14700.00^0.00^0.00^14700.00^5^^^BHJCE5654J^Parekh Info Ltd.^29/11/2023^48500.00^970.00^0.00^0.00^970.00^^970.00^^29/11/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 228
+Column Count in AnneI: 38
+AnnI value:0^22^DD^1^4^--Select--^3584800^03/01/2024^64835^94C^4556.00^0.00^0.00^4556.00^1^^^HBVPT2157O^Madhu Mohan^27/12/2023^45000.00^450.00^0.00^0.00^450.00^^450.00^^27/12/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 221
+Column Count in AnneI: 38
+AnnI value:0^23^DD^1^4^--Select--^3584800^03/01/2024^64835^94C^4556.00^0.00^0.00^4556.00^2^^^NBECE5150Q^Moheena Catering Services Ltd.^28/12/2023^60400.00^1208.00^0.00^0.00^1208.00^^1208.00^^28/12/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 243
+Column Count in AnneI: 38
+AnnI value:0^24^DD^1^4^--Select--^3584800^03/01/2024^64835^94C^4556.00^0.00^0.00^4556.00^3^^^CBWFG0583S^Qureshi Cleansing Agency^29/12/2023^42600.00^852.00^0.00^0.00^852.00^^852.00^^29/12/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 234
+Column Count in AnneI: 38
+AnnI value:0^25^DD^1^4^--Select--^3584800^03/01/2024^64835^94C^4556.00^0.00^0.00^4556.00^4^^^MZWCW5484Q^Meghna Cleaning Services Ltd.^29/12/2023^65400.00^1308.00^0.00^0.00^1308.00^^1308.00^^29/12/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 242
+Column Count in AnneI: 38
+AnnI value:0^26^DD^1^4^--Select--^3584800^03/01/2024^64835^94C^4556.00^0.00^0.00^4556.00^5^^^EDAPE0452N^Ashish Verma^30/12/2023^73800.00^738.00^0.00^0.00^738.00^^738.00^^30/12/2023^--Select--^02^1.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 222
+Column Count in AnneI: 38
+AnnI value:0^27^DD^1^5^--Select--^3584800^03/01/2024^26587^4JA^14870.00^0.00^0.00^14870.00^1^^^BCYFN2483P^Shivansh Technologies^27/12/2023^34500.00^690.00^0.00^0.00^690.00^^690.00^^27/12/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 233
+Column Count in AnneI: 38
+AnnI value:0^28^DD^1^5^--Select--^3584800^03/01/2024^26587^4JB^14870.00^0.00^0.00^14870.00^2^^^MEIFV1561H^Kokila Sisters & Firm^28/12/2023^65200.00^6520.00^0.00^0.00^6520.00^^6520.00^^28/12/2023^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 237
+Column Count in AnneI: 38
+AnnI value:0^29^DD^1^5^--Select--^3584800^03/01/2024^26587^4JA^14870.00^0.00^0.00^14870.00^3^^^SYEFB1570E^Anju Legal Services^28/12/2023^58700.00^5870.00^0.00^0.00^5870.00^^5870.00^^28/12/2023^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 235
+Column Count in AnneI: 38
+AnnI value:0^30^DD^1^5^--Select--^3584800^03/01/2024^26587^--Select--^14870.00^0.00^0.00^14870.00^4^^^DVGFB5823D^Sagar Associates^29/12/2023^41000.00^820.00^0.00^0.00^820.00^^820.00^^29/12/2023^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 235
+Column Count in AnneI: 38
+AnnI value:0^31^DD^1^5^--Select--^3584800^03/01/2024^26587^--Select--^14870.00^0.00^0.00^14870.00^5^^^BHJCE5654J^Parekh Info Ltd.^29/12/2023^48500.00^970.00^0.00^0.00^970.00^^970.00^^29/12/2023^--Select--^01^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 235
+Out time for AnneI:1768553466041detailsnull
+saved file path:C:\Users\DELL\Documents\SARANYATDS
+current file path SARANYATDS
+existing file chooser C:\Users\DELL\Documents\SARANYATDS
+copied file C:\Users\DELL\Documents\SARANYATDS
+next saved file pathC:\Users\DELL\Documents
+After first save file size: 0
+default cursor
+before state changed called
+Re-Initializing
+inside ANNE_TAB_INDEX2
+Form Number26Q
+before state changed called
+Re-Initializing
+Type of statement: Regular
+File type:R
+before state changed called
+Re-Initializing
+inside ANNE_TAB_INDEX2
+Form Number26Q
+before state changed called
+Re-Initializing
+Type of statement: Regular
+File type:R
+Input file name: 26QRQ3
+Input file path: 
+Saved file path inside try: C:\Users\DELL\Documents\SARANYATDS
+Last Index of File.separator: 23
+Last Index of File.separator: 23
+---UPPER---
+calling main method

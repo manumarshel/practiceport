@@ -1,0 +1,64 @@
+.subDetailContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5rem;
+}
+
+.subDetail {
+    margin: 1rem 0;
+}
+
+.subDetailTitle {
+    color: gray;
+}
+
+.subDetailData {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    font-weight: bold;
+}
+
+.borderMarginPadding {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.extraPadding {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.subDetailOutside {
+    padding-bottom: 2rem;
+}
+
+.extraMargin {
+    margin-bottom: 2rem;
+}
+
+.mainContainer {
+    border: 1px solid lightgray;
+}
+
+.widthControl {
+    width: 80%;
+    margin-left: 1rem;
+}
+
+.displayControl {
+    display: inline-block;
+}
+
+.detailTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.statusHeading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

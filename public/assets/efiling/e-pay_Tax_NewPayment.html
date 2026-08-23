@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/EpayTaxNewPayment.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>New Payment</title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+  <div class="container">
+    <p class="heading">Dashboard > e-payTax > New Payment</p>
+
+    <div class="paymentDetails">
+      <h4>New Payment</h4>
+      <form class="newPaymentSector">
+        <p>TAN:Ch*****</p>
+        <label>Assessment Year*</label>
+        <select name="year" id="year">
+          <option>Select</option>
+          <option value="2021-2022">2021-2022</option>
+          <option value="2022-2023">2022-2023</option>
+          <option value="2023-2024">2023-2024</option>
+        </select>
+
+        <div id="2023-2024" class="optionDetails">
+          <p>Financial Year is 2023-24 for the selected Assessment Year 2024-25</p>
+        </div>
+
+        <div id="2022-2023" class="optionDetails">
+          <p>Financial Year is 2022-23 for the selected Assessment Year 2023-24</p>
+        </div>
+
+        <div id="2021-2022" class="optionDetails">
+          <p>Financial Year is 2021-22 for the selected Assessment Year 2022-23</p>
+        </div>
+
+      </form>
+    </div>
+
+      <div class="instruction"> * Indicates mandatory fields</div>
+    <div>
+      
+      <div class="paymentListHolder">
+
+        <div class="subHolder">
+          <div class="textHolder">
+            <p class="title">Pay TDS</p>
+            <p class="listText">
+              Financial Year is 2023-2024 fo the selected assissignment year 20xx-20xx
+            </p>
+            <p class="listText">
+              Section 192, Section 193, Section 194, Section 194A,Section 194B,
+              Section 194BA, Section… <a>Read More </a>
+            </p>
+          </div>
+          <div class="proceedButtonHolder">
+            <button class="proceedButton" id="proceedTDS">Proceed</button>
+          </div>
+        </div>
+  
+        <div class="subHolder">
+          <div class="textHolder">
+          <p class="title">Pay Outstanding Demand</p>
+          <p class="listText">Payment of demand raised against previous years</p>
+          </div>
+          <div class="proceedButtonHolder">
+            <button class="proceedButton">Proceed</button>
+          </div>
+        </div>
+  
+        <div class="subHolder">
+          <div class="textHolder">
+          <p class="title">Pay Fee [Other Receipts (500)]</p>
+          <p>Appeal Fee</p>
+          </div>
+          <div class="proceedButtonHolder">
+            <button class="proceedButton">Proceed</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <button class="backButton" id="epayTax">< Back</button>
+    <h4 class="bottomDivider">Need Help?</h4>
+    <ul class="lastLinkHolder">
+      <li><a class="lastLink">What is Assessignment year?</a></li>
+    </ul>
+
+  </div>
+
+  <div class="footer">
+    <div class="credit">
+        <div>
+            <img src="images/emblem_coloured.svg" alt="logo">
+            <p>
+                Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</div>
+<script src="js/navigationBar.js" ></script>
+<script src="js/newPayment.js"></script>
+  </body>
+</html>

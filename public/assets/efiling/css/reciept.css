@@ -1,0 +1,88 @@
+body {
+  font-family: Verdana, Tahoma, sans-serif;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.page {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.tableStyle {
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.tableBody {
+  width: 100%;
+}
+
+#tableOne td:nth-child(1) {
+  text-align: left;
+}
+
+#tableOne td:nth-child(2) {
+  text-align: right;
+}
+
+#tableOne td:nth-child(3) {
+  text-align: left;
+}
+
+.bottomHeading{
+  font-size: 1.2rem;
+}
+
+#tableTwo td:nth-child(1) {
+  text-align: left;
+  width: 10%;
+}
+
+#tableTwo td:nth-child(2) {
+  text-align: left;
+}
+
+#tableTwo td:nth-child(3) {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bottomContainer {
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.bottomTitle {
+  font-size: 1.6rem;
+}
+
+.bottomPara {
+  font-size: 1rem;
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+}
+
+.topPara {
+  font-size: 1.6rem;
+}
+
+.imageHolder {
+  margin-left: 5rem;
+  border-left: 1px solid black;
+  padding-left: 1rem;
+}

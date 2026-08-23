@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/EpayTax.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>E-Pay Tax</title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+      <div class="container">
+
+        <h3 class="heading">Dashboard > e-payTax</h3>
+
+        <div class="headerComponent">
+          <h1>e-Pay Tax</h1>
+          <button id="newPayment">+ New Payment</button>
+        </div>
+
+        <p class="linkHolder">
+            Please click on New Payment for tax payment through (i) Net Banking (ii)
+            Debit Card (iii) Over the Counter (iv) NEFT/RTGS (v) Payment Gateway for
+            <a href="#">these banks</a>
+        </p> 
+
+        <p class="colorChangeBlue">
+          Please Note if the amount is debited from your bank account and the status
+          is not yet updated, then please wait for the status update before
+          generating another challan for payment. It takes some time to reconcile
+          and update the CRN status with bank.
+        </p>
+
+        <div class="formContainer">
+          <div class="formHeader">
+            <ul id="navigationList">
+              <li class="titleColor titleSelected" data-target="savedDraftDiv">Saved Draft</li>
+              <li class="titleColor">Generated Challens</li>
+              <li class="titleColor" data-target="paymentHistoryDiv">Payment History</li>
+              <li class="titleColor">Challan Status Inquiry (CSI) Files</li>
+            </ul>
+            <div>
+              <button>Delete</button>
+              <button class="filterButton">Filter</button>
+            </div>
+          </div>
+
+          <div class="formHolder contentDiv" id="savedDraftDiv">
+
+            <table>
+              <thead>
+                <form>
+                <tr>
+                  <th><input type="checkbox" /></th>
+                  <th>Type of Payment</th>
+                  <th>Assessement Year</th>
+                  <th>Saved On</th>
+                  <th>Action(s)</th>
+                </tr>
+                </form>
+              </thead>
+
+              <tbody>
+                <form>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>TDS/TCS Payable by Taxpayer(200)</td>
+                  <td>2024-2025</td>
+                  <td>06-Nov-2023</td>
+                  <td>
+                    <button id="editButton" class="optionButton">Edit</button> 
+                    <button id="deleteButton" class="optionButton deleteColor">Delete</button>
+                  </td>
+
+                  <!-- Add class empty to other td elements and remove from no rows found -->
+
+                  <td class="text-center empty">No Rows Found</td>
+                </tr>
+                </form>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div id="paymentHistoryDiv" class="formHolder contentDiv">
+            <table>
+              <thead>
+                <form>
+                <tr>
+                  <th><input type="checkbox" /></th>
+                  <th>CN</th>
+                  <th>Bank Reference Number</th>
+                  <th>Assessement Year</th>
+                  <th>Type Of Payment</th>
+                  <th>Amount</th>
+                  <th>Payment Date and Time</th>
+                  <th>Actions</th>
+                </tr>
+                </form>
+              </thead>
+
+              <tbody>
+                <form>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td class="fontSizeControl">23120701163356UBIN</td>
+                  <td class="fontSizeControl">521544694</td>
+                  <td class="fontSizeControl">2024-25</td>
+                  <td class="fontSizeControl">TDS/TCS Payable by Taxpayer(200)</td>
+                  <td class="fontSizeControl">400</td>
+                  <td class="fontSizeControl">06-Dec-2023 19:07:41</td>
+                  <td>
+                    <button id="download" class="optionButton fontSizeControl">Download</button> 
+                    <button id="copy" class="optionButton fontSizeControl">Copy</button>
+                    <button id="viewDetails" class="optionButton fontSizeControl">View Details</button>
+                  </td>
+                </tr>
+                </form>
+
+                <form>
+                  <tr>
+                    <td><input type="checkbox" /></td>
+                    <td class="fontSizeControl">23120701163356UBIN</td>
+                    <td class="fontSizeControl">521544694</td>
+                    <td class="fontSizeControl">2024-25</td>
+                    <td class="fontSizeControl">TDS/TCS Payable by Taxpayer(200)</td>
+                    <td class="fontSizeControl">400</td>
+                    <td class="fontSizeControl">06-Dec-2023 19:07:41</td>
+                    <td>
+                      <button id="optionButton" class="optionButton fontSizeControl">Download</button> 
+                      <button id="optionButton" class="optionButton fontSizeControl">Copy</button>
+                      <button id="optionButton" class="optionButton fontSizeControl">View Details</button>
+                    </td>
+                  </tr>
+                  </form>
+
+                  <form>
+                    <tr>
+                      <td><input type="checkbox" /></td>
+                      <td class="fontSizeControl">23120701163356UBIN</td>
+                      <td class="fontSizeControl">521544694</td>
+                      <td class="fontSizeControl">2024-25</td>
+                      <td class="fontSizeControl">TDS/TCS Payable by Taxpayer(200)</td>
+                      <td class="fontSizeControl">400</td>
+                      <td class="fontSizeControl">06-Dec-2023 19:07:41</td>
+                      <td>
+                        <button id="optionButton" class="optionButton fontSizeControl">Download</button> 
+                        <button id="optionButton" class="optionButton fontSizeControl">Copy</button>
+                        <button id="optionButton" class="optionButton fontSizeControl">View Details</button>
+                      </td>
+                    </tr>
+                    </form>
+              </tbody>
+            </table>
+
+            
+          </div>
+
+        </div>
+
+
+        <button class="backButton" id="goDashboard">Go To Dashnoard</button>
+        <h4 class="bottomDivider">Need Help?</h4>
+        <ul class="lastLinkHolder">
+          <li><a class="lastLink">What is Assessignment year?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="credit">
+            <div>
+                <img src="images/emblem_coloured.svg" alt="logo">
+                <p>
+                    Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/navigationBar.js" ></script>
+    <script src="js/E-pay_Tax.js"></script>
+  </body>
+</html>

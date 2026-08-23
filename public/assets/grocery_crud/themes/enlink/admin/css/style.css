@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+body{
+	font-family: 'DM Sans', sans-serif;
+}
+.hide{
+	display: none !important;
+}
+h4.form-title {
+    font-size: 17px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    color: #53535f;
+}
+.table th{
+    /*text-align: center;*/
+}

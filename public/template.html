@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAT 201 Return</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 40px;
+        background-color: #f9f9f9;
+        color: #000;
+    }
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        max-width: 100%; /* reduced width by 10% */
+        margin: auto;   /* center horizontally */
+    }
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    header img {
+        height: 50px;
+    }
+    /* Title Bar */
+    .title-bar {
+        background-color: #f5f7f9;
+        padding: 15px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #123a63;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    /* Status */
+    .status {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .status span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    /* Details Box */
+    .details-box {
+        border: 1px solid #000;
+        margin: 20px 0;
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .details-box div {
+        display: flex;
+    }
+    .details-box div label {
+        flex: 0 0 200px;
+        font-weight: bold;
+    }
+    /* Info Sections */
+    .section {
+        background-color: #f5f5f5;
+        padding: 15px 20px;
+        margin: 15px 0;
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .section h4 {
+        margin: 0 0 10px 0;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    /* Footer */
+    .footer {
+        background-color: #163a5c;
+        color: white;
+        padding: 15px 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-top: 20px;
+        border-radius: 3px;
+    }
+    .footer a {
+        color: white;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <img id="__image1" data-sap-ui="__image1" src="/public/assets/vat/images/FTA_logo_new.png" role="presentation" aria-hidden="true" alt="" class="sapMImg sapMBarChild">
+    <img src="/public/assets/vat/images/FTA_merged_logo1.png" alt="Federal Tax Authority Logo">
+</header>
+
+<div class="title-bar" style="text-align:center;">VAT 201 Return</div>
+
+<div class="status" style="display:flex;gap:250px;">
+    <h5>Application Submitted Successfully</h5>
+    <div style="font-size: 16px;"><span></span> Submitted</div>
+</div>
+
+
+
+
+     
+        
+       
+    
+
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            <div class="details-box">
+        <div><label>TRN :</label> 1042463693000003</div>
+        <div><label>Registrant’s Name :</label> Test company</div>
+        <div><label>Reference Number :</label> 230008411219</div>
+        <div><label>Submission Date :</label> 07/05/20265</div>
+        <div><label>VAT Return Period :</label> 01/03/2025</div>
+        <div><label>VAT Stagger :</label>Stagger 2 – Quarterly (Mar to Feb)</div>
+        <div><label>Due Date :</label> 31/06/2025</div>
+        <div><label>Tax Year End :</label> 28/02/2026</div>
+        <div><label>Return Amount :</label> AED 6225.00</div>
+        <div><label>Due Amount :</label> AED 0.00</div></div>
+        </div>
+<div style="padding-left:20px;padding-right:20px;"> 
+<div class="section">
+    <h4>What's next</h4>
+    <p>1. Following the submission of your VAT return, the reported payable tax must be settled within the due date. Delay in payment would result in a late payment penalty.</p>
+    <p>2. The status of your application in the dashboard will be updated accordingly. You can check the status of your application at any time by logging into your taxpayer portal.</p>
+</div>
+
+<div class="section">
+    <h4>Important Notes</h4>
+    <p>1. You can edit your submitted VAT return until the due date.</p>
+    <p>2. If you become aware after the due date that the VAT return submitted is incorrect, you are required to correct the error. Depending on the amount, you can correct your return either by submitting a Voluntary Disclosure or as an adjustment in tax return for the tax period in which the error has been discovered.</p>
+</div>
+
+<div class="footer">
+    For any inquiry or assistance, please contact us on: Within UAE: 600509994 | Outside UAE: +971 600509994  
+    Email us at <a href="mailto:info@tax.gov.ae">info@tax.gov.ae</a>
+</div>
+
+</div>
+
+</body>
+</html>

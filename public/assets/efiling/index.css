@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: #F6F7FB;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.upperSection {
+    align-self: center;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    background-color: #FFFFFF;
+}
+
+.upperSection span {
+    font-size: 14px;
+}
+
+.upperSection span ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.upperSection span ul li {
+    margin: 0 1rem;
+}
+
+.upperSection span p {
+    float: right;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.profile {
+    display: none;
+}
+
+.profile div {
+    text-transform: uppercase;
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    width: 100%;
+    background-color: #2a3a8d;
+    display: flex;
+    padding: 1rem 0;
+    color: white;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.menu li {
+    margin: 0 1rem;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.submenu {
+    margin-top: 1rem;
+    display: none;
+    text-align: left;
+}
+
+.submenu li {
+    list-style-type: none;
+    margin: 0.8rem 0;
+}
+
+.dropDownLink {
+    color: white;
+    margin: 0;
+}
+
+.dropDown:hover .submenu{
+    display: block;
+}
+
+.indicator {
+    float: right;
+    font-size: 0.8rem;
+}
+
+.container {
+    width: 60%;
+    margin: 2rem auto;
+    margin-bottom: 4rem;
+}
+
+.mainHolder {
+    margin-top: 0.3rem;
+    display: flex;
+    border: 1px solid grey;
+}
+
+
+.loginHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem;
+    background-color:  #FFFFFF ;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginHolder h2 {
+    margin-bottom: 2rem;
+}
+
+.loginHolder form label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.loginHolder form input {
+    height: 2rem;
+    padding-left: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.loginHolder form button {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.backButton {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: white;
+    border: 2px solid #2a3a8d;
+}
+
+.paragraph {
+    margin-top: 3rem;
+}
+
+.loginHolder img {
+    display: inline;
+    margin-top: 1rem;
+}
+
+.loginHolder p {
+    display: inline;
+}
+
+.detailHolder {
+    background-color: #FAFBFD;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailHolder div {
+    display: flex;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.detailHolder div img {
+    width: 40px;
+}
+
+.detailHolder div p {
+    width: 70%;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+
+a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #2a3a8d;
+    margin-left: 1rem;
+}
+
+.footerColorChange {
+    background-color: #1a2038;
+}
+
+.footer {
+    background-color: #EEEFF6;
+    display: flex;
+    flex-direction: column;
+    color: #5F6062;
+    padding-top: 3rem;
+}
+
+.footerLogin {
+    background-color: #1a2038;
+    color: white;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.footerContent ul {
+    list-style-type: none;
+    margin-right: 1rem;
+}
+
+.footerContent ul h3 {
+    margin-bottom: 1rem;
+}
+
+.footerContent ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+}
+
+.credit{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.credit div {
+    margin-top: 1rem ;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid white;
+    padding-top: 1rem;
+}
+
+.credit div p {
+    width: 50%;
+    font-size: 0.8rem;
+}
+
+.error {
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+    color: red;
+}
+
+.noError {
+    display: none;
+}

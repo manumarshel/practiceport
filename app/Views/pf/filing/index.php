@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>
+	MonthlyContributionHome
+</title><link rel="stylesheet" type="text/css" href="../../public/assets/esi/monthcontribution/esicCSSglobal.css"><link rel="stylesheet" type="text/css" href="../../public/assets/esi/monthcontribution/esiccsstaskhome.css"><link rel="stylesheet" type="text/css" href="../../public/assets/esi/monthcontribution/esiclayout.css">
+
+
+
+
+    <script type="text/javascript" src="../../public/assets/esi/monthcontribution/JavaScript1.js"></script>
+
+    <script type="text/javascript">
+        var isClose = false;
+        var closeCtr = 1;
+        function disableBackButton() {<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>ECR Filing - Practicepot</title>
+        
+        
+
+        <!-- Latest compiled and minified CSS -->
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous">
+        
+        <link href="/public/assets/pf/epfo-style.css" rel="stylesheet">
+        <link href="/public/assets/pf/logo.jpg.gif" rel="shortcut icon">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        
+        
+        
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        
+        
+        
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+        <script src="/public/assets/pf/epfo-ui.js"></script>
+        <script src="/public/assets/pf/CustomValidation.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha256-9wRM03dUw6ABCs+AU69WbK33oktrlXamEXMvxUaF+KU=" crossorigin="anonymous"></script>
+        
+        <script nonce="" type="text/javascript" src="/public/assets/pf1/epfo-security.js"></script>
+        
+        
+        
+        <script nonce="" type="text/javascript">
+            var logoutUrl = "/pf/restoreSession/logout?_HDIV_STATE_=12-1-17D33EE66731EC80724A8F35ECF87D3E";
+            var validateSessionUrl = "/pf/restoreSession/validateActivity?_HDIV_STATE_=12-2-17D33EE66731EC80724A8F35ECF87D3E";
+            var logoutFuncUrl = "/pf/logout?_HDIV_STATE_=12-0-17D33EE66731EC80724A8F35ECF87D3E";
+        </script>
+        <style>
+            .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .input-error {
+            border-color: red;
+        }
+        a:link {
+    color: #0000FF;
+      text-decoration: none;  
+}
+        </style>
+    </head>
+    <body class="epfo-body session-disp" style="font-size: 15px;"> 
+        &nbsp;
+  
+
+
+
+
+
+
+<script type="text/javascript">
+    //set hostname for all js Used in all 
+    var hostname = '/epfo';
+    $(function () {
+       
+    });
+</script>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" style="z-index: 1;" role="navigation">
+        <div class="row row-fluid">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="navbar-header col-lg-12 col-md-12 col-sm-12 col-xs-12 content-pad-0">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 content-pad-0" style="text-align:center;max-width:90px;">
+                        <img class="header-logo" id="header-icon-img" src="/public/assets/pf/logo.jpg.gif">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 content-pad-0" style="margin-left:-20px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <a class="navbar-brand navbar-left" href="#" style="margin-top:5px; padding:0px 0px">
+                               <span class="header-text"> Employees' Provident Fund Organisation, India </span><br>
+                                <span class="hidden-xs header-sub-text" style=""> Ministry of Labour &amp; Employment, Government of India</span>
+		                    </a>
+                        </div>
+                        
+                        <div class="navbar-header col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+	                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width:265px;text-align: right;font-size:11px;">
+                <div class="row row-fluid" style="font-weight:600;">
+                    <div style="height: 20px;">
+                        <span style="color:#05326D;padding:5px 5px;border-right:1px solid #FFF;font-weight:bold;">
+                            
+                            <i class="fa fa-user icon-orange"></i> Welcome:<span style="color:#F39C12;">  <?php echo session('establishment_id'); ?> </span>
+                        </span>
+                       
+                    </div>
+                    <div>
+                        <span class="hidden-xs" style="color:#3654AE;text-align: left;">	
+                            
+                                Est. Id: <?php echo session('establishment_id'); ?>
+                            
+                        </span>
+                    </div>
+                    <div>
+                        <span class="hidden-xs" style="color:#3654AE" title="CROSSLITE INFRA PRIVATE LIMITED">	
+                          
+                          Name : <?php echo session('company_name'); ?>
+                          
+                       </span>
+                    </div>
+                  
+                </div>
+                
+            </div>
+                
+                <div class="col-md-4" style="float: right;text-align:right;font-size: 11px;margin-right: 10px;">
+                    <div>
+                        <span class="hidden-xs" style="color:#FFF;padding:5px 5px;border-right:1px solid #3654AE;">
+                            <a href="#" id="btnFontMinus" style="color:#FFF;font-weight:bold;background-color:#3654AE;padding:0 2px;">-A</a>  
+                            <a href="#" id="btnFontReset" style="color:#FFF;font-weight:bold;background-color:#3654AE;padding:0 4px;" "="">A</a>
+                            <a href="#" id="btnFontPlus" style="color:#FFF;font-weight:bold;background-color:#3654AE;padding:0 1px;" "="">A+</a>
+                        </span>
+                        <span class="hidden-xs" style="padding:5px 5px;color:#05326D;">
+                            <i class="fa fa-envelope icon-orange"></i> employerfeedback[at]epfindia[dot]gov[dot]in
+                        </span>
+                    </div>
+                    <div>
+                     
+                       <span style="color:#FFF;padding:3px 3px;margin-top:5px;">
+                           <a href="/epfo/logout?_HDIV_STATE_=12-4-17D33EE66731EC80724A8F35ECF87D3E"><i class="fa fa-sign-out fa-2"></i> Logout</a>
+                       </span>
+                       
+
+                    </div>
+                    <div style="text-align:right;font-size:10px;height: 20px;" id="versionDiv"> 
+Mon 12, Aug 2024 (PV 5.0.41) 
+
+                    </div>
+                        
+                </div>
+               
+        </div>
+    </nav>
+</header>
+         
+        
+
+
+
+
+
+
+<style>
+    .m1{
+            overflow-y: scroll;
+            max-height: 650px;
+            scrollbar-width: auto; 
+    }
+</style>
+
+<div class="navbar navbar-default-custom navbar-static-top" role="navigation" style="margin-top:0px;z-index: 1;">
+    <div class="collapse navbar-collapse main-nav" style="min-height:32px !important;width: 100%;">
+        <div id="divMenuBar" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content-pad-0" style="margin-left:30px;z-index: 10000;">
+            <?php include('header.php');?>
+                            
+        </div>
+    </div>
+</div>
+
+
+        <div class="epfo-container displayDiv" style = "margin-top: 80px;" >
+            <div class="row" >
+                <div class="divide10" ></div >
+                <div class="col-md-12 displayDiv" style = "min-height: 560px;" >
+                    <noscript >
+                    <div class="alert alert-danger" style = "padding-left: 20px; padding-right: 0px; margin-left: 0px;" > Please enable JavaScript in your browser </div >
+                    </noscript >
+                        
+
+
+
+    
+<!--<link rel = "stylesheet" href = "/public/assets/pf/jquery-ui.min.css" >-->
+<!--<link rel = "stylesheet" type = "text/css" href = "/epfo/bower_components/jqGrid/css/ui.jqgrid.css" >-->
+<!--<script src = "/epfo/bower_components/jqGrid/js/i18n/grid.locale-en.js" ></script >-->
+<!--<script src = "/epfo/bower_components/jqGrid/js/jquery.jqGrid.min.js" ></script >-->
+
+    <link rel="stylesheet" type="text/css" href="/public/assets/pf/jqueryCSS.custom.css" />
+<script src="/public/assets/pf/jquery.blockUI.js"></script>
+   <!-----        ----------->
+   <link rel="stylesheet" type="text/css" href="/public/assets/pf/ECREstHomePage.css"/>
+
+   
+   <ul class="breadcrumb">
+        <!--<li><a href="/epfo/">Home</a></li>-->
+        <li><a href='/epfo/home?_HDIV_STATE_=14-66-B31F1CF0086AEA317BAEAED7E095BB7D' style="padding-left: 4px;" title="Click to go to Home Page">Home</a></li>
+    <li class="active">ECR Home Page</li>
+</ul>
+<script>
+    $(function () {
+        today = new Date();
+        till = new Date(2021, 3, 1);
+        if (till < today) {
+            $(".is-new ").hide();
+        }
+    });
+</script>
+<style>
+    .bc-abry{
+        background-color: #f0ebf9;
+    }
+    .e-badge{
+        font-size: 0.9rem;
+        min-width: 10px;
+        background-color: #155396;
+        border-radius: 20px;
+        height: 5px;
+        overflow: hidden;
+        padding: 2px 5px;
+        color:#fff;
+        font-weight: 700;
+        font-variant: small-caps;
+    }
+</style>
+<ul class="breadcrumb bc-abry">
+    <li class="active"><span class="is-new e-badge"><strong> <i class="fa fa-star"></i> NEW </strong></span>&nbsp;<b>Atma Nirbhar Bharat Rozgar Yojana</b></li>
+    <li><a href="/epfo/aatmanibharYojna/view?_HDIV_STATE_=14-67-B31F1CF0086AEA317BAEAED7E095BB7D">Establishment Registration</a></li>
+    <li><a href="/epfo/aatmanibharYojna/bulkForm?_HDIV_STATE_=14-68-B31F1CF0086AEA317BAEAED7E095BB7D">Member Registration</a></li>
+</ul>
+
+
+<div  class="dv1">
+     
+</div>
+
+<div class="dv2">
+    
+    
+    
+
+    
+
+    <div id="MenuLinks" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+        <h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-header-active ui-state-active ui-accordion-icons" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>ECR Quick Links: </h3>
+        <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style=""> 
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <table class="table table-bordered table-condensed table-striped tab1" id="dataTable" cellspacing="1" cellpadding="4">
+                <tbody><tr class="row1 trs">
+                    <th>
+                        <b>ECR</b>
+                    </th>
+                    <td>
+                         <b><a href="/pf/member/ecr-upload" style="color: #4082a6; font-size:14px;" title="Click to upload ECR">ECR Upload</a></b>
+                    </td>
+                    <td>
+                        <b><a href="/epfo/ecr/ecrcl?_HDIV_STATE_=13-69-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view actionable ECR challans">Actionable ECR Challans </a></b>
+                    </td>
+                    <td>
+                        <b><a href="/epfo/ecr/estEcrHistoryView?_HDIV_STATE_=13-71-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view ECRs">View ECRs</a></b>
+                    </td>
+                </tr>
+                <tr class="row2 trs">
+                    <th>
+                        <b>Direct Challan</b>
+                    </th>
+                    <td>
+                        <b><a href="/epfo/challan/challanEntry?_HDIV_STATE_=13-73-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to generate direct challan">Challan Entry</a></b>
+                    </td>
+                    <td>
+                        <b> <a href="/epfo/challan/dcl/?_HDIV_STATE_=13-76-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view actionable direct challans">Actionable Direct Challans </a></b>
+                    </td>
+                    <td></td>
+                </tr> 
+                <tr class="row2 trs">
+                    <th>
+                        <b>Common Links</b>
+                    </th>
+                    <td>
+                        <b><a href="/epfo/challan/challanlistView?_HDIV_STATE_=13-70-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to search Challans">Search Challans</a></b>
+                    </td>
+                    <td>
+                        <b> <a href="/epfo/doubleverification/viewLockedECRs?_HDIV_STATE_=13-75-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view challans locked for payment">View Locked Challans</a></b>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                
+                <tr class="row2 trs">
+                    <th>
+                        <b>Damages and Interest</b>
+                    </th>
+                    <td>
+                        <b><a href="/epfo/Damages/DueDamages?_HDIV_STATE_=13-78-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view and prepare 7Q-14B challans">Prepare 7Q-14B Challan</a></b>
+                    </td>
+                    <td>
+                        <b> <a href="/epfo/Damages/InProcessChallans?_HDIV_STATE_=13-79-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view in-process and processed 7Q-14B challans">View/Pay 7Q-14B Challans</a></b>
+                    </td>
+                    <td>
+                         <b> <a href="/epfo/damageNotices/init?_HDIV_STATE_=13-80-7B24703BCF880F42B59E91B641E1660B" style="color: #4082a6; font-size:14px;" title="Click to view Due Summary of Auto-calculated Damages and Interest">Due Summary of Auto-calculated Damages and Interest</a></b>
+                    </td>                    
+                </tr>
+                
+                <tr class="row2 trs">
+                    <td colspan="4" class="is">[## If you have made payment using SBI Aggregator &amp; payment status is "Awaiting payment confirmation from bank" and amount is not debited from your bank account, In such scenario for unlocking the PAY Button, kindly select the Payment-&gt;ECR/Return Filing-&gt;View Locked Challan-&gt; (from the menu) then select the TRRN under the head SBI Aggregator Challan List to Unlock: ---- TRRN will be available in this list after 1 hour of initiation of payment attempt.]</td>
+                </tr>
+            </tbody></table>
+        </div>            
+    </div>
+
+         
+    <br>
+
+
+    <div id="pendingChallans" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+        <h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-header-active ui-state-active ui-accordion-icons" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Pending Challans: </h3>
+        <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="false" style="">
+            <table class="table table-bordered table-condensed table-striped tab1" id="dataTable" cellspacing="1" cellpadding="4">
+                <tbody><tr class="row1 trs">
+                    <td>
+                        <b>ECR's Pending for Payment: </b>
+                    </td>
+                    <td>
+                        1
+                        
+                            &nbsp;
+                            <a href="/epfo/ecr/ecrcl?_HDIV_STATE_=13-69-7B24703BCF880F42B59E91B641E1660B" title="Click to make payments of pending ECRs"><span class="blinker blnk"><b>Click to Pay</b></span></a>
+                        
+                    </td>
+
+                    <td>
+                        <b>Direct Challan's Pending for Payment: </b>
+                    </td>
+                    <td>
+                        0
+                        
+                    </td>
+                </tr>
+                
+                    <tr class="row2 trs">
+                        <td>
+                            <b>Damages &amp; Interest Pending ECR's: </b>
+                        </td>
+                        <td>
+                            43
+                            
+                                &nbsp;
+                                <a href="/epfo/Damages/DueDamages?_HDIV_STATE_=13-78-7B24703BCF880F42B59E91B641E1660B" title="Click to make Damages &amp; Interest payments of ECRs"><span class="blinker blnk"><b>Click to Pay</b></span></a>
+                            
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                
+            </tbody></table>
+        </div>
+    </div>
+
+    <br>
+    
+</div>
+
+ 
+                    </div>
+                </div>
+            </div>
+   
+   
+   
+   
+   
+   <!--------------------------------------------    --->
+       
+        <footer id="footer" class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="footer-btm">
+                    <div>
+                            <span id="footer_msg_1">Designed, Developed and Hosted by: Employees' Provident Fund Organisation, India</span>
+                    </div>
+                    <span><span id = "last_updated">Last Updated</span>
+
+ 
+ </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+ <script>
+      document.getElementById('searchMember').addEventListener('submit', function(event) {
+            // Prevent form submission
+            event.preventDefault();
+            
+
+            // Clear previous error messages
+            document.getElementById('uan_errors').innerText = ''; 
+
+            let isValid = true;
+
+            // Validate Name
+            const uan_no = document.getElementById('uan_number').value.trim(); 
+            if (uan_no === '') {
+                document.getElementById('uan_errors').innerText = 'Enter valid UAN.';
+                isValid = false;
+            }
+
+           
+
+            // If form is valid, proceed with form submission
+            if (isValid) { 
+                $.ajax({
+                    url: '/pf/member/uansearch',  // URL for the server-side route
+                    type: 'POST', 
+                    dataType: 'json', 
+                    data: {uan_no:uan_no},
+                    success: function(response) {
+                    if (response.message) {
+                        $('#result').html('<p>' + response.message + '</p>');
+                    } else { 
+                        $('#personProfile').show();
+                        $('#memberID').html(response.memberID);
+                        $('#username').html(response.username);
+                        $('#wage').html(response.wage);
+                        $('#mobile').html(response.mobile);
+                        $('#email').html(response.email);
+                        $('#relation').html(response.relation);
+                        $('#father_name').html(response.father_name);
+                        $('#gender').html(response.gender);
+                        $('#dob').html(response.dob);
+                        $('#doj').html(response.doj);
+                        $('#uan-face').html(response.uan);
+                        $('#u_name').html(response.username);
+                    }
+                    },
+                    error: function() {
+                        
+                        $('#result').html('<p>An error occurred while fetching the user.</p>');
+                    }
+                   
+                });
+            }
+        });
+ </script>
+    </body>
+</html>
+   
+
+
+<script src="../../public/assets/esi/monthcontribution/WebResource_002.js" type="text/javascript"></script>
+
+
+<script src="../../public/assets/esi/monthcontribution/ScriptResource_002.js" type="text/javascript"></script>
+<script src="../../public/assets/esi/monthcontribution/ScriptResource.js" type="text/javascript"></script>
+<script src="../../public/assets/esi/monthcontribution/ScriptResource_003.js" type="text/javascript"></script>
+<script src="../../public/assets/esi/monthcontribution/jquery1.js" type="text/javascript"></script>
+<script src="../../public/assets/esi/monthcontribution/esic.js" type="text/javascript"></script>
+<script src="../../public/assets/esi/monthcontribution/WebResource.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+ 
+</body></html>

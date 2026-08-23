@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Component_1" width="100%" height="100%" data-name="Component 1" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+    <defs>
+        <style>
+            .cls-1{fill:inherit}.cls-2{fill:none}
+         </style>
+    </defs>
+    <g id="Group_14731" data-name="Group 14731" transform="translate(-448 -606)">
+        <g id="bank-building" transform="translate(449 607)">
+            <g id="Layer_1_78_">
+                <g id="Group_12963" data-name="Group 12963">
+                    <path id="Path_10646" d="M20.5 504.425H.976a.976.976 0 1 0 0 1.953H20.5a.976.976 0 0 0 0-1.953z" class="cls-1" data-name="Path 10646" transform="translate(0 -484.904)"></path>
+                    <path id="Path_10647" d="M32.493 196.461a.977.977 0 0 0 0 1.953h17.081a.977.977 0 0 0 0-1.953h-.244v-8.785h.244a.488.488 0 0 0 0-.975H32.493a.488.488 0 0 0 0 .975h.244v8.785h-.244zm14.885-8.785v8.785H44.45v-8.785zm-4.881 0v8.785h-2.928v-8.785zm-7.809 0h2.928v8.785h-2.928z" class="cls-1" data-name="Path 10647" transform="translate(-30.296 -179.478)"></path>
+                    <path id="Path_10648" d="M.976 6.48h19.531a.976.976 0 0 0 .317-1.9L11.138.222a.978.978 0 0 0-.8 0L.575 4.614a.976.976 0 0 0 .4 1.866z" class="cls-1" data-name="Path 10648" transform="translate(0 -.136)"></path>
+                </g>
+            </g>
+        </g>
+        <path id="Rectangle_3548" d="M0 0h24v24H0z" class="cls-2" data-name="Rectangle 3548" transform="translate(448 606)"></path>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+
+.credit {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.credit div { 
+    border-top: none;
+    padding-top: 0;
+}
+
+.credit div p {
+    width: 70%;
+    text-align-last: right;
+}
+
+.footer {
+    padding-top: 0;
+}

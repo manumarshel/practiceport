@@ -1,0 +1,35 @@
+# CodeIgniter 4 Environment & Secrets
+.env
+*.env.local
+*.env.*.local
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.ftpquota
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Writable / Runtime Cache & Logs
+/writable/cache/*
+!/writable/cache/index.html
+!/writable/cache/.gitkeep
+/writable/debugbar/*
+/writable/logs/*
+!/writable/logs/index.html
+!/writable/logs/.gitkeep
+/writable/session/*
+!/writable/session/index.html
+!/writable/session/.gitkeep
+
+# Builds & Vendor (uncomment /vendor/ if you run composer install on deployment)
+# /vendor/

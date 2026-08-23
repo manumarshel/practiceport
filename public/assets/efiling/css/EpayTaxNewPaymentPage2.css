@@ -1,0 +1,182 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.paymentDetails {
+    width: 40%;
+}
+
+.paymentDetails h1 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    margin: 0.2rem 0;
+}
+
+.paymentDetails h2 {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.paymentDetails p {
+    font-size: 0.8rem;
+}
+
+.boldPara {
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+.paymentListHolder{
+    background-color: white;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    border: 1px solid lightgray;
+}
+
+.filter {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0.8rem;
+    padding: 0 1rem;
+}
+
+form {
+    flex-direction: row;
+}
+
+.filter input {
+    margin-right: 0.8rem;
+    padding: 0.5rem;
+}
+
+.filter button {
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+}
+
+.listForm{
+    flex-direction: column;
+}
+
+/* .sectionOne {
+    display: flex;
+    margin-right: 4rem;
+}
+
+.descriptionHolder {
+    border: 2px solid #F2F2F2;
+    display: flex;
+    font-size: 0.8rem;
+    padding: 0.8rem;
+    justify-content: space-between;
+}
+
+
+.descriptionWidth {
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.sectionThree {
+    margin: 0 4rem;
+} */
+
+.marginBottom {
+    margin-bottom: 0.5rem;
+}
+
+.continueButton {
+    float: right;
+    margin-top: 1rem;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    background-color: grey;
+    border: none;
+}
+
+.backButton {
+    margin-top: 1rem;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.dividerGray {
+    height: 1px; 
+    width: 100%;
+    background-color: lightgray;
+}
+
+table {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+td:nth-child(1) {
+    width: 2%;
+}
+
+td:nth-child(2) {
+    width: 60%;
+}
+
+td:nth-child(3) {
+  width: 40%;
+}
+
+.pageHolder {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.pageBtn {
+    margin-right: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.pageHolder button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.selectedBtn {
+    background-color: gray;
+    color: white;
+}
+
+.pageContent {
+    display: none;
+  }
+
+.pageContent.active {
+    display: block;
+}
+
+#continueBtn:hover {
+    background-color: #2a3a8d;
+    color: white;
+}
+
+#newPaymentPage1:hover {
+    background-color: #2a3a8d;
+    color: white;
+}

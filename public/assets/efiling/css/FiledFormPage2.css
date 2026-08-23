@@ -1,0 +1,137 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.introHolder {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+}
+
+.introHolder p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.boldPara {
+    font-weight: 600;
+}
+
+.introHolder div span {
+    display: flex;
+    justify-content: end;
+}
+
+.introHolder div h1 {
+    font-size: 1.5rem;
+    width: 70%;
+    display: inline-block;
+}
+
+.filter{
+    border: none;
+    background-color: #F6F7FB;
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+.exportButton {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    background-color: white;
+    border: 2px solid #2a3a8d;
+}
+
+.mainContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.listHolder {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #EEEFF6;
+}
+
+.listHeader {
+    background-color: #EEEFF6;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listHeader a {
+    color: #0795E8;
+    
+}
+
+.listSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.leftBorder {
+    border-left: 1px solid #EEEFF6;
+    padding-left: 1rem;
+}
+
+.marginControlPara {
+    margin-bottom: 0.4rem;
+}
+
+.backButton{
+    background-color: #F6F7FB;
+    margin-top: 1rem;
+}
+
+.downloadButton {
+    border-color: #0795E8;
+    color: #0795E8;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.displayControl {
+    display: inline-block;
+}
+
+.subDetailData {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    font-weight: bold;
+}
+
+.subDetailTitle {
+    color: gray;
+}
+
+.statusHolder {
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.extraMarginBottom {
+    margin-bottom: 0.5rem;
+}
+
+.statusData {
+    margin-left: 0.5rem;
+}

@@ -1,0 +1,9 @@
+The part added gets called returns true for value Protean RPU 5.7
+BATCH VALIDATION STARTED
+countOfBatch1
+isFinYrGrtrthn:- true
+ PersonResponsilblePAN :: OFRPH4268P
+PersonResponsilblePAN.trim().length() ::10
+END TIME : Thu Jan 08 13:24:22 IST 2026
+the errorFileNameSAM is C:\Users\FINPROVE\Documents\ASNA2022.err
+---UPPER---

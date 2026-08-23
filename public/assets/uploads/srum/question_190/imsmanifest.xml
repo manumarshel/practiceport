@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="By2MwOKevdV7w" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
+<metadata>
+<schema>ADL SCORM</schema>
+<schemaversion>2004 4th Edition</schemaversion>
+<lom:lom>
+<lom:general>
+<lom:title>
+<lom:string>Practical Accounting_FS Impact</lom:string>
+</lom:title>
+</lom:general>
+<lom:educational>
+<lom:typicalLearningTime>
+<lom:duration>PT1H0M0S</lom:duration>
+</lom:typicalLearningTime>
+</lom:educational>
+</lom:lom>
+</metadata>
+<organizations default="practical_accounting_fs_impact_organization">
+<organization identifier="practical_accounting_fs_impact_organization">
+<title>Practical Accounting_FS Impact</title>
+<item identifier="C584AF2A-0AF1-4F08-9575-8CEF704D1F14" identifierref="resource">
+<title>Practical Accounting_Level 1</title>
+<imsss:sequencing>
+<imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"/>
+</imsss:sequencing>
+</item>
+<imsss:sequencing>
+<imsss:controlMode flow="true"/>
+</imsss:sequencing>
+</organization>
+</organizations>
+<resources>
+<resource identifier="resource" type="webcontent" adlcp:scormType="sco" href="res/index.html">
+<file href="res/index.html"/>
+<file href="res/lms.js"/>
+<file href="res/data/thmb1.png"/>
+<file href="res/data/video1.mp4"/>
+<file href="res/data/slide1.js"/>
+<file href="res/data/slide1.css"/>
+<file href="res/data/thmb2.png"/>
+<file href="res/data/slide2.js"/>
+<file href="res/data/slide2.css"/>
+<file href="res/data/thmb3.png"/>
+<file href="res/data/video2.mp4"/>
+<file href="res/data/slide3.js"/>
+<file href="res/data/slide3.css"/>
+<file href="res/data/thmb4.png"/>
+<file href="res/data/scenario1.js"/>
+<file href="res/data/scenario1/fnt1.woff"/>
+<file href="res/data/scenario1/fnt1b.woff"/>
+<file href="res/data/scenario1/fnt1bi.woff"/>
+<file href="res/data/scenario1/fnt1i.woff"/>
+<file href="res/data/scenario1/html5-unsupported.html"/>
+<file href="res/data/scenario1/img0.png"/>
+<file href="res/data/scenario1/img1.png"/>
+<file href="res/data/scenario1/snd0.mp3"/>
+<file href="res/data/thmb5.png"/>
+<file href="res/data/quiz1.js"/>
+<file href="res/data/quiz1/fonts/fnt0.woff"/>
+<file href="res/data/quiz1/fonts/fnt1.woff"/>
+<file href="res/data/quiz1/fonts/fnt2.woff"/>
+<file href="res/data/quiz1/fonts/fnt3.woff"/>
+<file href="res/data/quiz1/fonts/fnt4.woff"/>
+<file href="res/data/quiz1/fonts/fnt5.woff"/>
+<file href="res/data/quiz1/images/img-be1168cb16d458a5a527d10b1565ce9a60981e67.png"/>
+<file href="res/data/quiz1/images/quiz_bg_0.png"/>
+<file href="res/data/thmb6.png"/>
+<file href="res/data/scenario2.js"/>
+<file href="res/data/scenario2/fnt1.woff"/>
+<file href="res/data/scenario2/fnt1b.woff"/>
+<file href="res/data/scenario2/fnt1bi.woff"/>
+<file href="res/data/scenario2/fnt1i.woff"/>
+<file href="res/data/scenario2/html5-unsupported.html"/>
+<file href="res/data/scenario2/img0.png"/>
+<file href="res/data/scenario2/img1.png"/>
+<file href="res/data/scenario2/snd0.mp3"/>
+<file href="res/data/thmb7.png"/>
+<file href="res/data/quiz2.js"/>
+<file href="res/data/quiz2/audios/snd-23914767b672e8c64359d7930a457a93d411ecc3.mp3"/>
+<file href="res/data/quiz2/fonts/fnt0.woff"/>
+<file href="res/data/quiz2/fonts/fnt1.woff"/>
+<file href="res/data/quiz2/fonts/fnt2.woff"/>
+<file href="res/data/quiz2/fonts/fnt3.woff"/>
+<file href="res/data/quiz2/fonts/fnt4.woff"/>
+<file href="res/data/quiz2/images/img-9395518e666dce84612ec8021bb1027cc62560d1.png"/>
+<file href="res/data/quiz2/images/quiz_bg_0.png"/>
+<file href="res/data/thmb8.png"/>
+<file href="res/data/video3.mp4"/>
+<file href="res/data/slide8.js"/>
+<file href="res/data/slide8.css"/>
+<file href="res/data/thmb9.png"/>
+<file href="res/data/video4.mp4"/>
+<file href="res/data/slide9.js"/>
+<file href="res/data/slide9.css"/>
+<file href="res/data/thmb10.png"/>
+<file href="res/data/scenario3.js"/>
+<file href="res/data/scenario3/fnt1.woff"/>
+<file href="res/data/scenario3/fnt1b.woff"/>
+<file href="res/data/scenario3/fnt1bi.woff"/>
+<file href="res/data/scenario3/fnt1i.woff"/>
+<file href="res/data/scenario3/html5-unsupported.html"/>
+<file href="res/data/scenario3/img0.png"/>
+<file href="res/data/scenario3/img1.png"/>
+<file href="res/data/scenario3/snd0.mp3"/>
+<file href="res/data/thmb11.png"/>
+<file href="res/data/quiz3.js"/>
+<file href="res/data/quiz3/fonts/fnt0.woff"/>
+<file href="res/data/quiz3/fonts/fnt1.woff"/>
+<file href="res/data/quiz3/fonts/fnt2.woff"/>
+<file href="res/data/quiz3/fonts/fnt3.woff"/>
+<file href="res/data/quiz3/fonts/fnt4.woff"/>
+<file href="res/data/quiz3/fonts/fnt5.woff"/>
+<file href="res/data/quiz3/fonts/fnt6.woff"/>
+<file href="res/data/quiz3/fonts/fnt7.woff"/>
+<file href="res/data/quiz3/images/img-04662c59908941cf9ed5cef5b543c59484533c9f.gif"/>
+<file href="res/data/quiz3/images/img-adbd64d52c592c4aa1bbc8bb777bbd464e53ac31.gif"/>
+<file href="res/data/quiz3/images/img-ec81f02c93320ef4e7e78668eda768ee76c9d3ab.png"/>
+<file href="res/data/quiz3/images/quiz_bg_0.png"/>
+<file href="res/data/thmb12.png"/>
+<file href="res/data/scenario4.js"/>
+<file href="res/data/scenario4/fnt1.woff"/>
+<file href="res/data/scenario4/fnt1b.woff"/>
+<file href="res/data/scenario4/fnt1bi.woff"/>
+<file href="res/data/scenario4/fnt1i.woff"/>
+<file href="res/data/scenario4/html5-unsupported.html"/>
+<file href="res/data/scenario4/img0.png"/>
+<file href="res/data/scenario4/img1.png"/>
+<file href="res/data/scenario4/snd0.mp3"/>
+<file href="res/data/thmb13.png"/>
+<file href="res/data/quiz4.js"/>
+<file href="res/data/quiz4/fonts/fnt0.woff"/>
+<file href="res/data/quiz4/fonts/fnt1.woff"/>
+<file href="res/data/quiz4/fonts/fnt2.woff"/>
+<file href="res/data/quiz4/fonts/fnt3.woff"/>
+<file href="res/data/quiz4/images/img-9395518e666dce84612ec8021bb1027cc62560d1.png"/>
+<file href="res/data/quiz4/images/quiz_bg_0.png"/>
+<file href="res/data/thmb14.png"/>
+<file href="res/data/scenario5.js"/>
+<file href="res/data/scenario5/fnt1.woff"/>
+<file href="res/data/scenario5/fnt1b.woff"/>
+<file href="res/data/scenario5/fnt1bi.woff"/>
+<file href="res/data/scenario5/fnt1i.woff"/>
+<file href="res/data/scenario5/html5-unsupported.html"/>
+<file href="res/data/scenario5/img0.png"/>
+<file href="res/data/scenario5/img1.png"/>
+<file href="res/data/scenario5/snd0.mp3"/>
+<file href="res/data/scenario5/snd1.mp3"/>
+<file href="res/data/thmb15.png"/>
+<file href="res/data/video5.mp4"/>
+<file href="res/data/slide15.js"/>
+<file href="res/data/slide15.css"/>
+<file href="res/data/thmb16.png"/>
+<file href="res/data/scenario6.js"/>
+<file href="res/data/scenario6/fnt1.woff"/>
+<file href="res/data/scenario6/fnt1b.woff"/>
+<file href="res/data/scenario6/fnt1bi.woff"/>
+<file href="res/data/scenario6/fnt1i.woff"/>
+<file href="res/data/scenario6/html5-unsupported.html"/>
+<file href="res/data/scenario6/img0.png"/>
+<file href="res/data/scenario6/img1.png"/>
+<file href="res/data/scenario6/snd0.mp3"/>
+<file href="res/data/thmb17.png"/>
+<file href="res/data/video6.mp4"/>
+<file href="res/data/slide17.js"/>
+<file href="res/data/slide17.css"/>
+<file href="res/data/thmb18.png"/>
+<file href="res/data/scenario7.js"/>
+<file href="res/data/scenario7/fnt1.woff"/>
+<file href="res/data/scenario7/fnt1b.woff"/>
+<file href="res/data/scenario7/fnt1bi.woff"/>
+<file href="res/data/scenario7/fnt1i.woff"/>
+<file href="res/data/scenario7/html5-unsupported.html"/>
+<file href="res/data/scenario7/img0.png"/>
+<file href="res/data/scenario7/img1.png"/>
+<file href="res/data/scenario7/snd0.mp3"/>
+<file href="res/data/scenario7/snd1.mp3"/>
+<file href="res/data/thmb19.png"/>
+<file href="res/data/quiz5.js"/>
+<file href="res/data/quiz5/fonts/fnt0.woff"/>
+<file href="res/data/quiz5/fonts/fnt1.woff"/>
+<file href="res/data/quiz5/fonts/fnt2.woff"/>
+<file href="res/data/quiz5/fonts/fnt3.woff"/>
+<file href="res/data/quiz5/fonts/fnt4.woff"/>
+<file href="res/data/quiz5/fonts/fnt5.woff"/>
+<file href="res/data/quiz5/fonts/fnt6.woff"/>
+<file href="res/data/quiz5/images/img-04662c59908941cf9ed5cef5b543c59484533c9f.gif"/>
+<file href="res/data/quiz5/images/img-adbd64d52c592c4aa1bbc8bb777bbd464e53ac31.gif"/>
+<file href="res/data/quiz5/images/img-ec81f02c93320ef4e7e78668eda768ee76c9d3ab.png"/>
+<file href="res/data/quiz5/images/quiz_bg_0.png"/>
+<file href="res/data/thmb20.png"/>
+<file href="res/data/sound1.mp3"/>
+<file href="res/data/slide20.js"/>
+<file href="res/data/slide20.css"/>
+<file href="res/data/thmb21.png"/>
+<file href="res/data/video7.mp4"/>
+<file href="res/data/slide21.js"/>
+<file href="res/data/slide21.css"/>
+<file href="res/data/thmb22.png"/>
+<file href="res/data/slide22.js"/>
+<file href="res/data/slide22.css"/>
+<file href="res/data/thmb23.png"/>
+<file href="res/data/scenario8.js"/>
+<file href="res/data/scenario8/fnt1.woff"/>
+<file href="res/data/scenario8/fnt1b.woff"/>
+<file href="res/data/scenario8/fnt1bi.woff"/>
+<file href="res/data/scenario8/fnt1i.woff"/>
+<file href="res/data/scenario8/html5-unsupported.html"/>
+<file href="res/data/scenario8/img0.png"/>
+<file href="res/data/scenario8/img1.png"/>
+<file href="res/data/scenario8/snd0.mp3"/>
+<file href="res/data/scenario8/snd1.mp3"/>
+<file href="res/data/thmb24.png"/>
+<file href="res/data/quiz6.js"/>
+<file href="res/data/quiz6/fonts/fnt0.woff"/>
+<file href="res/data/quiz6/fonts/fnt1.woff"/>
+<file href="res/data/quiz6/fonts/fnt2.woff"/>
+<file href="res/data/quiz6/fonts/fnt3.woff"/>
+<file href="res/data/quiz6/fonts/fnt4.woff"/>
+<file href="res/data/quiz6/fonts/fnt5.woff"/>
+<file href="res/data/quiz6/images/img-114df862e499fb2fd4d758814fa3c4ef207ee4db.png"/>
+<file href="res/data/quiz6/images/img-36d3bfaea783207a3dde5e3505a88c052e2def37.png"/>
+<file href="res/data/quiz6/images/img-465fa3d899a7b407d1c962389d1ad44546168b4a.png"/>
+<file href="res/data/quiz6/images/quiz_bg_0.png"/>
+<file href="res/data/thmb25.png"/>
+<file href="res/data/scenario9.js"/>
+<file href="res/data/scenario9/fnt1.woff"/>
+<file href="res/data/scenario9/fnt1b.woff"/>
+<file href="res/data/scenario9/fnt1bi.woff"/>
+<file href="res/data/scenario9/fnt1i.woff"/>
+<file href="res/data/scenario9/html5-unsupported.html"/>
+<file href="res/data/scenario9/img0.png"/>
+<file href="res/data/scenario9/img1.png"/>
+<file href="res/data/scenario9/snd0.mp3"/>
+<file href="res/data/thmb26.png"/>
+<file href="res/data/slide26.js"/>
+<file href="res/data/slide26.css"/>
+<file href="res/data/quizplayer.js"/>
+<file href="res/data/scenarioplayer.js"/>
+<file href="res/index.html"/>
+<file href="res/data/player.js"/>
+<file href="res/data/eraser.cur"/>
+<file href="res/data/highlighter.cur"/>
+<file href="res/data/marker.cur"/>
+<file href="res/data/lock.cur"/>
+<file href="res/data/browsersupport.js"/>
+<file href="res/data/apple-touch-icon.png"/>
+<file href="res/data/favicon.ico"/>
+<file href="res/data/fnt0.woff"/>
+<file href="res/data/fnt1.woff"/>
+<file href="res/data/fnt2.woff"/>
+<file href="res/data/fnt3.woff"/>
+<file href="res/data/fnt4.woff"/>
+<file href="res/data/fnt5.woff"/>
+<file href="res/data/fnt6.woff"/>
+<file href="res/data/fnt7.woff"/>
+<file href="res/data/fnt8.woff"/>
+<file href="res/data/html5-unsupported.html"/>
+<file href="res/data/img0.jpg"/>
+<file href="res/data/img1.png"/>
+<file href="res/data/img10.jpg"/>
+<file href="res/data/img11.jpg"/>
+<file href="res/data/img12.png"/>
+<file href="res/data/img13.png"/>
+<file href="res/data/img14.png"/>
+<file href="res/data/img15.png"/>
+<file href="res/data/img16.png"/>
+<file href="res/data/img17.jpg"/>
+<file href="res/data/img18.png"/>
+<file href="res/data/img19.jpg"/>
+<file href="res/data/img2.jpg"/>
+<file href="res/data/img20.png"/>
+<file href="res/data/img21.png"/>
+<file href="res/data/img22.png"/>
+<file href="res/data/img23.png"/>
+<file href="res/data/img24.jpg"/>
+<file href="res/data/img25.png"/>
+<file href="res/data/img26.png"/>
+<file href="res/data/img27.png"/>
+<file href="res/data/img28.png"/>
+<file href="res/data/img29.png"/>
+<file href="res/data/img3.png"/>
+<file href="res/data/img30.png"/>
+<file href="res/data/img31.png"/>
+<file href="res/data/img32.png"/>
+<file href="res/data/img4.png"/>
+<file href="res/data/img5.png"/>
+<file href="res/data/img6.png"/>
+<file href="res/data/img7.png"/>
+<file href="res/data/img8.png"/>
+<file href="res/data/img9.png"/>
+<file href="res/data/goodbye.html"/>
+</resource>
+</resources>
+</manifest>

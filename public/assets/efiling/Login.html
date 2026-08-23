@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Login</title>
+</head>
+<body>
+    
+    <nav>
+
+        <div class="upperSection">
+            <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+            <span>
+                <ul>
+                    <li>Call Us</li>
+                    <span>|</span>
+                    <li>English</li>
+                    <span>|</span>
+                    <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                    <span>|</span>
+                    <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                    <li class="profile">
+                        <img alt="profile">
+                        <div>
+                            <span style="font-weight:600;">licny</span>
+                            <span>tds</span>
+                        </div>
+                    </li>
+                </ul>
+                <p>Do not have an account? <a href="#">Register</a> </p>
+            </span>
+        </div>
+
+        <ul class="menu">
+            <li>Home</li>
+            <li>Induvidual/HUF</li>
+            <li>Company</li>
+            <li>Non-Company</li>
+            <li>Tax Professionals & Others</li>
+            <li>Dowloads</li>
+            <li>Help</li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <p class="indicator"> * Indicates mandatory fields</p>
+        <br/>
+
+        <div class="mainHolder">
+
+            <div class="loginHolder">
+
+                <h2>Login</h2>
+
+                <form>
+                    <label class="label" for="user-Id"> Enter your User ID *</label>
+                    <input id="user-Id" type="text" placeholder="PAN/ ADHAAR/ OTHER USER ID">
+
+                    <div class="noError">Error : This is a Mandatory Field.</div>
+                    <div class="noError">Error : Invalid User ID, Please Retry.</div>
+                    <!-- change class to error from noError to show error message -->
+
+                    <Button type="submit" id="continueButton" class="continueButton"> Continue > </Button>
+                    <Button class="backButton" type="button" id="goBack"> < Back </Button>
+                </form>
+
+                <div class="paragraph">
+                    <p>Other ways to access your account</p>
+                    <div class="netBankingDiv">
+                        <img alt="icon" class="netBanking" src="images/netbanking.svg"> 
+                        <p class="netBankingText">Net Banking</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="detailHolder">
+
+                <p class="detailsHeading">Know about your <b>User ID</b></p>
+
+                <div>
+                    <img src="images/pan.svg" alt="icon">
+                    <p class="bottomDivider">
+                        PAN (Permanent Account Number) <br>
+                        Individuals (Salaried employee, Senior citizen, Freelancer, NRI)
+                        Other Than Individuals (Company, Trust, AOP, AJP, BOI, Firm, HUF, Local Authority)
+                    </p>
+                </div>
+                <div>
+                    <img src="images/adhaar.svg" alt="icon">
+                    <p class="bottomDivider">     
+                        Aadhaar Number <br>
+                        Individuals (Salaried employee, Senior citizen, Freelancer, NRI)
+                    </p>
+                </div>
+                <div>
+                    <img  src="images/userId.svg" alt="icon">
+                    <p>
+                        Other than PAN users <br>
+                        CA, External Agency, ERI, Tax Deductor & Tax collector, TIN 2.0 Stakeholders, ITDREIN, Non-Residents not holding and not required to have PAN
+                        ARCA (Authorised Representative Chartered Accountant) followed by 6 digit number
+                        TAN (Tax Deductor & Collector)
+                    </p>
+                </div>
+
+                <a href="#">Show More</a>
+
+            </div>
+        </div>
+    </div>
+  
+    <div class="footer footerLogin">
+
+            <div class="footerContent">
+                <ul>
+                    <h3>About Us</h3>
+                    <li>About the Portal</li>
+                    <li>History of Direct Taxation</li>
+                    <li>Vision, Mission, Values</li>
+                    <li>Who We Are</li>
+                    <li>Right to Information</li>
+                    <li>Organizations & Functions</li>
+                    <li>About the Media Reports</li>
+                    <li>e-Filing Calendar 2021</li>
+                    <li>About the Portal</li>
+                </ul>
+        
+                <ul>
+                    <h3>Contact Us</h3>
+                    <li>Helpdesk Numbers</li>
+                    <li>Grievances</li>
+                    <li>View Grievance</li>
+                    <li>Feedback</li>
+                    <li>Help</li>
+                </ul>
+        
+                <ul>
+                    <h3>Using the Portal</h3>
+                    <li>Website Policies</li>
+                    <li>Accessibility Statement</li>
+                    <li>Site Map</li>
+                    <li>Browser Support</li>
+                </ul>
+        
+                <ul>
+                    <h3>Related Sites</h3>
+                    <li>Income Tax India</li>
+                    <li>Protean (previously NSDL)</li>
+                    <li>TRACES</li>
+                </ul>
+            </div>
+
+        <div class="credit">
+            <h3>Follow us on :</h3>
+            <div>
+                <img src="images/emblem_coloured.svg" alt="logo">
+                <p>
+                    Last reviewed and updated on : 06-Nov-2023
+                    This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Microsoft Edge.
+                    Copyright @ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/buttonEventLisener.js"></script>
+    <script>
+          document.getElementById("continueButton").onclick = function (event) {
+    event.preventDefault();
+    location.href = "LoginPassword.html";
+  };
+  
+    </script>
+
+</body>
+</html>

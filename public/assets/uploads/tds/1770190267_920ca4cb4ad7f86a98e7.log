@@ -1,0 +1,11 @@
+The part added gets called returns true for value Protean RPU 5.8
+BATCH VALIDATION STARTED
+countOfBatch1
+isFinYrGrtrthn:- true
+ PersonResponsilblePAN :: BWDPA4732C
+PersonResponsilblePAN.trim().length() ::10
+END TIME : Wed Feb 04 12:56:02 IST 2026
+the errorFileNameSAM is C:\Users\DELL\Documents\26QRQ1.err
+---UPPER---
+Type of statement: Regular
+File type:R

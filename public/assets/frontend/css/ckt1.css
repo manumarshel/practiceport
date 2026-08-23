@@ -1,0 +1,7 @@
+.dlist-align {
+    display: flex;
+    justify-content: space-between;
+}
+.text-end {
+    text-align: right !important;
+}

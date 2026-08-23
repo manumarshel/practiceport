@@ -1,0 +1,93 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.introContainer {
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: space-between;
+}
+
+.textHolder {
+    width: 30%;
+}
+
+.textHolder h1 {
+    letter-spacing: -2px;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.textHolder p {
+    font-size: 0.8rem;
+    color: grey;
+    margin-bottom: 0.5rem;
+}
+
+.backButton{
+    background-color: #F6F7FB;
+}
+
+.continueButton {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    background-color: #2a3a8d;
+    color: white;
+    border: none;
+}
+
+.instructionContainer {
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.instructionHolder {
+    width: 77%;
+    display: flex;
+    margin: 0 4rem;
+}
+
+.containerOne {
+    width: 50%;
+}
+
+.containerControl{
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.containerControl h4 {
+    font-size: 1.2rem;
+}
+
+.containerControl ul li {
+    font-size: 0.8rem;
+    margin: 0.4rem 0;
+    margin-left: 1rem;
+}
+
+.containerControl ul li a {
+    margin: 0;
+    color: #476BCF;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}

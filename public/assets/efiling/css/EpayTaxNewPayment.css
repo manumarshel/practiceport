@@ -1,0 +1,138 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.paymentDetails {
+    width: 40%;
+}
+
+.paymentDetails h4 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    margin: 0.2rem 0;
+}
+
+.newPaymentSector p {
+    margin: 0.4rem 0;
+}
+
+.newPaymentSector{
+    width: 70%;
+    margin-bottom: 4rem;
+}
+
+.newPaymentSector label {
+    font-size: 0.8rem;
+}
+
+.newPaymentSector select {
+    height: 2.5rem;
+    margin-top: 0.3rem;
+}
+
+.instruction {
+    text-align: end;
+    font-size: 0.8rem;
+}
+
+.paymentListHolder{
+    background-color: white;
+    margin-top: 1rem;
+    display: flex;
+    padding: 1rem;
+}
+
+.subHolder {
+    border: 2px solid #F2F2F2;
+    margin: 0 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.textHolder {
+    padding: 1rem;
+}
+
+.listText {
+    font-size: 0.8rem;
+}
+
+.listText a {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.proceedButtonHolder{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.proceedButton {
+    padding: 0.4rem;
+    margin: 0.4rem;
+}
+
+.backButton {
+    background-color: #F6F7FB;
+    border: 1px solid #2a3a8d;
+    color: #2a3a8d;
+    margin: 2rem 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+}
+
+.bottomDivider {
+    border-bottom: 1px solid grey;
+    padding-bottom: 0.5rem;
+}
+
+.lastLinkHolder {
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+}
+
+.lastLink {
+    color: #2a3a8d;
+    margin: 0;
+    padding: 0;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.optionDetails{
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    width: 11rem;
+}
+
+#year {
+    padding-left: 0.5rem;
+}

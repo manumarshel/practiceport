@@ -1,0 +1,227 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.upperSection span p {
+    display: none;   
+}
+   
+.profile {
+    display: flex;
+}
+
+.headerComponent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.headerComponent h1 {
+    font-weight: 400;
+}
+
+.headerComponent button {
+    background-color: #F6F7FB;
+    border: 1px solid #2a3a8d;
+    color: #2a3a8d;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+}
+
+.empty {
+    display: none;
+}
+
+.container p {
+    line-height: 1.2rem;
+}
+
+.colorChangeBlue {
+    color: #25B1EA;
+    font-size: 1rem;
+}
+
+.linkHolder {
+    font-size: 0.8rem;
+}
+
+.linkHolder a {
+    margin-left: 0.2rem;
+    color: #2a3a8d;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.formContainer {
+    margin-top: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; 
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.formHeader ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.formHeader li {
+    display: inline;
+    font-weight: 600;
+    margin: 0 1rem;
+}
+
+.formHeader div {
+    border-top: 2px solid #EEEFF6;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: end;
+}
+
+.formHeader div button {
+    margin: 0 0.4rem;
+    padding: 0.4rem;
+    background-color: white;
+    border: 2px solid #EEEFF6;
+}
+
+.filterButton {
+    border: none;
+    outline: none;
+}
+
+.formHolder {
+    margin-top: 1rem;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #EEEFF6;
+}
+
+table thead {
+    background-color: #EEEFF6;
+}
+
+.formHolder table thead tr th {
+    padding: 1rem;
+}
+
+.formHolder table tbody tr td {
+    padding: 1rem;
+    text-align: center;
+}
+
+.backButton {
+    background-color: #F6F7FB;
+    border: 1px solid #2a3a8d;
+    color: #2a3a8d;
+    margin: 2rem 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+}
+
+.bottomDivider {
+    border-bottom: 2px solid #EEEFF6;
+    padding-bottom: 0.5rem;
+}
+
+.lastLinkHolder {
+    margin-left: 1rem;
+}
+
+.lastLink {
+    color: #076BCF;
+    margin: 0;
+    padding: 0;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.optionButton {
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+}
+
+#optionButton:hover {
+    border: 1px solid lightgray;
+}
+
+.deleteColor {
+    color: red;
+}
+
+.form {
+    display: block;
+}
+
+.titleColor {
+    color: gray;
+}
+
+.titleSelected {
+    color: #2a3a8d;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #2a3a8d;
+}
+
+.fontSizeControl {
+    font-size: 0.7rem;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#download:hover {
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+#viewDetails:hover {
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+#copy:hover {
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+#editButton:hover {
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+#deleteButton:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}

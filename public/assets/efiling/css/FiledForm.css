@@ -1,0 +1,90 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.introHolder {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.introHolder h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.mainContainer {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.boldPara {
+    font-weight: 600;
+}
+
+.controlForm{
+    flex-direction: row;
+}
+
+.filter{
+    border: none;
+    background-color: #F6F7FB;
+    padding: 1rem;
+}
+
+.search {
+    padding: 0.8rem 1rem;
+}
+
+.boxContainer {
+    border: 2px solid #EEEFF6;
+    width: 34%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.partOne{
+    background-color: #EEEFF6;
+    padding: 1rem;
+}
+
+.partTwo{
+    border-bottom: 1px solid #EEEFF6;
+    padding: 1rem;
+}
+
+.partThree {
+    padding: 1rem;
+}
+
+.partThree div {
+    display: flex;
+    margin: 0.4rem 0;
+}
+
+.partThree h4{
+    background-color: #EEEFF6;
+    margin: 0 0.2rem;
+    padding: 0.2rem 0.4rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.backButton{
+    background-color: #F6F7FB;
+    margin-top: 1rem;
+}
+

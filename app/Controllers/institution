@@ -1,0 +1,303 @@
+<?php
+
+
+namespace App\Controllers\Admin;
+
+
+
+use App\Models\MasterPackageModel;
+use App\Models\user\UserModel;
+use App\Models\MasterSubscriptionModel;
+
+use Config\Services;
+
+class Users extends \App\Controllers\BaseController
+{
+    public function index()
+    {
+        $data = [];
+        $um = new UserModel();
+        $data['users'] =  $um->orderBy('user_id', 'ASC')->findAll();
+        
+        return view('admin/users', $data);
+    }
+    
+    
+     public function user_import()
+    {
+        $data = [];
+        $um = new UserModel(); 
+         $pkg = new MasterPackageModel();
+         $subscriptionModel = new MasterSubscriptionModel();
+           $data['packages'] =$pkg->where(['status' => 1])->findAll();
+           
+        if ($this->request->getMethod() == 'post') {
+             
+            $validation = Services::validation();
+                $validation->setRules([
+                    'packages' => ['label' => 'Packages', 'rules' => 'required'], 
+                ]);
+
+                if (!$this->validate($validation->getRules())) {
+                    $data['validation'] = $this->validator;
+                    return view('admin/add-user', $data);
+                } else {
+                   
+                    $pkg_id=$_POST['packages']; 
+                    $question_data = $this->request->getFile('user_import');
+                    $question_file_name = $question_data->getRandomName();
+                    
+                    $file = $this->request->getFile('user_import');
+
+                               
+                                
+                                    // Check if the file is not a directory
+                                    if ($file->isDir()) {
+                                         return redirect()->back()->with('error', 'Uploaded file is not valid.');
+                                    }
+                                
+                                    // Check the file type (ensure it's a CSV)
+                                   $validMimeTypes = ['text/csv', 'application/csv', 'application/vnd.ms-excel','text/plain'];
+                                        if (!in_array($file->getMimeType(), $validMimeTypes)) {
+                                            return redirect()->back()->with('error', 'Please upload a valid CSV file.');
+                                        }
+                                         if (!$file->isValid()) {
+                                              if ($file->getError() !== UPLOAD_ERR_OK) {
+                                            echo 'Error: ' . $file->getErrorString();
+                                        }
+                                        echo 'Error: ' . $file->getErrorString();
+                                        echo 'File upload failed.';exit;
+                                    }
+                                
+                                    // Process the file
+                                    $fileHandle = fopen($file->getTempName(), 'r');
+                                    if (!$fileHandle) {
+                                          return redirect()->back()->with('error', 'Unable to read the uploaded file.');
+                                    }
+                               
+                               
+                                    
+                                    $subscriptionData = [];
+                                    $studentData = [];
+                                    $password = "12345678"; // Default password for all students
+                                    
+                                    // Read the first row as headers
+                                    $fileHandle = fopen($file->getTempName(), 'r');
+                                    if (!$fileHandle) {
+                                        return redirect()->back()->with('error', 'Unable to read the uploaded file.');
+                                    }
+                                    
+                                    $header = fgetcsv($fileHandle); // Read headers only once
+                                    
+                                    if ($header === false) {
+                                        // Handle empty file
+                                        fclose($fileHandle);
+                                        return redirect()->back()->with('error', 'The uploaded CSV file is empty or invalid.');
+                                    }
+                                    
+                                    // Loop through each row of the file
+                                    while (($row = fgetcsv($fileHandle)) !== false) {
+                                        // Validate the row (ensure it matches header columns)
+                                        if (count($row) < count($header)) {
+                                            continue; // Skip invalid or incomplete rows
+                                        }
+                                        // Prepare student data for insertion
+                                        $studentData[] = [
+                                            'first_name'       => trim($row[0]), // Assuming the first column is the first name
+                                            'last_name'        => trim($row[1]), // Second column is the last name
+                                            'email'            => trim($row[2]), // Third column is email
+                                            'phone'            => trim($row[3]), // Fourth column is phone
+                                            'password'         => $password, // Secure password
+                                            'active'           => 1,
+                                            'date_registered'  => date('Y-m-d'),
+                                        ];
+                                    }
+                                    
+                                    // Close the file
+                                    fclose($fileHandle);
+                                    
+                               //    print_r($studentData); exit;
+                                    foreach ($studentData as $student) {
+                                        // Insert student and get the inserted ID
+                                        
+                                          $db = db_connect(); // Get the database connection
+                                            $builder2 = $db->table('users');
+                                            //  $exists = $builder2
+                                            //     ->groupStart() // Start grouping conditions
+                                            //         ->where('email', $student['email'])
+                                            //         ->orWhere('phone', $student['phone'])
+                                            //     ->groupEnd() // End grouping
+                                            //     ->countAllResults() > 0;
+                                                
+                                                
+                                                 $studentRecord = $builder2
+                                                    ->select('user_id') // Fetch the ID
+                                                    ->groupStart() // Start grouping conditions
+                                                        ->where('email', $student['email'])
+                                                        ->orWhere('phone', $student['phone'])
+                                                    ->groupEnd() // End grouping
+                                                    ->get()
+                                                    ->getRow(); 
+                                            
+                                            if ($studentRecord) {
+                                                $userId = $studentRecord->user_id;
+                                               
+                                                    $builderSubscriptions = $db->table('mst_subscriptions');
+                                                    $existingSubscription = $builderSubscriptions
+                                                        ->select('package_id')
+                                                        ->where('user_id', $userId)
+                                                        ->where('package_id', $pkg_id)
+                                                        ->get()
+                                                        ->getRow();
+                                            
+                                                    if ($existingSubscription) {
+                                                        // Package already subscribed by the user
+                                                      //  echo "User already subscribed to package ID: $pkg_id. Skipping import.";
+                                                       // return;
+                                                    }else{
+                                            
+                                                     $package = $pkg->find($_POST['packages']);
+                                                    $duration = $package['duration']; // Duration in 'x months' format (e.g., '2 months')
+                                                    $cost= $package['cost'];
+                                                    $startDate = date('Y-m-d'); // Current date
+                                                    $endDate = date('Y-m-d', strtotime("+$duration", strtotime($startDate)));
+                                                    
+                                                    // Package not subscribed, insert a new subscription
+                                                    $builderSubscriptions->insert([
+                                                        'user_id' => $userId,
+                                                        'package_id' => $pkg_id,
+                                                        'start_date' => $startDate,
+                                                        'end_date' => $endDate,
+                                                        'cost'   => $cost,// Or set a default end date
+                                                    ]);
+                                            
+                                                   
+                                                    }
+                                               
+                                               // already registered
+                                            }else{
+                                                 //no duplication
+                                        
+                                                $studentId = $um->insert($student);
+                                                $this->sendmail_notification($student['first_name'],$student['email']);
+                                
+                                                if ($studentId) {
+                                                    // Prepare subscription data for the student
+                                                    $package = $pkg->find($_POST['packages']);
+                                                    
+                                                    $duration = $package['duration']; // Duration in 'x months' format (e.g., '2 months')
+                                                    $cost= $package['cost'];
+                                                    $startDate = date('Y-m-d'); // Current date
+                                                    $endDate = date('Y-m-d', strtotime("+$duration", strtotime($startDate)));
+        
+                                                    $subscriptionData[] = [
+                                                        'user_id'    => $studentId, // ID of the student
+                                                        'package_id' => $_POST['packages'],         // Default package ID
+                                                        'start_date' => $startDate, // Subscription start date
+                                                        'end_date'   => $endDate, // Subscription end date
+                                                        'cost'   => $cost, // Subscription end date
+                                                    ];
+                                                    $subscriptionModel->insertBatch($subscriptionData);
+                                                    //il("geethuag2015@gmail.com", "fgh", "$messag, $mes"s
+                                               
+                                                    
+                                                }
+                                            }
+                                    }
+                        
+                                    // Insert subscriptions into the database
+                                     
+                                       return redirect()->to('admin/users/');
+                                  
+                                       // return redirect()->back()->with('error', 'Failed to import subscriptions.');
+                                    
+                               
+ 
+                       
+                     
+                    
+                    
+                }
+            
+
+             
+            
+        }else {
+            return view('admin/add-user', $data);
+        }
+        
+       
+    }
+    
+    public function sendmail_notification($name, $email)
+    {
+        
+                  //  $to = "geethuag2015@gmail.com"; // Replace $userEmail with the actual user's email
+                      $to = $email;
+            
+            // Subject
+            $subject = "Registration Confirmation";
+            
+            // Generate a unique confirmation link
+            $token = bin2hex(random_bytes(16)); // Generates a secure random token
+            $confirmationLink = "12345678";
+            
+            // Email message
+            $message = "
+            <html>
+            <head>
+                <title>Registration Successfull</title>
+            </head>
+            <body>
+                <h2>Dear $name, Welcome to Practicepot</h2>
+                <p>Thank you for registering at Practicepot. Your account has been successfully created!</p>
+                <p>Here are your login credentials:</p>
+                    <ul>
+                        <li><strong>Email:</strong> $email</li>
+                        <li><strong>Password:</strong> $confirmationLink</li>
+                    </ul>
+                    <p>You can log in to your account by visiting <a href='https://practicepot.com/'>https://practicepot.com</a>.</p>
+                    <p>If you have any questions or need assistance, feel free to contact our support team.</p>
+                    <br>
+            </body>
+            </html>
+            ";
+            
+            // Headers
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= "From: contact@practicepot.com" . "\r\n"; // Replace with your sender email
+            
+            $res= mail($to, $subject, $message, $headers);
+            // Send email
+            if ($res) {
+                return true;
+            } else {
+                return 2;
+            }
+      
+    }
+      public function delete_user($user_id) {
+         
+          //$question_id = $_POST['package_id'];
+        $qm = new UserModel();
+          $sm = new MasterSubscriptionModel();
+        if ( $user_id && intval($user_id) ) {
+            try {
+               
+                  $deleted = $sm->where('user_id', $user_id) // Match user ID
+                      ->delete();
+                  $qm->delete($user_id);
+                // $qm->update($user_id, ['active' => 0]);
+                return redirect()->to( base_url('/admin/users') )->with('msg', "successfully deleted");
+            } catch (DatabaseException $e) {
+                 
+                 return redirect()->to( base_url('/admin/users') )->with('msg', $e->getMessage());
+            }
+
+        }
+        return $this->response->setStatusCode(401, "invalid user_id");
+//        echo "questionId: " . $question_id;
+    }
+     
+}

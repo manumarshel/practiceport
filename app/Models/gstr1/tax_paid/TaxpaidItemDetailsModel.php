@@ -1,0 +1,18 @@
+<?php
+
+
+namespace App\Models\gstr1\tax_paid;
+
+
+use CodeIgniter\Model;
+
+class TaxpaidItemDetailsModel extends Model
+{
+    protected $table = 'adjustment_advance_item_details';
+    protected $primaryKey = '11a_tax_id';
+    protected $allowedFields = [
+        '11a_tax_id',
+        'item_detail_id'
+    ];
+    protected $returnType     = 'array';
+}

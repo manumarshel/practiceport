@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/TaxFormInstructionScreen.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>Instructions</title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+  <div class="container">
+    <p class="heading">Dashboard > Income Tax Forms</p>
+
+    <div class="introContainer">
+      <div class="textHolder">
+        <h1>TDS/TCS Return</h1>
+        <p>[Quarterly TDS/TCS Return (24Q,26Q,27Q,27EQ)]</p>
+        <button class="backButton" id="incomeTaxtForm">< Back</button>
+        <button class="continueButton" id="formTDS">Let's Get Started</button>
+      </div>
+
+      <div>
+        <img src="images/Group21054.svg">
+      </div>
+    </div>
+  </div>
+
+  <div class="instructionContainer">
+    <div class="instructionHolder">
+      <div class="containerControl containerOne">
+        <h4>Documents list to help you file faster</h4>
+        <ul>
+          <li>
+            Return should be prepared through latest NSDL Return Preparation Utility. To download go to https://www.tin-nsdl.com/downloads/e-tds/eTDS-download-regular.html
+          </li>
+          <li>
+            Once the file has been prepared as per the NSDL Return Preparation Utility , it should be verified using the File Validation Utility (FVU) provided by NSDL e-Gov. To download latest versions of FVU go to https://www.tin-nsdl.com/downloads/e-tds/eTDS-download-regular.html
+          </li>
+        </ul>
+      </div>
+      <div class="containerControl">
+        <h4>Instructions</h4>
+        <ul>
+          <li><a>General Instructions</a></li>
+          <li><a>Things you should know before filing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    
+
+    <div class="footer">
+      <div class="credit">
+          <div>
+            <img src="images/emblem_coloured.svg" alt="logo">
+                <p>
+                    Feedback |
+    Website Policies |
+    Accessibility Statement |
+    Site Map |
+    Browser Support |
+    CoBrowse Help <br>
+    Last reviewed and updated on : 6-Nov-2023<br>
+    This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+    <br>
+    Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navigationBar.js" ></script>
+    <script type="text/javascript">
+      document.getElementById("formTDS").onclick = function () {
+          location.href = "FormTDS.html";
+      };
+
+      document.getElementById("incomeTaxtForm").onclick = function () {
+          location.href = "IncomeTaxform.html";
+      };
+  </script>
+
+  </body>
+</html>

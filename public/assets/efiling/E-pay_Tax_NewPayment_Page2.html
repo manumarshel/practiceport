@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/EpayTaxNewPaymentPage2.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>E-Pay Tax</title>
+  </head>
+  <body>
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+  <div class="container">
+    <p class="heading">Dashboard > e-payTax > New Payment</p>
+
+    <div class="paymentDetails">
+
+      <div class="statusContainer">
+        <div class="statusHolder mr-1">
+          <div class="statusIconText">1</div>
+          <p class="statusText">Add Nature Of Payment Details</p>
+        </div>
+        <div  class="statusHolder mr-1">
+          <div class="statusIconText statusDisabled statusDisabledBoreder">2</div>
+          <p class="statusText statusDisabled">Add Tax Break Up Details</p>
+        </div>
+        <div class="statusHolder">
+          <div class="statusIconText statusDisabled statusDisabledBoreder">3</div>
+          <p class="statusText statusDisabled">Add Payment Details</p>
+        </div>
+      </div>
+
+      <h1>New Payment</h1>
+      <h2>TAN:Ch*****</h2>
+
+      <p class="marginBottom">Type of Payment (Minor Head)</p>
+      <p class="boldPara">TDS/TCS Payable by Taxpayer (200)</p>
+    </div>
+
+    <div class="paymentListHolder">
+      <div class="filter">
+        <form>
+        <input type="text" placeholder="Search by Description"/>
+        <button>Filter</button>
+        </form>
+      </div>
+
+        <!-- Pages in divs -->
+        <form class="listForm">
+
+        <!-- Page 1 -->
+
+        <div id="page1" class="pageContent active">
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment to Govt. Employees other than Union Government Employees
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">192</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">92A</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of Employees other than Govt. Employees
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">192</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">92B</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Interest on securities
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">193</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">193</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm" id="dividendForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" id="dividend" value="dividend"/></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Dividend
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">194</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Interest other than interest on securities
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194A</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94A</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Winnings from lotteries and crossword puzzles
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194B</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94B</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Winnings from horse race
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194BB</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4BB</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment in respect of Life Insurance Policy
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194DA</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4DA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of Compensation on Acquisition of Certain Immovable Property
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LA</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4LA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income by way of Interest from Infrastructure debt fund payable to a Non-Resident
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LB</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4LB</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+        </div>
+
+        <!-- Page 2 -->
+        <div id="page2" class="pageContent">
+          <div class="dividerGray"></div>
+        
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+      
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income by way of Interest from Indian Company
+                      </p>
+                  </td>
+      
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LC</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4LC</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+      
+          <div class="dividerGray"></div>
+      
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+      
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income by way of interest on certain bonds and Government securities
+                      </p>
+                  </td>
+      
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LD</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4LD</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+      
+          <div class="dividerGray"></div>
+      
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+      
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of contractors and sub-contractors
+                      </p>
+                  </td>
+      
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94C</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+      
+         <div class="dividerGray"></div>
+      
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+      
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Insurance Commission
+                     </p>
+                 </td>
+      
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194LD</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94D</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+      
+         <div class="dividerGray"></div>
+      
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+      
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Payments to non-resident Sportsmen/Sport Associations
+                     </p>
+                 </td>
+      
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194E</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94E</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Payments in respect of Deposits under National Savings Schemes
+                     </p>
+                 </td>
+
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194EE</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">4EE</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Payments on account of Re-purchase of Units by Mutual Funds or UTI
+                     </p>
+                 </td>
+
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194F</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94F</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Commission, prize etc., on sale of Lottery tickets
+                     </p>
+                 </td>
+
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194G</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94G</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Commission or Brokerage
+                     </p>
+                 </td>
+
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194H</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94H</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+         <form class="listForm">
+           <table>
+             <tbody class="descriptionHolder">
+               <tr>
+                 <td><input type="radio" /></td>
+
+                 <td>
+                     <p>Description</p>
+                     <p class="boldPara">
+                       Rent
+                     </p>
+                 </td>
+
+                 <td>
+                     <p>Section</p>
+                     <p class="boldPara">194I</p>
+                 </td>
+                 <td>
+                     <p>Code</p>
+                     <p class="boldPara">94I</p>     
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </form>
+
+         <div class="dividerGray"></div>
+
+        </div>
+
+        <!-- Page 3 -->
+        <div id="page3" class="pageContent">
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment under Specified Agreement
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194IC</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4IC</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Fees for Professional or Technical Services
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194J</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94J</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Certain income from units of a business trust
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LBA</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">LBA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income in respect of Units of Investment Fund
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LBB</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">LBB</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income in respect of Investment in Securitization Trust
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194LBC</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">LBC</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of certain Amount in Cash
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194N</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94N</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of certain sums by e-commerce operator to e-commerce participant
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194O</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94O</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Other sums
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">195</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">195</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income in respect of units of Non-Residents
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">196A</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">96A</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from Alcoholic Liquor for Human Consumption
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+        </div>
+
+        <!-- Page 4 -->
+
+        <div id="page4" class="pageContent">
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from Timber obtained under Forest lease
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CB</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from Timber obtained by any Mode other than a Forest Lease
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CC</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from any other Forest Produce (not being timber or tendu leaves)
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CD</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from Scrap
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CE</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from contractors or licensee or lease relating to Parking lots
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CF</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from contractors or licensee or lease relating to toll plaza
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CG</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from contractors or licensee or lease relating to mining or quarrying
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CH</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Collection at source from tendu leaves
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CI</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Minerals
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CJ</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Bullion and Jewellery
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CK</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+        </div>
+
+        <!-- Page 5 -->
+
+        <div id="page5" class="pageContent">
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment of accumulated balance due to an employee
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">192</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">2AA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        TCS on sale of Motor Vehicle
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CL</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        CTCS on sale in cash of any goods (other than bullion/jewellery)
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CM</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        TCS on providing of any services (other than Ch-XVII-B)
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CN</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        TCS on Foreign Remittance
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CO</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income payable to a resident assessee in respect of Units of a specified Mutual Fund specified u/s 10(23D) or units from the Administrator of the specified undertaking or units from specified company
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194K</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94K</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payments in respect of Units to an Offshore Fund
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">196B</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">96B</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income from foreign Currency Bonds or shares of Indian Company
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">196C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">96C</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income of foreign institutional investors from securities
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">196D</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">96D</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Deduction of tax in case of specified senior citizens
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194P</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94P</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+          
+        </div>
+
+        <!-- Page 6 -->
+
+        <div id="page6" class="pageContent">
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Deduction of tax at source on payment of certain sum for purchase of goods
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194Q</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94Q</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Income of specified fund from securities referred to in clause (a) of sub-section (1) of section 115AD (other than interest income referred to in section 194LD)
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">196D(1A)</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6DA</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Remittance under LRS for educational loan taken from financial institution mentioned in Section 80E
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CP</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Remittance under LRS for purpose other than for purchase of overseas tour package or for educational loan taken from financial institution
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CQ</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        TCS on sale of goods
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">206C</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">6CR</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Deduction of tax on benefit or perquisite in respect of business or profession
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194R</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94R</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment on transfer of virtual digital asset
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194S</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">94S</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Winnings from lotteries and crossword puzzles where consideration is made in kind or cash is not sufficient to meet the tax liability and tax has been paid before such winnings are released
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194B-P</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4BP</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Benefits or perquisites of business or profession where such benefit is provided in kind or where part in cash is not sufficient to meet tax liability and tax required to be deducted is paid before such benefit is released
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194R-P</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4RP</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+          <form class="listForm">
+            <table>
+              <tbody class="descriptionHolder">
+                <tr>
+                  <td><input type="radio" /></td>
+
+                  <td>
+                      <p>Description</p>
+                      <p class="boldPara">
+                        Payment for transfer of virtual digital asset where payment is in kind or in exchange of another virtual digital asset and tax required to be deducted is paid before such payment is released
+                      </p>
+                  </td>
+
+                  <td>
+                      <p>Section</p>
+                      <p class="boldPara">194S-P</p>
+                  </td>
+                  <td>
+                      <p>Code</p>
+                      <p class="boldPara">4SP</p>     
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+          <div class="dividerGray"></div>
+
+        </div>
+
+      <div class="pageHolder">
+        <button class="pageBtn selectedBtn" onclick="showPage(1)">1</button>
+        <button class="pageBtn" onclick="showPage(2)">2</button>
+        <button class="pageBtn" onclick="showPage(3)">3</button>
+        <button class="pageBtn" onclick="showPage(4)">4</button>
+        <button class="pageBtn" onclick="showPage(5)">5</button>
+        <button class="pageBtn" onclick="showPage(6)">6</button>
+      </div>
+
+    </div>
+
+    <button class="backButton" id="newPaymentPage1">< Back</button>
+
+    <button class="continueButton" id="continueBtn">Continue</button>
+  </form>
+  </div>
+
+  <div class="footer">
+    <div class="credit">
+        <div>
+          <img src="images/emblem_coloured.svg" alt="logo">
+            <p>
+                Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</div>
+  <script src="js/navigationBar.js" ></script>
+  <script src="js/newPaymentPage2.js"></script>
+  </body>
+</html>

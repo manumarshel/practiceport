@@ -1,0 +1,88 @@
+The part added gets called returns true for value Protean RPU 5.7
+BATCH VALIDATION STARTED
+countOfBatch1
+isFinYrGrtrthn:- true
+ PersonResponsilblePAN :: DESPQ3565A
+PersonResponsilblePAN.trim().length() ::10
+END TIME : Thu Jan 08 12:08:00 IST 2026
+the errorFileNameSAM is C:\Users\FINPROVE\Documents\ASNA2023.err
+---UPPER---
+before state changed called
+Re-Initializing
+inside ANNE_TAB_INDEX2
+Form Number26Q
+array length is18
+filled rows are 16
+Column Count in AnneI: 38
+AnnI value:0^8^DD^1^1^--Select--^6975004^05/02/2024^06781^94C^2824.00^0.00^0.00^2824.00^1^^^OSWFC6233A^Midhun Adverts & Firm^09/01/2024^72800.00^1456.00^0.00^0.00^1456.00^^1456.00^^09/01/2024^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 233
+Column Count in AnneI: 38
+AnnI value:0^9^DD^1^1^--Select--^6975004^05/02/2024^06781^94C^2824.00^0.00^0.00^2824.00^2^^^BCEPX2568L^Gopal Bakers^16/01/2024^68400.00^1368.00^0.00^0.00^1368.00^^1368.00^^16/01/2024^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 224
+Column Count in AnneI: 38
+AnnI value:0^10^DD^1^2^--Select--^6975004^05/02/2024^23649^94A^3960.00^0.00^0.00^3960.00^1^^^NTSCW9780S^Bindu Grameena Bank Ltd^10/01/2024^15000.00^1500.00^0.00^0.00^1500.00^^1500.00^^10/01/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 237
+Column Count in AnneI: 38
+AnnI value:0^11^DD^1^2^--Select--^6975004^05/02/2024^23649^94A^3960.00^0.00^0.00^3960.00^2^^^SEQCT6558F^Kesari Financial Institutions Ltd^12/01/2024^24600.00^2460.00^0.00^0.00^2460.00^^2460.00^^12/01/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 247
+Column Count in AnneI: 38
+AnnI value:0^12^DD^1^3^--Select--^6975004^05/03/2024^54763^94A^7354.00^0.00^0.00^7354.00^1^^^NTSCW9780S^Bindu Grameena Bank Ltd^10/02/2024^15000.00^1500.00^0.00^0.00^1500.00^^1500.00^^10/02/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 237
+Column Count in AnneI: 38
+AnnI value:0^13^DD^1^3^--Select--^6975004^05/03/2024^54763^94A^7354.00^0.00^0.00^7354.00^2^^^SEQCT6558F^Kesari Financial Institutions Ltd^12/02/2024^24600.00^2460.00^0.00^0.00^2460.00^^2460.00^^12/02/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 247
+Column Count in AnneI: 38
+AnnI value:0^14^DD^1^3^--Select--^6975004^05/03/2024^54763^94A^7354.00^0.00^0.00^7354.00^3^^^BETCP4154G^Paravur Seva Financial Institutions Ltd^15/02/2024^21540.00^2154.00^0.00^0.00^2154.00^^2154.00^^15/02/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 253
+Column Count in AnneI: 38
+AnnI value:0^15^DD^1^3^--Select--^6975004^05/03/2024^54763^94A^7354.00^0.00^0.00^7354.00^4^^^ASWPN6872O^Gaurav Khanna^16/02/2024^12400.00^1240.00^0.00^0.00^1240.00^^1240.00^^16/02/2024^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 227
+Column Count in AnneI: 38
+AnnI value:0^16^DD^1^4^--Select--^6975004^05/03/2024^68235^94H^3150.00^0.00^0.00^3150.00^1^^^XSJPE0065P^Sheela Birla^14/02/2024^29000.00^1450.00^0.00^0.00^1450.00^^1450.00^^14/02/2024^--Select--^02^5.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 225
+Column Count in AnneI: 38
+AnnI value:0^17^DD^1^4^--Select--^6975004^05/03/2024^68235^94H^3150.00^0.00^0.00^3150.00^2^^^CBRPD1826E^Vishnu Das Arakkal^14/02/2024^34000.00^1700.00^0.00^0.00^1700.00^^1700.00^^14/02/2024^--Select--^02^5.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 231
+Column Count in AnneI: 38
+AnnI value:0^18^DD^1^5^--Select--^6975004^05/04/2024^24657^94A^7354.00^0.00^0.00^7354.00^1^^^NTSCW9780S^Bindu Grameena Bank Ltd^10/03/2024^15000.00^1500.00^0.00^0.00^1500.00^^1500.00^^10/03/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 237
+Column Count in AnneI: 38
+AnnI value:0^19^DD^1^5^--Select--^6975004^05/04/2024^24657^94A^7354.00^0.00^0.00^7354.00^2^^^SEQCT6558F^Kesari Financial Institutions Ltd^12/03/2024^24600.00^2460.00^0.00^0.00^2460.00^^2460.00^^12/03/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 247
+Column Count in AnneI: 38
+AnnI value:0^20^DD^1^5^--Select--^6975004^05/04/2024^24657^94A^7354.00^0.00^0.00^7354.00^3^^^BETCP4154G^Paravur Seva Financial Institutions Ltd^15/03/2024^21540.00^2154.00^0.00^0.00^2154.00^^2154.00^^15/03/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 253
+Column Count in AnneI: 38
+AnnI value:0^21^DD^1^5^--Select--^6975004^05/04/2024^24657^94A^7354.00^0.00^0.00^7354.00^4^^^ASWPN6872O^Gaurav Khanna^16/03/2024^12400.00^1240.00^0.00^0.00^1240.00^^1240.00^^16/03/2024^--Select--^02^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 227
+Column Count in AnneI: 38
+AnnI value:0^22^DD^1^6^--Select--^6975004^05/04/2024^54283^4JA^7344.00^0.00^0.00^7344.00^1^^^XEWCD2489F^Amara Taxperts Ltd.^13/03/2024^64900.00^6490.00^0.00^0.00^6490.00^^6490.00^^13/03/2024^--Select--^01^10.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 233
+Column Count in AnneI: 38
+AnnI value:0^23^DD^1^6^--Select--^6975004^05/04/2024^54283^4JA^7344.00^0.00^0.00^7344.00^2^^^CSEFG6562R^Deepa Associates^14/03/2024^42700.00^854.00^0.00^0.00^854.00^^854.00^^14/03/2024^--Select--^02^2.0000^--Select--^^^^^^^^^^^LineHash
+
+Size of appender: 226
+Out time for AnneI:1767854292592detailsnull
+saved file path:C:\Users\FINPROVE\Documents\ASNA2023
+current file path ASNA2023
+existing file chooser C:\Users\FINPROVE\Documents\ASNA2023
+copied file C:\Users\FINPROVE\Documents\ASNA2023
+next saved file pathC:\Users\FINPROVE\Documents
+After first save file size: 0
+default cursor
+inside File Saved

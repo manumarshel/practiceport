@@ -1,0 +1,91 @@
+body {
+    background-color: #F6F7FB;
+}
+
+.heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.headerSection h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 0.4rem;
+}
+
+.fontSize {
+    font-size: 0.8rem;
+}
+
+.boldPara {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+}
+
+.formContainer {
+    background-color: white;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.formContainerHeading {
+    border-bottom: 1px solid grey;
+    padding: 1rem 1rem;
+    color: #076BCF;
+    border-bottom: 1px solid #076BCF;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+.formControl {
+    padding: 0.8rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid grey;
+    border-bottom: 0px;
+}
+
+.bottomformControl {
+    padding: 0.8rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid grey;
+}
+
+.formContainer form h5 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #000000DE;
+}
+
+.formContainer form p {
+    font-size: 0.8rem;
+}
+
+.textHolder {
+    width: 90%;
+}
+
+.backButton {
+    margin-top: 1rem;
+    background-color: #F6F7FB;
+    padding: 0.5rem 1rem;
+}
+
+.upperSection span p {
+    display: none;   
+   }
+   
+.profile {
+       display: flex;
+}
+
+.changeColor {
+    color: gray;
+}

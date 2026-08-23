@@ -1,0 +1,75 @@
+form {
+    display: block;
+    width: 100%;
+}
+
+.mainContainer {
+    display: flex;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.note {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.noteBold {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.detailHeader {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.detailHeaderTwo {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.detailTitle {
+    color: grey;
+}
+
+.radioHolder {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.margin1rem {
+    margin-bottom: 1rem;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backBtn {
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: white;
+    border: #253175;
+    border-radius: 5px;
+    color: #253175;
+    font-size: 0.8rem;
+    align-self: center;
+    border: 1px solid #253175;
+}
+
+.continueBtn {
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: #253175;
+    border: #253175;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    align-self: center;
+}

@@ -1,0 +1,43 @@
+{
+  "question_id": 1,
+  "company_id": 1,
+  "user_id": 1,
+  "b2b": [
+    {
+      "receiver_gstin": "ss",
+      "receiver_name": "ss",
+      "invoice_number": "ss",
+      "invoice_date": "ss",
+      "pos": "ss",
+      "total_invoce_value": "ss",
+      "supply_type": "ss",
+      "item_details": [
+        {
+          "rate_percent": "zepr",
+          "tax_value": 1,
+          "integrated_tax": 1,
+          "cess": 1
+        }
+      ]
+    }
+  ],
+  "b2cl": [
+    {
+      "receiver_gstin": "ss",
+      "receiver_name": "ss",
+      "invoice_number": "ss",
+      "invoice_date": "ss",
+      "pos": "ss",
+      "total_invoce_value": "ss",
+      "supply_type": "ss",
+      "item_details": [
+        {
+          "rate_percent": "zepr",
+          "tax_value": 1,
+          "integrated_tax": 1,
+          "cess": 1
+        }
+      ]
+    }
+  ]
+}

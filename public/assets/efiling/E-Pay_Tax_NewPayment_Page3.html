@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/EpayTaxNewPaymentPage3.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>E-Pay Tax</title>
+  </head>
+  <body>
+
+    <nav>
+
+      <div class="upperSection">
+        <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+
+          <span>
+              <ul>
+                  <li>Call Us</li>
+                  <span>|</span>
+                  <li>English</li>
+                  <span>|</span>
+                  <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                  <span>|</span>
+                  <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                  <li class="profile">
+                      <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                      <div>
+                          <span style="font-weight:600;">licny</span>
+                          <span>tds</span>
+                      </div>
+                  </li>
+              </ul>
+              <p>Do not have an account? <a href="#">Register</a> </p>
+          </span>
+      </div>
+
+      <div class="menuWidthControl">
+        <ul class="menu">
+            <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+            <li class="dropDown">e-File
+                <ul class="submenu">
+                    <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                    <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                    <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                </ul>
+            </li>
+            <li>Authorised Partners</li>
+            <li>Services</li>
+            <li>Pending Actions</li>
+            <li>Grievances</li>
+            <li>Help</li>
+            <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+  <div class="container">
+    <p class="heading">Dashboard > e-payTax > New Payment</p>
+
+    <div class="paymentDetails">
+
+      <div class="statusContainer">
+        <div class="statusHolder mr-1">
+          <img class="statusIcon" src="images/icons8-tick-480.png">
+          <p class="statusText">Add Nature Of Payment Details</p>
+        </div>
+        <div  class="statusHolder mr-1">
+          <div class="statusIconText">2</div>
+          <p class="statusText">Add Tax Break Up Details</p>
+        </div>
+        <div class="statusHolder">
+          <div class="statusIconText statusDisabled statusDisabledBoreder">3</div>
+          <p class="statusText statusDisabled">Add Payment Details</p>
+        </div>
+      </div>
+
+      <h1>New Payment</h1>
+      <h2>TAN:Ch*****</h2>
+
+      <p>Type of Payment (Minor Head)</p>
+      <p class="boldPara">TDS/TCS Payable by Taxpayer (200)</p>
+    </div>
+    
+    <p class="marginTop">Tax Applicable (Major Head)</p>
+    <input  type="radio" id="radio" checked="true" name="radio" class="extraMarginTop" value="radio">
+    <label class="radioLabel" for="radio">Other than Company Deductee – Income Tax (Other than Companies) (0021)</label>
+    <br>
+    <input  type="radio" id="radioTwo" checked="true" class="extraMarginTop" name="radio" value="radio">
+    <label class="radioLabel" for="radio">Company Deductee – Corporation Tax (0020)</label>
+
+    <div class="formContainer">
+      <form>
+        <div>
+          <label>(a) Tax</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+        <div>
+          <label>(b) Supercharge</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+        <div>
+          <label>(c) Cess</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+        <div>
+          <label>(d) Intrest</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+        <div>
+          <label>(e) Penalty</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+        <div>
+          <label>(f) Fee Under Section 234E</label>
+          <input type="number" placeholder="Rs 0"/>
+        </div>
+      </form>
+      <div class="formFooter">
+        <p>Total (a+b+c+d+e+f)</p>
+        <p>Rs 0</p>
+      </div>
+      <div class="formFooter">
+        <p>In Word</p>
+        <p>#amount in text</p>
+      </div>
+
+      <div class="noError">Total Amount Can Not Be Zero</div>
+      <!-- change class name to error for showing error message -->
+    </div>
+
+    <button class="backButton" id="backBtn">< Back</button>
+    <button class="continueButton" id="epayTaxPayment">Continue ></button>
+    <button class="backButton saveButton" id="saveDraft">Save as Draft</button>
+    
+  </div>
+
+  <div class="footer">
+    <div class="credit">
+        <div>
+              <img src="images/emblem_coloured.svg" alt="logo">
+              <p>
+                  Feedback |
+  Website Policies |
+  Accessibility Statement |
+  Site Map |
+  Browser Support |
+  CoBrowse Help <br>
+  Last reviewed and updated on : 6-Nov-2023<br>
+  This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+  <br>
+  Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+              </p>
+          </div>
+      </div>
+  </div>
+
+  <script src="js/navigationBar.js" ></script>
+
+  <script type="text/javascript">
+    document.getElementById("backBtn").onclick = function () {
+        location.href = "E-pay_Tax_NewPayment_Page2.html";
+    };
+    document.getElementById("epayTaxPayment").onclick = function () {
+        location.href = "E-Pay_Tax_PaymentSuccess.html";
+    };
+  </script>
+
+  </body>
+</html>

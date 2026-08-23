@@ -1,0 +1,206 @@
+13980|updatePanel|ctl00_HomePageContent_UpdatePanel1|
+                            <table width="100%" border="0" cellpadding="2" cellspacing="0" class="formlevel">
+                                <tr>
+                                    <td class="pageHeader" colspan="4">
+                                        <table width="100%">
+                                            <tr>
+                                                <td class="pageHeaderText">
+                                                    Track Registered Employees
+                                                </td>
+                                                <td valign="bottom" class="mandatoryField">
+                                                    &nbsp;
+                                                </td>
+                                                <td>
+                                                    <span id="ctl00_HomePageContent_lblErrorMsg"></span>
+                                                    <span id="ctl00_HomePageContent_lblmodal"></span>
+                                                    <span id="ctl00_HomePageContent_Label2"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lastFormValue" colspan="4">
+                                        &nbsp;
+
+                                        <span class="errordisplay" id="diverror" style="display: none">Employee's Insurance
+                                        No. Field Cannot be Empty.</div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="100%" border="0" cellpadding="2" cellspacing="0" class="formlevel border">
+                                <tr>
+                                    <td class="leftTopFormLabelgrid" colspan="4">
+                                        <div>
+
+</div>
+                                    </td>
+                                </tr>
+                                <div id="ctl00_HomePageContent_pnlEmprCode">
+
+                                    <tr class="lastData_Section" id="trGetEmprNo">
+                                        <td colspan="2" class="leftTopFormLabel">
+                                            Employer/Subunit Code No:<span class="mandatoryField">*</span>
+                                        </td>
+                                        <td colspan="2" class="lastFormValue">
+                                            <input name="ctl00$HomePageContent$txtEmployerCode" type="text" value="54000249070000999" maxlength="17" id="ctl00_HomePageContent_txtEmployerCode" disabled="disabled" class="txtbox numericAlignRight" onkeyup="checkNumerOnly(this)" />
+                                            <span id="ctl00_HomePageContent_rfvEmployerCode" style="color:Red;display:none;">Please Enter Employer/Subunit Code No</span>
+
+                                        </td>
+                                    </tr>
+
+</div>
+                                <tr class="lastData_Section" id="RowForNew">
+                                    <td class="leftTopFormLabel" colspan="2" width="40%">
+                                        Was the Employee ever allotted a ESI Number?**:
+                                    </td>
+                                    <td class="lastFormValue" colspan="2" width="60%">
+                                        <span id="ctl00_HomePageContent_ctrlLblCount" class="pageHeaderText" style="color:Red;"></span>
+                                        <table id="ctl00_HomePageContent_rbtnlistIsregistered" onchange="javascript:return SubmitConfirm();" border="0">
+	<tr>
+		<td><input id="ctl00_HomePageContent_rbtnlistIsregistered_0" type="radio" name="ctl00$HomePageContent$rbtnlistIsregistered" value="0" onclick="javascript:setTimeout('__doPostBack(\'ctl00$HomePageContent$rbtnlistIsregistered$0\',\'\')', 0)" /><label for="ctl00_HomePageContent_rbtnlistIsregistered_0">Yes</label></td><td><input id="ctl00_HomePageContent_rbtnlistIsregistered_1" type="radio" name="ctl00$HomePageContent$rbtnlistIsregistered" value="1" checked="checked" /><label for="ctl00_HomePageContent_rbtnlistIsregistered_1">No</label></td>
+	</tr>
+</table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="ctl00_HomePageContent_Panel2">
+
+                                <table width="100%" border="0" cellpadding="2" cellspacing="0" class="internalTable3">
+                                    <tr>
+                                        <td colspan="2" class="leftTopFormLabel" width="40%">
+                                            Mobile Number:<span class="mandatoryField">*</span>
+                                        </td>
+                                        <td colspan="2" class="lastFormValue" width="60%">
+                                            <input name="ctl00$HomePageContent$txtmobilenumber" type="text" maxlength="10" id="ctl00_HomePageContent_txtmobilenumber" class="txtbox numericAlignRight" AutoComplete="Off" onkeypress="return onlyNumbers(event)" />
+                                            <span id="ctl00_HomePageContent_RequiredFieldValidator3" style="color:Red;display:none;">Please enter mobile number</span>
+                                            <span id="ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1" class="errordisplay" style="color:Red;display:none;">The mobile number doesn’t contain 10 digits. Please enter correct Mobile Number</span>
+                                            <a onclick="startTimer();" id="ctl00_HomePageContent_lnkmobilecheck" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$HomePageContent$lnkmobilecheck&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Validate Mobile Number</a>
+
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+</div>
+
+                            <div id="ctl00_HomePageContent_pnlFootnote">
+
+                                <table width="100%" border="0" cellpadding="2" cellspacing="0" class="internalTable3">
+                                    <tr>
+                                        <td class="lastFormValue" colspan="4">
+                                            <span id="ctl00_HomePageContent_Label3" style="font-weight:bold;">* Provide correct and actual mobile number.</span></br>
+                                            <span id="ctl00_HomePageContent_Label4" style="font-weight:bold;">* This mobile will remain same at the time of registration. You won’t be able to edit it. </span></br>
+                                            <span id="ctl00_HomePageContent_Label5" style="font-weight:bold;">* The OTP will remain valid for 20 minutes. </span></br>
+                                            <span id="ctl00_HomePageContent_Label6" style="font-weight:bold;">* You are allowed to generate OTP maximum 3 times.</span></br>
+                                            <span id="ctl00_HomePageContent_Label7" style="font-weight:bold;">* After 3 consecutive attempts of generating OTP, system won’t generate any OTP for said mobile number for next 3 hours.</span></br>
+                                            <span id="ctl00_HomePageContent_Label8" style="font-weight:bold;"><b>* Note:</b> It shall be the responsibility of the Employer to provide the correct Mobile Number of the Employee to prevent administrative consequences. It is recommended that each Insured Person should have unique mobile number.  </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+</div>
+
+
+                            <div class="pagesubmission" style="text-align: center">
+                                <div class="primary">
+
+                                    <input type="submit" name="ctl00$HomePageContent$button" value="Close" onclick="window.close();" id="ctl00_HomePageContent_button" title="Go back to Main Menu" class="btn" onkeydown="if (event.keyCode == 13) document.getElementById('ctl00_HomePageContent_button').click()" />
+                                </div>
+                            </div>
+                            <table width="100%" border="0" cellpadding="2" cellspacing="0" id="Table5" class="internalTable3">
+                                <tr class="lastData_Section" id="Tr11">
+                                    <td colspan="4" class="leftTopFormLabel">
+                                        <span id="ctl00_HomePageContent_ctrlLblCount1" class="pageHeaderText" style="color:Blue;"></span>
+                                        </br>
+
+                                        <span id="ctl00_HomePageContent_ctrlLblCount2" class="pageHeaderText" style="color:Red;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+
+
+
+                            <div id="ctl00_HomePageContent_panMessage" style="width:70%;">
+
+                                <table class="internalTable" border="0" cellpadding="2" cellspacing="0">
+                                    <tr>
+                                        <td class="leftTopFormLabelgrid">
+                                            rned RO/SRO after due verification of relevant records. Until then, the date of
+                                            registration shall be deemed as the date of appointment. Please submit the relevant
+                                            records/documents to the designated RO/SRO within 15 days in the prescribed format.
+                                            Please also take note that in case of failure to do the needful, the date of registration
+                                            will be treated as the date of appointment, for all purposes.<br />
+                                            <br />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="pageFooter1">
+                                            <input type="submit" name="ctl00$HomePageContent$btnAgree" value="I Agree" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$HomePageContent$btnAgree&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_HomePageContent_btnAgree" title="Close" class="btn" />
+                                            <input type="submit" name="ctl00$HomePageContent$Button1" value="Cancel" onclick="ClosePopup();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$HomePageContent$Button1&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_HomePageContent_Button1" title="Close" class="btn" />
+                                        </td>
+                                    </tr>
+                                </table>
+
+</div>
+                            <div id="ctl00_HomePageContent_Panel3" style="width:70%;">
+
+                                <table class="internalTable" border="0" cellpadding="2" cellspacing="0">
+                                    <tr>
+                                        <td class="leftTopFormLabelgrid">
+                                            <span id="ctl00_HomePageContent_lblpopup"></span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="pageFooter1">
+                                            <input type="submit" name="ctl00$HomePageContent$btncancel" value="Back" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$HomePageContent$btncancel&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_HomePageContent_btncancel" title="Close" class="btn" />
+                                            <input type="submit" name="ctl00$HomePageContent$btnmobile" value="Proceed" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$HomePageContent$btnmobile&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_HomePageContent_btnmobile" title="Close" class="btn" />
+                                        </td>
+                                    </tr>
+                                </table>
+
+</div>
+                        |0|hiddenField|__LASTFOCUS||0|hiddenField|__EVENTTARGET||0|hiddenField|__EVENTARGUMENT||924|hiddenField|__VIEWSTATE|/wEPDwUKLTEzMzQyNDA4MRBkZBYCZg9kFgICAQ9kFgYCAw9kFgICAQ9kFgJmD2QWAmYPZBYCZg9kFgQCAQ9kFgJmDw8WAh4EVGV4dAURNTQwMDAyNDkwNzAwMDA5OTlkZAIDD2QWBAICDxYCHgdWaXNpYmxlaGQCBA8WAh8BaGQCBQ9kFgRmD2QWAmYPZBYCAgEPPCsADQEADxYCHwFoZGQCAQ9kFgJmD2QWAgIBD2QWAgIBD2QWBAIBDxYCHwFnFgJmD2QWAgIBD2QWAmYPZBYSAgsPPCsADQBkAg0PZBYCAgEPDxYEHwAFETU0MDAwMjQ5MDcwMDAwOTk5HgdFbmFibGVkaGRkAhEPEGRkFgECAWQCEw8PFgIfAWdkZAIXDw8WAh8BZ2RkAhsPDxYCHwFoZBYEAgUPDxYCHwJnZGQCDw8PFgIfAGVkZAIdDw8WBB8BaB4QQ2F1c2VzVmFsaWRhdGlvbmdkZAIfDw8WAh8ABQVDbG9zZRYCHgdvbmNsaWNrBQ93aW5kb3cuY2xvc2UoKTtkAisPDxYCHwAFBzM4MTc0MTBkZAIDDxYCHwFoZAIHD2QWAmYPZBYCZg9kFgYCAQ8PFgIfAAUQSVAgQWRkcmVzcyA6IDQ0LmRkAgIPDxYCHwAFKUFTUCBTZXNzaW9uIElEIDogams0NXZiNTVwMG55YjIzd3JvMmdkNTM0ZGQCAw8PFgIfAGVkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUQY3RsMDAkaW1nYnRuSG9tZQUSY3RsMDAkaW1nYnRuTG9nb3V0BTBjdGwwMCRIb21lUGFnZUNvbnRlbnQkU3ViVW5pdERldGFpbHNMaXN0R3JpZFZpZXcPPCsACgIGFQEJU3ViVW5pdFBLCAL/////D2Q=|156|hiddenField|__EVENTVALIDATION|/wEWEwKPrPm/AwLz27n+AwLlj5PNDAL6j5PNDAL14LkjArDoruwKAqX755IOArjz5doFAuKal4gJAsyd7fMNApaB9p8GArG9oZwHArL3gesGAtTens8IAszHqKcBApzUytwBAoLjnPUNApy9h6AMApvCsp8F|0|asyncPostBackControlIDs|||28|postBackControlIDs||ctl00$HomePageContent$button|35|updatePanelIDs||tctl00$HomePageContent$UpdatePanel1|0|childUpdatePanelIDs|||34|panelsToRefreshIDs||ctl00$HomePageContent$UpdatePanel1|2|asyncPostBackTimeout||90|97|formAction||RegisteredEmployees.aspx?userPk=XnUBQWLv2ClMGcDMhZatAywZM+Qy2nOG&status=UNRF86AauDI%3d&aadhaarNo=|20|pageTitle||EmployeeRegistration|64|arrayDeclaration|Page_Validators|document.getElementById("ctl00_HomePageContent_rfvEmployerCode")|72|arrayDeclaration|Page_Validators|document.getElementById("ctl00_HomePageContent_RequiredFieldValidator3")|91|arrayDeclaration|Page_Validators|document.getElementById("ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1")|210|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=1S69Q75bv9bxNZKsrvCGAS9DYAA6CS96ao-sII-BcaLxtIPH5YXGo1UI_j79x7rqbRxERwRMM3a9kaqVc63TU5pjNWOIra0xOa8MOXD97QyLdLGvTgZEwlK9XJmlhFY61vZWX7OhH54B4VGe7le5RckUSLA1&t=18a43c7f|218|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=S2EdcwRowuWAOSxx0D57MJGzKhZKODoOS5vjRdQWKRSSO9NyW1hIjnYwt17ZMWz72_7IhP3n68u30OrgQPgyYn8ciqv3-9TC8AprBp72KkAF6IORb_6WA2iL-Jd4icwbeIEnuzbpz-cGWLV6pWHXSzTT6jU1&t=ffffffff87636c38|239|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=zPTcTMpHG8lobh4D6bNFO85wonNVQz-7cqZ0Wtby7UB-wtTkT58I_-b4PRvg2XgZmhbHnb2lqpZogJ9WkRBVd_dmO-ZcqwtbelY_lg21KU_pS9yOTzKvH3rXahOMmrD7GWhkQbz_iRmTG1QmWOOsvoPN0B5EuDRNicWSVrmkiI81Dc_L0&t=ffffffff87636c38|261|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=5L1WMTLyHbdqge-tzjiHIeVUWMYYpYBgBt_SbHTsNJhBu2bx49nH3EyBvD-q_nPudFRVbghxHNWcCdxaoabbdzoFhHKpUTQr1ruuljJXRTDmgga6eck9bwVLfAJZHXgOaDMsJHTtz6mjDiLRIAekjyrioNbr2zc5ouKEmjSycqFofaDUvOHvw_kgvjPU0UyfjKmdQw2&t=ffffffff87636c38|218|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=6I6bYDpqfNuSrSBZrUy8dMoPLnzjW-DRvIFYBleAWxX5gt7lydDgBgYadeDk6nfms990UWMwiK3jO42U6IG__ydR6hiUZa3ltRp-NnbRB1x6suWcl9b6Awt4tGxkM8O9FFZ9qrN9UlSp8O6GoJsMQawoleE1&t=ffffffff87636c38|239|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=LXM-ThqkFqxzxcDImgYjeYfNbDxvh8MrLyBX_aTPwxC1Kti4YGVnD7YdqQyJgj2C0qXXqBXCl7swX5jtXq2FHpdFqz40rjbJQthB2wAzh7mjVvN-KryYNVawRFNSc4-pUI6nGZdgrliJZ_tWbjgGL93JKl4WnpCTC9FX0Otvjsdm8v1g0&t=ffffffff87636c38|261|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=auI8qM7zi2eaxcP10mIz4atDQCI-GRbqDKUhbti-GmjawUS_8nvW9WJkWMF3cLmTD3Kbc44B6wlixLG1h6x7zkPjLYDo_vVuwZkIiktUHDznB5Mur6MKIjCNd0e7LDZawfzZBZEB3SJi3NQJHjYfuc6vlBx5u2gsRDIMDbwYX5O9BpIRxETTTJMvWT3JVl-cn3xKdA2&t=ffffffff87636c38|239|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=cR81sAb9GsNBBUr3noAA29Yfc_upojVbth7_6XuG-0Rb0DYMfDn7as5s9SVSp03exn7SxzI7iqAzDd8VofaR0vibJpi1VfkQgspCid4trNTVe8mr2krQL43pzNrzmSIxgkx_pRHCMdpPtW3FgOlUtTd90gvQIaH1qXQQES3O2y1Oy5mT0&t=ffffffff87636c38|239|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=M2BC3sBFcUwr8kk5bE7v5HS0YLrlKoLbZGRX3KcpCIIVf5jOSRg0PGWCxttgQmyt9rFxkguzoJd8IUkbqWBGVHScAlK8MUGsB3-0ctcQ5k8WVqNERhOif_cKBox0yf46VCBHpwMCDN5FnVIpQV3ppAmooBsGgrnO_vyfwFoQQiwsAk7E0&t=ffffffff87636c38|239|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=_BKulS0wae24Gp8lNfGInmux744IREilTIdzMBrSAa3OxkVWouLpqATUdNCb4QRyakMWhv4MXgJiCIqAvw42KGhmJ_t3BfxC4gNCCetygm9p8sg4rBBFID5FTiSfB7HcOb6hPmWdeCIt0Aig_mdpjhQ3p0HIwYPNC-K8XB41ndBeoCZb0&t=ffffffff87636c38|281|scriptStartupBlock|ScriptContentNoTags|
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        |196|scriptStartupBlock|ScriptContentNoTags|
+document.getElementById('ctl00_HomePageContent_rfvEmployerCode').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_HomePageContent_rfvEmployerCode'));
+}
+|212|scriptStartupBlock|ScriptContentNoTags|
+document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3'));
+}
+|250|scriptStartupBlock|ScriptContentNoTags|
+document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1'));
+}
+|343|scriptStartupBlock|ScriptContentNoTags|Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"ctl00_HomePageContent_panMessage","dynamicServicePath":"/InsuranceGlobalWebV4/Employee/RegisteredEmployees.aspx","id":"behUserDetail"}, null, null, $get("ctl00_HomePageContent_lblmodal"));
+});
+|338|scriptStartupBlock|ScriptContentNoTags|Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"ctl00_HomePageContent_Panel3","dynamicServicePath":"/InsuranceGlobalWebV4/Employee/RegisteredEmployees.aspx","id":"behUserDetail1"}, null, null, $get("ctl00_HomePageContent_Label2"));
+});
+|90|onSubmit||if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;|39|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['controltovalidate']|"ctl00_HomePageContent_txtEmployerCode"|3|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['focusOnError']|"t"|39|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['errormessage']|"Please Enter Employer/Subunit Code No"|9|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['display']|"Dynamic"|16|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['validationGroup']|"Trackemployees"|39|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['evaluationfunction']|"RequiredFieldValidatorEvaluateIsValid"|2|expando|document.getElementById('ctl00_HomePageContent_rfvEmployerCode')['initialvalue']|""|39|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['controltovalidate']|"ctl00_HomePageContent_txtmobilenumber"|3|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['focusOnError']|"t"|28|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['errormessage']|"Please enter mobile number"|9|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['display']|"Dynamic"|16|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['validationGroup']|"Trackemployees"|39|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['evaluationfunction']|"RequiredFieldValidatorEvaluateIsValid"|2|expando|document.getElementById('ctl00_HomePageContent_RequiredFieldValidator3')['initialvalue']|""|39|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['controltovalidate']|"ctl00_HomePageContent_txtmobilenumber"|3|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['focusOnError']|"t"|81|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['errormessage']|"The mobile number doesn’t contain 10 digits. Please enter correct Mobile Number"|9|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['display']|"Dynamic"|43|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['evaluationfunction']|"RegularExpressionValidatorEvaluateIsValid"|16|expando|document.getElementById('ctl00_HomePageContent_PresentMobileNoRegularExpressionValidator1')['validationexpression']|"^[6789]\\d{9}$"|189|scriptBlock|ScriptPath|/InsuranceGlobalWebV4/ScriptResource.axd?d=kYpSKogtk8gDFUKs212IERZPQpCtNdWoeNcvixLx4sHJt0viibboF39OYL-R0gLRvdWaBIlQ6ABkbOhD9_LtwZoCEeIBUg3Cj8yWQvQtpFfzC1kvohM3F3_WsSSXCmkrrLiucA2&t=18a43c7f|37|focus||ctl00_HomePageContent_txtEmployerCode|

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/ePayPaymentSuccess.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <nav>
+
+        <div class="upperSection">
+          <a href="#"><img src="/images/efiling_logo.svg" alt="logo"></a>
+  
+            <span>
+                <ul>
+                    <li>Call Us</li>
+                    <span>|</span>
+                    <li>English</li>
+                    <span>|</span>
+                    <li><img src="images/reduceFont.svg"> <img src="images/defaultFont.svg"> <img src="images/increaseFont.svg"></li>
+                    <span>|</span>
+                    <li><img style="padding-top: 2px;" src="images/contrast.svg"></li>
+                    <li class="profile">
+                        <img style="height: 2rem;" src="images/userImageBlank.png" alt="profile">
+                        <div>
+                            <span style="font-weight:600;">licny</span>
+                            <span>tds</span>
+                        </div>
+                    </li>
+                </ul>
+                <p>Do not have an account? <a href="#">Register</a> </p>
+            </span>
+        </div>
+  
+        <div class="menuWidthControl">
+            <ul class="menu">
+                <li><a class="dropDownLink" href="Dashboard.html">Dashboard</a></li>
+                <li class="dropDown">e-File
+                    <ul class="submenu">
+                        <a class="dropDownLink font-black" href="IncomeTaxform.html"><li>File Income Tax Forms</li></a>
+                        <a class="dropDownLink font-black" href="FiledForms.html"><li>View Filed Forms</li></a>
+                        <a class="dropDownLink font-black" href="E-pay_Tax.html"><li>E-Pay Tax</li></a>
+                    </ul>
+                </li>
+                <li>Authorised Partners</li>
+                <li>Services</li>
+                <li>Pending Actions</li>
+                <li>Grievances</li>
+                <li>Help</li>
+                <li><a class="dropDownLink" href="Login.html">Logout</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    
+    <div class="container">
+       <span>Home> e-Pay Tax</span>
+
+       <div class="topContainer">
+            <img src="images/correct.png" alt="tickImg" class="successImg">
+                <div class="successTextHolder">
+                    <h3 class="successHeading">The Challan Payment is  successful!</h3>
+                    <p class="successText">You can download the challan receipt by clicking Download</p>
+                </div>
+            <button class="successBtn" id="epaySuccess">Download</button>
+       </div>
+
+       <h3 class="headingSeparator">Summary</h3>
+
+       <div class="mainContainer">
+            <h4 class="detailHeader">Taxpayer Details</h4>
+            <div class="taxpayerDetails">
+
+                <div class="detailContainer">
+                    <div class="subContainer">
+                        <p class="detailTitle">TAN</p>
+                        <p>CHNK06904C</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Name</p>
+                        <p>COMPANY PRODUCTS PRIVATE LIMITED</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Assessment Year</p>
+                        <p>2023-24</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Financial Year</p>
+                        <p>2022-23</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Tax Applicable (Major Head)</p>
+                        <p>Income Tax (Other than Companies)</p>
+                    </div>
+                </div>
+
+                <div class="detailContainer marginTopModifier">
+                    <div class="subContainer">
+                        <p class="detailTitle">Type Of Payment</p>
+                        <p>Income Tax (Other than Companies)</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Amount(in Rs)</p>
+                        <p>Income Tax (Other than Companies)</p>
+                    </div>
+                    <div class="subContainer">
+                        <p class="detailTitle">Amount(in words)</p>
+                        <p>Income Tax (Other than Companies)</p>
+                    </div>
+                </div>
+                
+            </div>
+       </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="credit">
+            <div>
+                <img src="images/emblem_coloured.svg" alt="logo">
+
+                <p>
+                    Feedback |
+Website Policies |
+Accessibility Statement |
+Site Map |
+Browser Support |
+CoBrowse Help <br>
+Last reviewed and updated on : 6-Nov-2023<br>
+This site is best viewed in 1024 * 768 resolution with latest version of Chrome, Firefox, Safari and Internet Explorer.
+<br>
+Copyright Ⓒ Income Tax Department, Ministry of Finance, Government of India. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/navigationBar.js" ></script>
+    <script>
+        document.getElementById("epaySuccess").onclick = function () {
+            window.open("recepit.html", "_blank");
+        };
+    </script>
+</body>
+</html>

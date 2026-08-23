@@ -1,0 +1,52 @@
+﻿/*Fix for Footer Floating Issue*/
+/*Created By Jeffry Roy*/
+
+html, body
+{
+height:100%;
+overflow: auto ;
+  
+}
+
+body 
+{
+ padding:0; 
+margin:0; 
+background:#FFFFFF
+}
+#outer
+{
+ min-height:100%; 
+margin-bottom:0px
+}
+* html #outer
+{
+height:100%
+}
+#footersection 
+{
+background-color: #FFFFFF;
+border-top:1px solid #000; 
+border-bottom:1px solid #000; 
+clear:both;
+height:50px; 
+position:relative;
+ text-align:center; 
+width:100%;
+z-index:-100}
+* html #footerfootersection
+  {
+height:52px;
+height:50px;
+}
+html > body  #minHeight
+{
+float:left;
+width:0px;
+height:100%;
+margin-bottom:-52px;}
+
+
+
+
+

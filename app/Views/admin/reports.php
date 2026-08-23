@@ -4,96 +4,74 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<div class="card">
-			<div class="card-body">
-				<div class="row m-b-30">
-                    <div class="col-lg-8">
-                        <div class="d-md-flex">
-                        	<!-- <div class="m-b-10 m-r-15">
-                        		<div class="btn-group">
-                        		    <select class="custom-select" style="min-width: 180px;">
-                        		    	<option selected>Package</option>
-                        		    	<option value="">All</option>
-                        		    	<option value="">Basic</option>
-                        		    	<option value="">Pro</option>
-                        		    </select>
-                        		</div>
-                        	</div>
-                            <div class="m-b-10 m-r-15">
-                                <select class="custom-select" style="min-width: 180px;">
-                                    <option selected>All</option>
-                                    <option value="">This Week</option>
-                                    <option value="">This Month</option>
-                                    <option value="">Last Month</option>
-                                    <option value="">This Year</option>
-                                </select>
-                            </div>
-                            <div class="m-b-10 ">
-                            	<div class="form-group">
-                            	     <label>Range Datepicker</label>
-                            	    <div class="d-flex align-items-center">
-                            	        <input type="text" class="form-control datepicker-input" name="start" placeholder="From">
-                            	        <span class="p-h-10">to</span>
-                            	        <input type="text" class="form-control datepicker-input" name="end" placeholder="To">
-                            	    </div>
-                            	</div>
-                            </div> -->
-                            <h3>Reports</h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-right">
-                        <a href="<?php echo base_url() . '/admin/reports/download'; ?>" target="_blank" class="btn btn-primary">
-                            <i class="anticon anticon-file-excel m-r-5"></i>
-                            <span>Export</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                	<div class="col-md-12">
-                		<div class="table-responsive">
-                			<table id="data-table" class="table">
-                			    <thead>
-                			        <tr>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div>
+                <h3 class="font-weight-bold text-dark mb-1" style="font-size: 22px;">Subscription &amp; Sales Reports</h3>
+                <p class="text-muted mb-0" style="font-size: 13.5px;">Detailed logs of package purchases, licenses, and revenue.</p>
+            </div>
+            <div>
+                <a href="<?= base_url('admin/reports/download') ?>" target="_blank" class="btn btn-success d-inline-flex align-items-center gap-1 font-weight-semibold shadow-sm" style="background-color: #059669; border: none; border-radius: 8px; padding: 8px 18px;">
+                    <i class="anticon anticon-file-excel mr-1"></i> Export Excel
+                </a>
+            </div>
+        </div>
 
-                			            <th>ID	</th>
-                			            <th>License	</th>
-                			            <th>User	</th>
-                			            <th>Date	</th>
-                			            <th>Package	</th>
-                			            <th>Duration</th>
-                                        <th>Coupon</th>
-                			            <th>Amount</th>
-
-                			        </tr>
-                			    </thead>
-                			    <tbody>
-                                <?php if (isset($users)) {
-                                    $ii = 1;
-                                    foreach ($users as $user): ?>
-                                        <tr>
-                                            <td><?= $ii++; ?></td>
-                                            <td><?=substr(md5($user['subscription_id']), 0, 10); ?></td>
-                                            <td>
-                                                <?= $user['first_name']; ?> <?= $user['last_name']; ?>
-                                            </td>
-                                            <td><?= date('M d Y', strtotime($user['start_date'])); ?></td>
-                                            <td> <?= $user['title']; ?></td>
-                                            <td>
-                                                <?= $user['duration']; ?>
-                                            </td>
-                                            <td> <?= $user['coupon_used']; ?></td>
-                                            <td>₹ <?= $user['cost']; ?></td>
-                                        </tr>
-                                    <?php endforeach;
-                                } ?>
-                			    </tbody>
-                			    <tfoot>
-
-                			    </tfoot>
-                			</table>
-                		</div>
-                	</div>
-                </div>
+		<div class="admin-table-card">
+			<div class="card-body p-4">
+        		<div class="table-responsive-fixed">
+        			<table id="data-table" class="table table-hover align-middle mb-0">
+        			    <thead>
+        			        <tr>
+        			            <th style="width: 50px;">#</th>
+        			            <th>License Code</th>
+        			            <th>Subscriber</th>
+        			            <th>Start Date</th>
+        			            <th>Package</th>
+        			            <th>Duration</th>
+                                <th>Coupon</th>
+        			            <th>Amount</th>
+        			        </tr>
+        			    </thead>
+        			    <tbody>
+                        <?php if (isset($users)): ?>
+                            <?php $ii = 1; foreach ($users as $user): ?>
+                                <tr>
+                                    <td class="font-weight-bold text-muted">#<?= $ii++; ?></td>
+                                    <td>
+                                        <span class="badge badge-light border font-weight-bold px-2 py-1" style="font-family: monospace; font-size: 12px;">
+                                            <?= strtoupper(substr(md5($user['subscription_id']), 0, 10)); ?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="font-weight-bold text-dark">
+                                            <?= esc($user['first_name'] . ' ' . $user['last_name']); ?>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted small"><?= date('M d, Y', strtotime($user['start_date'])); ?></td>
+                                    <td>
+                                        <span class="badge badge-pill badge-primary font-weight-semibold" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 11.5px;">
+                                            <?= esc($user['title']); ?>
+                                        </span>
+                                    </td>
+                                    <td class="text-muted small"><?= esc($user['duration']); ?></td>
+                                    <td>
+                                        <?php if (!empty($user['coupon_used'])): ?>
+                                            <span class="badge badge-pill badge-warning text-dark font-weight-bold" style="background: #fef3c7; font-size: 11px;">
+                                                <?= esc($user['coupon_used']); ?>
+                                            </span>
+                                        <?php else: ?>
+                                            <span class="text-muted small">-</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <strong class="text-success" style="font-size: 14.5px;">₹<?= number_format($user['cost'], 2); ?></strong>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+        			    </tbody>
+        			</table>
+        		</div>
 			</div>
 		</div>
 	</div>

@@ -125,7 +125,7 @@ h4.form-title {
 
 /* Top padding MUST be 90px+ so nothing overlaps the fixed 70px header! */
 .page-container .main-content {
-    padding: 92px 30px 40px 30px !important;
+    padding: 20px 30px 40px 30px !important;
 }
 
 .page-header {
@@ -408,4 +408,142 @@ h4.form-title {
 
 table.gst3b-payment input {
     min-width: 80px;
+}
+
+/* =======================================================
+   ADMIN MODERN TABLES & DATATABLES SYSTEM
+   ======================================================= */
+.admin-table-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #eef2f6;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.admin-table-card .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-responsive-fixed {
+    max-height: 540px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.table-responsive-fixed thead th,
+.table-hover thead th {
+    position: sticky;
+    top: 0;
+    background: #f8fafc !important;
+    z-index: 5;
+    border-bottom: 2px solid #e2e8f0 !important;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    padding: 13px 16px;
+    white-space: nowrap;
+}
+
+.table-responsive-fixed tbody td,
+.table-hover tbody td {
+    padding: 13px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/* DataTables Styling */
+div.dataTables_wrapper div.dataTables_filter input {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 6px 12px;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+div.dataTables_wrapper div.dataTables_filter input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 6px 10px;
+    font-size: 13.5px;
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important;
+    border-color: #1d4ed8 !important;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    border-radius: 6px;
+}
+
+.pagination .page-item .page-link {
+    border-radius: 6px;
+    margin: 0 2px;
+    color: #475569;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+}
+
+/* Action Icon Buttons */
+.btn-action-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-action-edit {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.btn-action-edit:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.btn-action-delete {
+    background: #fef2f2;
+    color: #dc2626;
+}
+.btn-action-delete:hover {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.btn-action-view {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+.btn-action-view:hover {
+    background: #16a34a;
+    color: #ffffff;
 }

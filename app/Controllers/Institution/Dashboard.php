@@ -24,8 +24,24 @@ class Dashboard extends BaseController
         // Count packages assigned to this institution
         $packageCount = $db->table('institution_packages')
             ->where('PKInstitutionID', $instId)
-            ->where('status', 1)
+            ->where('status', 'active')
             ->countAllResults();
+
+        // Fetch active packages with usage details
+        $packagesList = $db->table('institution_packages ip')
+            ->select('ip.*, bp.title, bp.custom_title, bp.duration, bp.cost')
+            ->join('b2b_packages bp', 'bp.PKPackageID = ip.PKPackageID', 'left')
+            ->where('ip.PKInstitutionID', $instId)
+            ->orderBy('ip.PKInstitutionPackageID', 'desc')
+            ->get()->getResultArray();
+
+        foreach ($packagesList as &$pkg) {
+            $used = $pkg['used_students'] ?? 0;
+            $max = $pkg['max_students'] ?? 1;
+            $pkg['usage_percent'] = $max > 0 ? min(100, round(($used / $max) * 100)) : 0;
+            $pkg['remaining_seats'] = max(0, $max - $used);
+            $pkg['display_title'] = !empty($pkg['custom_title']) ? $pkg['custom_title'] : ($pkg['title'] ?? 'Standard Package');
+        }
 
         // Count pending assessment reviews
         $pendingReviews = $db->table('student_assessments')
@@ -37,7 +53,7 @@ class Dashboard extends BaseController
 
         // Fetch recent students
         $studentBuilder = $db->table('users u')
-            ->select('u.*, bp.title as package_name')
+            ->select('u.*, COALESCE(NULLIF(bp.custom_title, ""), bp.title) as package_name')
             ->join('mst_subscriptions s', 's.user_id = u.user_id', 'left')
             ->join('b2b_packages bp', 'bp.PKPackageID = s.package_id', 'left')
             ->where('u.deleted', 0);
@@ -54,12 +70,13 @@ class Dashboard extends BaseController
         if (!empty($instId)) {
             $asmtBuilder->where('sa.institution_id', $instId);
         }
-        $recentSubmissions = $asmtBuilder->orderBy('sa.id', 'desc')->limit(6)->get()->getResultArray();
+        $recentSubmissions = $asmtBuilder->orderBy('sa.id', 'desc')->limit(8)->get()->getResultArray();
 
         $data = [
             'institution'        => $institution,
             'student_count'      => $studentCount,
             'package_count'      => $packageCount,
+            'packages_list'      => $packagesList,
             'totalStudents'      => $studentCount,
             'activePackages'     => $packageCount,
             'pending_reviews'    => $pendingCount,

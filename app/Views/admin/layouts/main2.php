@@ -28,7 +28,12 @@
                 bottom: 0 !important;
                 width: 240px !important;
                 z-index: 1000 !important;
+                overflow: hidden !important;
+            }
+            .side-nav .side-nav-inner {
+                height: calc(100vh - 70px) !important;
                 overflow-y: auto !important;
+                overflow-x: hidden !important;
             }
             .header {
                 position: fixed !important;
@@ -42,6 +47,16 @@
                 padding-top: 70px !important;
                 min-height: 100vh !important;
             }
+        }
+        .side-nav .side-nav-inner::-webkit-scrollbar {
+            width: 5px;
+        }
+        .side-nav .side-nav-inner::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+        .side-nav .side-nav-inner::-webkit-scrollbar-track {
+            background: transparent;
         }
     </style>
 </head>

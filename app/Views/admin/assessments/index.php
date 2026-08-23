@@ -29,51 +29,54 @@
     </div>
 <?php endif; ?>
 
-<div class="card">
-    <div class="card-body">
+<div class="admin-table-card">
+    <div class="card-body p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">All Assessments</h4>
-            <button type="button" class="btn btn-primary" onclick="openAddModal()">
-                <i class="anticon anticon-plus m-r-5"></i> Add New
+            <div>
+                <h4 class="font-weight-bold text-dark mb-0">All Assessments</h4>
+                <small class="text-muted">Interactive test questions and case studies</small>
+            </div>
+            <button type="button" class="btn btn-primary d-inline-flex align-items-center gap-1 font-weight-semibold shadow-sm" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6); border: none; border-radius: 8px; padding: 8px 18px;" onclick="openAddModal()">
+                <i class="anticon anticon-plus mr-1"></i> Add New Assessment
             </button>
         </div>
 
-        <div class="table-responsive m-t-20">
-            <table class="table table-hover" id="assessmentsTable">
+        <div class="table-responsive-fixed mt-3">
+            <table class="table table-hover align-middle mb-0" id="assessmentsTable">
                 <thead>
                     <tr>
-                        <th style="width: 60px;">#</th>
-                        <th>Category</th>
-                        <th>Company</th>
+                        <th style="width: 50px;">#</th>
+                        <th>Category / Course</th>
+                        <th>Target Company</th>
                         <th>Question Preview</th>
-                        <th>Created At</th>
-                        <th style="width: 140px;" class="text-center">Actions</th>
+                        <th>Created Date</th>
+                        <th style="width: 120px;" class="text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (!empty($assessments)): ?>
                         <?php $i = 1; foreach ($assessments as $item): ?>
                             <tr>
-                                <td>#<?= $i++ ?></td>
+                                <td class="font-weight-bold text-muted">#<?= $i++ ?></td>
                                 <td>
-                                    <span class="badge badge-pill badge-blue font-size-12">
+                                    <span class="badge badge-pill badge-primary font-weight-semibold" style="background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 12px;">
                                         <?= esc($item['course_name'] ?: 'N/A') ?>
                                     </span>
                                 </td>
                                 <td>
-                                    <strong><?= esc($item['company_name'] ?: 'N/A') ?></strong>
+                                    <strong class="text-dark"><?= esc($item['company_name'] ?: 'N/A') ?></strong>
                                 </td>
                                 <td>
-                                    <div class="text-truncate" style="max-width: 380px;">
+                                    <div class="text-truncate font-weight-medium" style="max-width: 360px;" title="<?= strip_tags($item['question']) ?>">
                                         <?= strip_tags($item['question']) ?>
                                     </div>
                                 </td>
-                                <td><?= date('d M Y, h:i A', strtotime($item['created_at'] ?: 'now')) ?></td>
+                                <td class="text-muted small"><?= date('d M Y, h:i A', strtotime($item['created_at'] ?: 'now')) ?></td>
                                 <td class="text-center">
-                                    <button class="btn btn-icon btn-hover btn-sm btn-rounded text-primary" onclick="openEditModal(<?= $item['id'] ?>)" title="Edit">
+                                    <button class="btn-action-icon btn-action-edit" onclick="openEditModal(<?= $item['id'] ?>)" title="Edit">
                                         <i class="anticon anticon-edit"></i>
                                     </button>
-                                    <a href="<?= base_url('admin/assessments/delete/' . $item['id']) ?>" class="btn btn-icon btn-hover btn-sm btn-rounded text-danger" onclick="return confirm('Are you sure you want to delete this assessment?');" title="Delete">
+                                    <a href="<?= base_url('admin/assessments/delete/' . $item['id']) ?>" class="btn-action-icon btn-action-delete ml-1" onclick="return confirm('Are you sure you want to delete this assessment?');" title="Delete">
                                         <i class="anticon anticon-delete"></i>
                                     </a>
                                 </td>

@@ -3,30 +3,35 @@
 <?= $this->section('main_content'); ?>
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5>All Users</h5>
-                    <div>
-                         <a href="<?= base_url('admin/add-user')?>" class="btn btn-sm btn-primary">Import Users</a>  
-                    </div>
-                </div>
-                <div class="m-t-30">
-                    <div class="table-responsive">
-                        <table class="table table-hover" id="users-ajax-table">
-                            <thead>
+        <!-- PAGE TITLE BAR -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div>
+                <h3 class="font-weight-bold text-dark mb-1" style="font-size: 22px;">All Registered Users</h3>
+                <p class="text-muted mb-0" style="font-size: 13.5px;">Manage enrolled students, subscriptions, and learning analytics.</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <a href="<?= base_url('admin/add-user')?>" class="btn btn-primary d-inline-flex align-items-center gap-1 font-weight-semibold shadow-sm" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6); border: none; border-radius: 8px; padding: 8px 18px;">
+                    <i class="anticon anticon-upload mr-1"></i> Import Users
+                </a>
+            </div>
+        </div>
+
+        <div class="admin-table-card">
+            <div class="card-body p-4">
+                <div class="table-responsive-fixed">
+                    <table class="table table-hover align-middle mb-0" id="users-ajax-table">
+                        <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>User</th>
+                                <th style="width: 50px;">ID</th>
+                                <th>Student / User</th>
                                 <th>Email</th>
-                                <th>Joined</th>
-                                <th>Actions</th>
+                                <th>Joined Date</th>
+                                <th class="text-right pr-3" style="width: 140px;">Actions</th>
                             </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

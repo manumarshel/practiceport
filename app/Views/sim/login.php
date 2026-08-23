@@ -7,17 +7,12 @@
     <title>GST Simulation</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../public/assets/user/images/logo/favicon.png">
-
-    <!-- page css -->
+    <link rel="shortcut icon" href="<?= base_url('public/assets/user/images/logo/favicon.png') ?>">
 
     <!-- Core css -->
-<!--    <link href="../public/assets/user/css/app.min.css" rel="stylesheet">-->
-<!--    <link rel="stylesheet" href="../public/assets/user/css/style.css">-->
-
-    <link rel="stylesheet" href="../public/assets/simulation/css/fa-bootstrap1.1.css">
-    <link rel="stylesheet" href="../public/assets/simulation/css/staticapp1.2.css" title="app-css"/>
-    <link rel="stylesheet" href="../public/assets/simulation/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('public/assets/simulation/css/fa-bootstrap1.1.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('public/assets/simulation/css/staticapp1.2.css') ?>" title="app-css"/>
+    <link rel="stylesheet" href="<?= base_url('public/assets/simulation/css/style.css') ?>">
 
 </head>
 
@@ -115,7 +110,7 @@
                                         </div>
                                     <?php endif; ?>
                                     <p class="mand-text" data-ng-bind="trans.HLP_MAND_FIELD">indicates mandatory fields</p>
-                                    <form action="simulation" method="post">
+                                    <form action="<?= base_url('simulation') ?>" method="post">
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <label for="" class="m-cir reg">Username</label>

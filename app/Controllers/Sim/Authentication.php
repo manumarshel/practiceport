@@ -14,7 +14,7 @@ class Authentication extends BaseController
     public function index()
     {
         $data = [];
-        helper(['form']);
+        helper(['form', 'url']);
 
         if ($this->request->getMethod() == 'post') {
             $rules = [

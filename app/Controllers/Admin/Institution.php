@@ -13,49 +13,91 @@ use Config\Database;
 class Institution extends BaseController
 {
     public function index()
-{
-    $data = [];
-   $db = \Config\Database::connect();
+    {
+        $data = [];
+        $db = \Config\Database::connect();
 
-$builder = $db->table('mst_institutions i');
+        $builder = $db->table('mst_institutions i');
 
-$builder->select("
-    i.*,
-    ip.PKInstitutionPackageID,
-    ip.start_date,
-    ip.end_date,
-    ip.max_students,
-    p.title as package_title
-");
+        $builder->select("
+            i.*,
+            ip.PKInstitutionPackageID,
+            ip.start_date,
+            ip.end_date,
+            ip.max_students,
+            ip.used_students,
+            ip.status as package_status,
+            COALESCE(NULLIF(p.custom_title, ''), p.title) as package_title
+        ");
 
-$builder->join(
-    'institution_packages ip',
-    'ip.PKInstitutionID = i.PKInstitutionID AND ip.status = 1',
-    'left'
-);
+        $builder->join(
+            'institution_packages ip',
+            'ip.PKInstitutionID = i.PKInstitutionID AND (ip.status = "active" OR ip.status = "1" OR ip.status = 1)',
+            'left'
+        );
 
-$builder->join(
-    'b2b_packages p',
-    'p.PKPackageID = ip.PKPackageID',
-    'left'
-);
+        $builder->join(
+            'b2b_packages p',
+            'p.PKPackageID = ip.PKPackageID',
+            'left'
+        );
 
-$builder->where('i.status', 1);
+        $builder->orderBy('i.PKInstitutionID', 'DESC');
 
-$data['instututions'] = $builder->get()->getResult();
+        $data['instututions'] = $builder->get()->getResult();
 
+        $all_courses = new MasterB2bPackageModel();
+        $data['packages'] = $all_courses->findAll();
 
-// $builder = $db->table('institution_packages ip');
-// $builder->select('ip.*, p.name');
-// $builder->join('b2b_packages p', 'p.PKPackageID = ip.PKPackageID');
-// $builder->where('ip.status', 1); // Only active
-// $data['packages'] = $builder->get()->getResult();
+        return view('admin/institution/index', $data);
+    }
 
- $all_courses = new MasterB2bPackageModel();
-          $data['packages']= $all_courses->findAll();
+    public function reset_password()
+    {
+        $institutionId = $this->request->getPost('institution_id');
+        $newPassword = $this->request->getPost('new_password');
 
-    return view('admin/institution/index', $data);
-}
+        if (empty($institutionId) || empty($newPassword) || strlen($newPassword) < 4) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Password must be at least 4 characters.'
+            ]);
+        }
+
+        $instModel = new InstitutionModel();
+        $institution = $instModel->find($institutionId);
+        if (!$institution) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Institution not found.'
+            ]);
+        }
+
+        // InstitutionModel beforeUpdate automatically hashes the password
+        $instModel->update($institutionId, ['password' => $newPassword]);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Password reset successfully for ' . esc($institution['title'])
+        ]);
+    }
+
+    public function toggle_status($id)
+    {
+        $instModel = new InstitutionModel();
+        $inst = $instModel->find($id);
+
+        if (!$inst) {
+            return redirect()->back()->with('msg', 'Institution not found');
+        }
+
+        $newStatus = ($inst['status'] == 1 || $inst['status'] == '1') ? 0 : 1;
+        $instModel->update($id, ['status' => $newStatus]);
+
+        $statusText = ($newStatus == 1) ? 'activated' : 'temporarily deactivated';
+        return redirect()->to(base_url('/admin/institutions'))
+                         ->with('msg', 'Institution "' . esc($inst['title']) . '" has been ' . $statusText . ' successfully.');
+    }
 
     public function indexold()
     {

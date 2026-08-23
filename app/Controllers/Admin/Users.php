@@ -70,13 +70,16 @@ class Users extends \App\Controllers\BaseController
         foreach ($users as $user) {
             $row = [];
             $row[] = '#' . $ii++;
-            $row[] = $user->first_name . ' ' . $user->last_name;
-            $row[] = $user->email;
-            $row[] = date('M d Y', strtotime($user->date_registered));
+            $row[] = '<span class="font-weight-bold text-dark">' . esc($user->first_name . ' ' . $user->last_name) . '</span>';
+            $row[] = esc($user->email);
+            $row[] = date('M d, Y', strtotime($user->date_registered));
             
             $actionHtml = '<div class="d-flex align-items-center">
-                                <button class="btn btn-sm btn-primary view-progress-btn mr-2" data-userid="' . $user->user_id . '" title="View Progress">
+                                <button class="btn btn-sm btn-primary view-progress-btn mr-2" data-userid="' . $user->user_id . '" title="View Progress" style="border-radius: 6px; padding: 4px 10px; font-size: 12px;">
                                     <i class="anticon anticon-line-chart"></i> Progress
+                                </button>
+                                <button class="btn btn-sm btn-warning text-dark reset-password-btn mr-2" data-userid="' . $user->user_id . '" data-username="' . esc($user->first_name . ' ' . $user->last_name) . '" data-email="' . esc($user->email) . '" title="Reset Password" style="border-radius: 6px; padding: 4px 10px; font-size: 12px; background-color: #fef3c7; border-color: #fde68a;">
+                                    <i class="anticon anticon-key"></i> Reset
                                 </button>
                                 <div class="dropdown dropdown-animated scale-left">
                                     <a class="text-gray font-size-18" href="javascript:void(0);" data-toggle="dropdown">
@@ -101,6 +104,36 @@ class Users extends \App\Controllers\BaseController
         ];
         
         return $this->response->setJSON($response);
+    }
+
+    public function reset_password()
+    {
+        $userId = $this->request->getPost('user_id');
+        $newPassword = $this->request->getPost('new_password');
+
+        if (empty($userId) || empty($newPassword) || strlen($newPassword) < 4) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Password must be at least 4 characters.'
+            ]);
+        }
+
+        $userModel = new UserModel();
+        $user = $userModel->find($userId);
+        if (!$user) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'User not found.'
+            ]);
+        }
+
+        // UserModel beforeUpdate automatically hashes the password
+        $userModel->update($userId, ['password' => $newPassword]);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Password reset successfully for ' . esc($user['first_name'] . ' ' . $user['last_name'])
+        ]);
     }
     
     

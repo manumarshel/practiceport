@@ -52,48 +52,51 @@ $routes->group('admin', function ($routes) {
     
      $routes->add('user', 'Admin/Users::index', ['filter' => 'auth']);
      $routes->match(['get', 'post'], 'add-user', 'Admin/Users::user_import', ['filter' => 'auth']);
-    $routes->match(['get'], 'delete_user/(:num)', 'Admin\Users::delete_user/$1', ['filter' => 'auth']);
-    $routes->get('export-student-progress/(:num)', 'Admin\Users::export_student_progress/$1', ['filter' => 'auth']);
-    
-    // Reports
-    $routes->get('reports', 'Admin\Reports::index', ['filter' => 'auth']);
-    $routes->post('reports/export', 'Admin\Reports::export', ['filter' => 'auth']);
+     $routes->post('users/reset-password', 'Admin\Users::reset_password', ['filter' => 'auth']);
+     $routes->match(['get'], 'delete_user/(:num)', 'Admin\Users::delete_user/$1', ['filter' => 'auth']);
+     $routes->get('export-student-progress/(:num)', 'Admin\Users::export_student_progress/$1', ['filter' => 'auth']);
+     
+     // Reports
+     $routes->get('reports', 'Admin\Reports::index', ['filter' => 'auth']);
+     $routes->post('reports/export', 'Admin\Reports::export', ['filter' => 'auth']);
 
-    $routes->add('questions', 'Admin/Question::index', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'add-question', 'Admin/Question::add_question', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'add-question/(:num)', 'Admin/Question::add_question', ['filter' => 'auth']);
-    $routes->match(['post'], 'delete-question', 'Admin/Question::delete', ['filter' => 'auth']);
+     $routes->add('questions', 'Admin/Question::index', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'add-question', 'Admin/Question::add_question', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'add-question/(:num)', 'Admin/Question::add_question', ['filter' => 'auth']);
+     $routes->match(['post'], 'delete-question', 'Admin/Question::delete', ['filter' => 'auth']);
 
-    $routes->add('companies', 'Admin/Companies::index', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'add-company', 'Admin/Companies::add_company', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'add-company/(:num)', 'Admin/Companies::add_company', ['filter' => 'auth']);
+     $routes->add('companies', 'Admin/Companies::index', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'add-company', 'Admin/Companies::add_company', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'add-company/(:num)', 'Admin/Companies::add_company', ['filter' => 'auth']);
 
-    $routes->add('licenses', 'Admin/Licenses::index', ['filter' => 'auth']);
-    $routes->match(['post'], 'add-license', 'Admin/Licenses::add', ['filter' => 'auth']);
+     $routes->add('licenses', 'Admin/Licenses::index', ['filter' => 'auth']);
+     $routes->match(['post'], 'add-license', 'Admin/Licenses::add', ['filter' => 'auth']);
 
-    $routes->add('packages', 'Admin/Packages::index', ['filter' => 'auth']);
-    $routes->match(['post', 'get'], 'add-packages', 'Admin/Packages::add', ['filter' => 'auth']); 
-    $routes->match(['get'], 'delete_package/(:num)', 'Admin/Packages::delete_package/$1', ['filter' => 'auth']);
-    $routes->match(['get'], 'change_status/(:num)', 'Admin/Packages::change_status/$1', ['filter' => 'auth']);
-    $routes->match(['get'], 'change_status_deactivate/(:num)', 'Admin/Packages::change_status_deactivate/$1', ['filter' => 'auth']);
- 
-    $routes->add('ads', 'Admin/Ads::index', ['filter' => 'auth']);
-    $routes->match(['post', 'get'], 'add-ads', 'Admin/Ads::add', ['filter' => 'auth']);
+     $routes->add('packages', 'Admin/Packages::index', ['filter' => 'auth']);
+     $routes->match(['post', 'get'], 'add-packages', 'Admin/Packages::add', ['filter' => 'auth']); 
+     $routes->match(['get'], 'delete_package/(:num)', 'Admin/Packages::delete_package/$1', ['filter' => 'auth']);
+     $routes->match(['get'], 'change_status/(:num)', 'Admin/Packages::change_status/$1', ['filter' => 'auth']);
+     $routes->match(['get'], 'change_status_deactivate/(:num)', 'Admin/Packages::change_status_deactivate/$1', ['filter' => 'auth']);
+  
+     $routes->add('ads', 'Admin/Ads::index', ['filter' => 'auth']);
+     $routes->match(['post', 'get'], 'add-ads', 'Admin/Ads::add', ['filter' => 'auth']);
 //    $routes->match(['post'], 'delete-ad/(:num)', 'Admin/Ads::delete', ['filter' => 'auth']);
 
-    $routes->match(['get', 'post'], 'b2b_packages', 'Admin\B2b::index', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'b2b_package_add', 'Admin\B2b::add', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'b2b_package_update/(:num)', 'Admin\B2b::update/$1', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'b2b_package_delete/(:num)', 'Admin\B2b::delete_package/$1', ['filter' => 'auth']);
-      $routes->match(['get', 'post'], 'renew-package', 'Admin/Institution::renewPackage', ['filter' => 'auth']);
-      
+     $routes->match(['get', 'post'], 'b2b_packages', 'Admin\B2b::index', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'b2b_package_add', 'Admin\B2b::add', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'b2b_package_update/(:num)', 'Admin\B2b::update/$1', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'b2b_package_delete/(:num)', 'Admin\B2b::delete_package/$1', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'renew-package', 'Admin/Institution::renewPackage', ['filter' => 'auth']);
+       
 
-    $routes->add('institutions', 'Admin/Institution::index', ['filter' => 'auth']);
-    $routes->match(['get', 'post'], 'add', 'Admin/Institution::add', ['filter' => 'auth']);
-$routes->match( ['get','post'],'assign_package','Admin/Institution::assign_package', ['filter' => 'auth']);   
-$routes->match( ['get','post'],'delete_package/(:num)','Admin/Institution::delete_package/$1', ['filter' => 'auth']);
-$routes->match( ['get','post'],'update/(:num)','Admin/Institution::update/$1', ['filter' => 'auth']); 
-$routes->match( ['get','post'],'delete/(:num)','Admin/Institution::delete/$1', ['filter' => 'auth']); 
+     $routes->add('institutions', 'Admin/Institution::index', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'add', 'Admin/Institution::add', ['filter' => 'auth']);
+     $routes->match(['get','post'],'assign_package','Admin/Institution::assign_package', ['filter' => 'auth']);   
+     $routes->match(['get','post'],'delete_package/(:num)','Admin/Institution::delete_package/$1', ['filter' => 'auth']);
+     $routes->match(['get','post'],'update/(:num)','Admin/Institution::update/$1', ['filter' => 'auth']); 
+     $routes->match(['get','post'],'delete/(:num)','Admin/Institution::delete/$1', ['filter' => 'auth']); 
+     $routes->post('institutions/reset-password', 'Admin\Institution::reset_password', ['filter' => 'auth']);
+     $routes->match(['get', 'post'], 'toggle_institution_status/(:num)', 'Admin\Institution::toggle_status/$1', ['filter' => 'auth']); 
 
 
     $routes->add('videos', 'Admin/Videos::index', ['filter' => 'auth']);

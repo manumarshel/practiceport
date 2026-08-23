@@ -43,7 +43,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="progressModalLabel">Student Progress Analysis</h5>
+        <h5 class="modal-title font-weight-bold" id="progressModalLabel">Student Progress Analysis</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -55,11 +55,59 @@
   </div>
 </div>
 
+<!-- Reset Password Modal -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form id="resetPasswordForm">
+        <?= csrf_field() ?>
+        <input type="hidden" name="user_id" id="reset_user_id">
+        <div class="modal-header">
+          <h5 class="modal-title font-weight-bold" id="resetPasswordModalLabel">
+            <i class="anticon anticon-key text-warning mr-1"></i> Reset User Password
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-light border mb-3">
+            <div class="small text-muted">User Account:</div>
+            <strong class="text-dark d-block" id="reset_user_name"></strong>
+            <small class="text-muted" id="reset_user_email"></small>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="font-weight-bold">New Password</label>
+            <div class="input-group">
+              <input type="text" class="form-control" name="new_password" id="new_password_input" placeholder="Enter new password" required minlength="4">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="generatePasswordBtn">
+                  <i class="anticon anticon-sync"></i> Generate
+                </button>
+              </div>
+            </div>
+            <small class="text-muted">Minimum 4 characters.</small>
+          </div>
+
+          <div id="resetAlertPlaceholder"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="savePasswordBtn">
+            <i class="anticon anticon-check"></i> Update Password
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
     
-    $('#users-ajax-table').DataTable({
+    var usersTable = $('#users-ajax-table').DataTable({
         "processing": true,
         "serverSide": true,
         "ajax": {
@@ -91,6 +139,60 @@ $(document).ready(function() {
             },
             error: function() {
                 $('#progressModalBody').html('<div class="alert alert-danger">Failed to load progress data. Please try again.</div>');
+            }
+        });
+    });
+
+    // Reset Password Click
+    $(document).on('click', '.reset-password-btn', function(e) {
+        e.preventDefault();
+        var userId = $(this).data('userid');
+        var userName = $(this).data('username');
+        var userEmail = $(this).data('email');
+
+        $('#reset_user_id').val(userId);
+        $('#reset_user_name').text(userName);
+        $('#reset_user_email').text(userEmail);
+        $('#new_password_input').val('');
+        $('#resetAlertPlaceholder').html('');
+        $('#resetPasswordModal').modal('show');
+    });
+
+    // Generate random password
+    $('#generatePasswordBtn').on('click', function() {
+        var chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789!@#$';
+        var password = '';
+        for (var i = 0; i < 8; i++) {
+            password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        $('#new_password_input').val(password);
+    });
+
+    // Submit Reset Password
+    $('#resetPasswordForm').on('submit', function(e) {
+        e.preventDefault();
+        var btn = $('#savePasswordBtn');
+        btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status"></span> Updating...');
+
+        $.ajax({
+            url: '<?= base_url("admin/users/reset-password") ?>',
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(res) {
+                btn.prop('disabled', false).html('<i class="anticon anticon-check"></i> Update Password');
+                if (res.status === 'success') {
+                    $('#resetAlertPlaceholder').html('<div class="alert alert-success">' + res.message + '</div>');
+                    setTimeout(function() {
+                        $('#resetPasswordModal').modal('hide');
+                    }, 1500);
+                } else {
+                    $('#resetAlertPlaceholder').html('<div class="alert alert-danger">' + res.message + '</div>');
+                }
+            },
+            error: function() {
+                btn.prop('disabled', false).html('<i class="anticon anticon-check"></i> Update Password');
+                $('#resetAlertPlaceholder').html('<div class="alert alert-danger">An unexpected error occurred.</div>');
             }
         });
     });

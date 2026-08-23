@@ -270,9 +270,8 @@ class Dashboard extends BaseController
 
         $data['packages'] = $packages;
         $data['title'] = 'Simulations';
-        $data['hide_welcome'] = true;
         
-        return view('user/dashboard', $data);
+        return view('user/simulations', $data);
     }
     
       

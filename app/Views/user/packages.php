@@ -41,7 +41,7 @@
                         if (isset($current_subscriptions) && !empty($current_subscriptions)):
 
                             $today = date('y-m-d');
-                            $renewal_url = '<?= base_url('checkout') ?>';
+                            $renewal_url = base_url('checkout');
 
                             foreach ($current_subscriptions as $current_subscription):
 
@@ -74,10 +74,10 @@
 
                                         <?php if ($today > $end_date):
 
-                                            $renewal_url = '<?= base_url('checkout') ?>' . $current_subscription->package_id;
+                                            $renewal_url = base_url('checkout/' . $current_subscription->package_id);
                                             ?>
 
-                                            <a href="#"
+                                            <a href="<?= $renewal_url ?>"
                                                class="btn btn-warning btn-sm custom-btn-warning">
                                                 Renew
                                             </a>
@@ -162,7 +162,7 @@
                                                 <td>
 
                                                     <?php
-                                                    $renewal_url = '<?= base_url('checkout') ?>' . $package['package_id'];
+                                                    $renewal_url = base_url('checkout/' . $package['package_id']);
                                                     ?>
 
                                                     <a href="<?php echo $renewal_url; ?>"

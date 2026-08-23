@@ -233,7 +233,7 @@
                                 </p>
                             </div>
                             <div class="text-end">
-                                <span class="fw-bold text-dark fs-5"><?= $pkg['progress'] ?>%</span>
+                                <span class="fw-bold text-dark fs-5"><?= $pkg['progress'] ?? 0 ?>%</span>
                                 <span class="text-muted d-block small">Completed</span>
                             </div>
                         </div>
@@ -241,14 +241,14 @@
                         <!-- Progress Bar -->
                         <div class="progress progress-bar-custom mb-3">
                             <div class="progress-bar" role="progressbar" 
-                                 style="width: <?= max(0, min(100, $pkg['progress'])) ?>%; background: linear-gradient(90deg, #ff7a00, #ea580c);" 
-                                 aria-valuenow="<?= $pkg['progress'] ?>" aria-valuemin="0" aria-valuemax="100">
+                                 style="width: <?= max(0, min(100, $pkg['progress'] ?? 0)) ?>%; background: linear-gradient(90deg, #ff7a00, #ea580c);" 
+                                 aria-valuenow="<?= $pkg['progress'] ?? 0 ?>" aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center pt-2 border-top flex-wrap gap-2">
                             <span class="text-muted small">
-                                <i class="bi bi-grid-3x3-gap-fill text-muted me-1"></i> <?= $pkg['course_count'] ?> Specialized Modules
+                                <i class="bi bi-grid-3x3-gap-fill text-muted me-1"></i> <?= $pkg['course_count'] ?? 6 ?> Specialized Modules
                             </span>
                             <a href="<?= $runLink ?>" class="btn btn-sm btn-outline-warning fw-semibold px-3 d-inline-flex align-items-center gap-1" style="color: #ea580c; border-color: #ff7a00;">
                                 <span>Open Modules</span>
@@ -268,120 +268,149 @@
     <?php endif; ?>
 </div>
 
-<!-- SPLIT ACTIVITY SECTION (RECENT LEARNING & ASSESSMENT SUBMISSIONS) -->
+<!-- SPLIT ACTIVITY SECTION (RECENT LEARNING & ASSESSMENT SUBMISSIONS IN FIXED-HEIGHT RESPONSIVE TABLES) -->
 <div class="row g-4 mb-4">
     
-    <!-- LEFT: RECENT LEARNING ACTIVITY -->
+    <!-- LEFT: RECENT LEARNING ACTIVITY TABLE -->
     <div class="col-lg-7">
-        <div class="activity-feed-card h-100">
+        <div class="activity-feed-card d-flex flex-column" style="min-height: 420px;">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <h5 class="fw-bold text-dark mb-0">Recent Learning Activity</h5>
-                    <small class="text-muted">Your latest completed video tutorials and simulations</small>
+                    <small class="text-muted">Your latest completed video tutorials and simulation exercises</small>
                 </div>
-                <i class="bi bi-clock-history text-muted fs-5"></i>
+                <span class="badge bg-light text-dark border px-2.5 py-1.5 fw-semibold">
+                    <i class="bi bi-clock-history text-warning me-1"></i> <?= count($recent_activity ?? []) ?> Recent
+                </span>
             </div>
 
-            <?php if (!empty($recent_activity)): ?>
-                <div class="activity-list">
-                    <?php foreach ($recent_activity as $act): ?>
-                        <div class="activity-item">
-                            <div class="d-flex align-items-center gap-3">
-                                <?php if (!empty($act['video_tutorial_id'])): ?>
-                                    <div class="avatar avatar-sm rounded-circle bg-light d-flex align-items-center justify-content-center text-primary" style="width: 36px; height: 36px;">
-                                        <i class="bi bi-play-circle-fill fs-5"></i>
-                                    </div>
-                                    <div>
-                                        <span class="fw-semibold text-dark d-block" style="font-size: 13.5px;">
-                                            <?= esc($act['video_title'] ?: 'Watched Video Lesson') ?>
+            <div class="table-responsive flex-grow-1" style="max-height: 340px; overflow-y: auto; border: 1px solid #f1f5f9; border-radius: 10px;">
+                <table class="table table-hover align-middle mb-0" style="font-size: 13.5px;">
+                    <thead class="sticky-top bg-light" style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; border-bottom: 2px solid #e2e8f0;">
+                        <tr>
+                            <th class="ps-3 py-3" style="width: 50px;">Type</th>
+                            <th class="py-3">Lesson / Activity Title</th>
+                            <th class="py-3">Module</th>
+                            <th class="py-3">Date</th>
+                            <th class="text-end pe-3 py-3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($recent_activity)): ?>
+                            <?php foreach ($recent_activity as $act): ?>
+                                <tr>
+                                    <td class="ps-3">
+                                        <?php if (!empty($act['video_tutorial_id'])): ?>
+                                            <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" title="Video Tutorial">
+                                                <i class="bi bi-play-circle-fill fs-6"></i>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" title="Practical Simulation">
+                                                <i class="bi bi-code-slash fs-6"></i>
+                                            </div>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <span class="fw-semibold text-dark d-block text-truncate" style="max-width: 260px;" title="<?= esc($act['video_title'] ?: ($act['question_title'] ?: 'Completed Lesson')) ?>">
+                                            <?= esc($act['video_title'] ?: ($act['question_title'] ?: 'Completed Lesson')) ?>
                                         </span>
-                                        <small class="text-muted">
-                                            <span class="badge bg-light text-dark border px-1"><?= esc($act['course_name'] ?: 'Video Tutorial') ?></span> &bull; 
-                                            <?= date('M d, Y', strtotime($act['created_at'] ?? 'now')) ?>
-                                        </small>
-                                    </div>
-                                <?php else: ?>
-                                    <div class="avatar avatar-sm rounded-circle bg-light d-flex align-items-center justify-content-center text-success" style="width: 36px; height: 36px;">
-                                        <i class="bi bi-check-circle-fill fs-5"></i>
-                                    </div>
-                                    <div>
-                                        <span class="fw-semibold text-dark d-block" style="font-size: 13.5px;">
-                                            <?= esc($act['question_title'] ?: 'Completed Simulation Question') ?>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-light text-dark border px-2 py-1" style="font-size: 11px;">
+                                            <?= esc($act['course_name'] ?: 'General') ?>
                                         </span>
-                                        <small class="text-muted">
-                                            <span class="badge bg-light text-dark border px-1"><?= esc($act['course_name'] ?: 'Simulation') ?></span> &bull; 
-                                            <?= date('M d, Y', strtotime($act['created_at'] ?? 'now')) ?>
-                                        </small>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 small fw-semibold">
-                                Completed
-                            </span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php else: ?>
-                <div class="text-center py-5 text-muted">
-                    <i class="bi bi-journal-x fs-1 text-muted mb-2 d-block"></i>
-                    <span>No recent activity yet. Start your first lesson to see your progress!</span>
-                </div>
-            <?php endif; ?>
+                                    </td>
+                                    <td class="text-muted small">
+                                        <?= date('M d, Y', strtotime($act['created_at'] ?? 'now')) ?>
+                                    </td>
+                                    <td class="text-end pe-3">
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 fw-semibold" style="font-size: 11.5px;">
+                                            <i class="bi bi-check-circle-fill me-1"></i> Completed
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5" class="text-center py-5 text-muted">
+                                    <i class="bi bi-journal-x fs-2 text-muted mb-2 d-block"></i>
+                                    <span>No learning activity recorded yet. Start your lessons above!</span>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
-    <!-- RIGHT: MY ASSESSMENT SUBMISSIONS & RESULTS -->
+    <!-- RIGHT: MY ASSESSMENT SUBMISSIONS & RESULTS TABLE -->
     <div class="col-lg-5">
-        <div class="activity-feed-card h-100">
+        <div class="activity-feed-card d-flex flex-column" style="min-height: 420px;">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <h5 class="fw-bold text-dark mb-0">Assessment Submissions</h5>
-                    <small class="text-muted">Uploaded answers and evaluation scores</small>
+                    <small class="text-muted">Uploaded answers and instructor review scores</small>
                 </div>
-                <i class="bi bi-file-earmark-check text-muted fs-5"></i>
+                <span class="badge bg-light text-dark border px-2.5 py-1.5 fw-semibold">
+                    <i class="bi bi-file-earmark-check text-success me-1"></i> <?= count($assessment_submissions ?? []) ?> Uploads
+                </span>
             </div>
 
-            <?php if (!empty($assessment_submissions)): ?>
-                <div class="activity-list">
-                    <?php foreach ($assessment_submissions as $sub): ?>
-                        <div class="activity-item">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="avatar avatar-sm rounded-circle bg-light d-flex align-items-center justify-content-center text-success" style="width: 36px; height: 36px;">
-                                    <i class="bi bi-file-earmark-spreadsheet-fill fs-5"></i>
-                                </div>
-                                <div>
-                                    <span class="fw-semibold text-dark d-block" style="font-size: 13.5px;">
-                                        <?= esc($sub['course_name'] ?: 'Course Assessment') ?>
-                                    </span>
-                                    <small class="text-muted d-block">
-                                        <a href="<?= base_url('public/assets/uploads/assessments/' . $sub['answer_file']) ?>" target="_blank" class="text-success text-decoration-none fw-semibold">
-                                            <?= esc($sub['answer_file']) ?>
+            <div class="table-responsive flex-grow-1" style="max-height: 340px; overflow-y: auto; border: 1px solid #f1f5f9; border-radius: 10px;">
+                <table class="table table-hover align-middle mb-0" style="font-size: 13.5px;">
+                    <thead class="sticky-top bg-light" style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; border-bottom: 2px solid #e2e8f0;">
+                        <tr>
+                            <th class="ps-3 py-3">Module</th>
+                            <th class="py-3">Submitted File</th>
+                            <th class="py-3">Date</th>
+                            <th class="text-end pe-3 py-3">Status / Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($assessment_submissions)): ?>
+                            <?php foreach ($assessment_submissions as $sub): ?>
+                                <tr>
+                                    <td class="ps-3">
+                                        <span class="badge bg-light text-dark border px-2 py-1 fw-bold" style="font-size: 11px;">
+                                            <?= esc($sub['course_name'] ?: 'Course Test') ?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a href="<?= base_url('public/assets/uploads/assessments/' . $sub['answer_file']) ?>" target="_blank" 
+                                           class="d-inline-flex align-items-center gap-1 text-success text-decoration-none fw-semibold text-truncate" 
+                                           style="max-width: 140px;" title="Download <?= esc($sub['answer_file']) ?>">
+                                            <i class="bi bi-file-earmark-arrow-down-fill fs-6"></i>
+                                            <span class="text-truncate"><?= esc($sub['answer_file']) ?></span>
                                         </a>
-                                    </small>
-                                    <?php if (!empty($sub['remarks'])): ?>
-                                        <small class="text-muted fst-italic">"<?= esc($sub['remarks']) ?>"</small>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                            <div class="text-end">
-                                <?php if ($sub['status'] === 'Pending Review'): ?>
-                                    <span class="badge bg-warning text-dark px-2 py-1 small fw-semibold">Pending</span>
-                                <?php else: ?>
-                                    <span class="badge bg-primary px-2 py-1 small fw-semibold"><?= esc($sub['status']) ?></span>
-                                <?php endif; ?>
-                                <small class="text-muted d-block mt-1" style="font-size: 11px;">
-                                    <?= date('M d', strtotime($sub['submitted_at'] ?? 'now')) ?>
-                                </small>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php else: ?>
-                <div class="text-center py-5 text-muted">
-                    <i class="bi bi-inbox fs-1 text-muted mb-2 d-block"></i>
-                    <span>No assessments submitted yet. Upload answers in your course modules.</span>
-                </div>
-            <?php endif; ?>
+                                    </td>
+                                    <td class="text-muted small">
+                                        <?= date('M d', strtotime($sub['submitted_at'] ?? 'now')) ?>
+                                    </td>
+                                    <td class="text-end pe-3">
+                                        <?php if ($sub['status'] === 'Pending Review'): ?>
+                                            <span class="badge bg-warning text-dark px-2 py-1 fw-semibold" style="font-size: 11px;">
+                                                Pending Review
+                                            </span>
+                                        <?php else: ?>
+                                            <span class="badge bg-primary px-2 py-1 fw-semibold" style="font-size: 11px;">
+                                                <?= esc($sub['status']) ?>
+                                            </span>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="4" class="text-center py-5 text-muted">
+                                    <i class="bi bi-inbox fs-2 text-muted mb-2 d-block"></i>
+                                    <span>No assessment submissions uploaded yet.</span>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

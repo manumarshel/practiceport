@@ -61,11 +61,16 @@
                             $avatarColor = '#ff7a00';
                             $avatarIcon = 'bi-play-fill';
                             $smallLabel = 'Video Tutorial';
-                        } else {
+                        } elseif ($lesson['type'] === 'question') {
                             $avatarBg = '#e8f5e9';
                             $avatarColor = '#198754';
                             $avatarIcon = 'bi-terminal';
                             $smallLabel = 'Simulation';
+                        } else {
+                            $avatarBg = '#e8f5e9';
+                            $avatarColor = '#198754';
+                            $avatarIcon = 'bi-clipboard2-check';
+                            $smallLabel = '';
                         }
                 ?>
                     <div class="lesson-row-card p-3 rounded-3 bg-white border d-flex align-items-center justify-content-between cursor-pointer <?= $rowClass ?>" 
@@ -79,7 +84,9 @@
                             
                             <div>
                                 <h6 class="fw-bold mb-0 text-truncate-custom" style="font-size: 14px;"><?= $stepNum ?>. <?= $lesson['title'] ?></h6>
-                                <small class="text-muted" style="font-size: 11px;"><?= $smallLabel ?></small>
+                                <?php if (!empty($smallLabel)): ?>
+                                    <small class="text-muted" style="font-size: 11px;"><?= $smallLabel ?></small>
+                                <?php endif; ?>
                             </div>
                         </div>
 
@@ -143,7 +150,6 @@
                             <span class="text-success fw-bold font-monospace" style="font-size: 12px; letter-spacing: 0.5px;">PRACTICAL SIMULATION</span>
                         </div>
                         <h3 class="fw-bold mb-3 text-dark" id="questionTitleMain">Simulation Title</h3>
-                        <!-- <p class="text-muted mb-4" id="questionDesc" style="line-height: 1.6; font-size: 14px;">Simulation description will display here.</p> -->
                         
                         <div class="d-flex flex-column gap-3 text-secondary pt-3 border-top" style="font-size: 14px;">
                             <div><i class="bi bi-building me-2 text-success fs-5"></i> <strong>Company:</strong> <span id="questionCompany" class="text-dark fw-semibold">Demo Company</span></div>
@@ -165,6 +171,99 @@
                                 <i class="bi bi-play-fill fs-5"></i> Run Simulation
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assessment Details Wrap (Type: Assessment) -->
+            <div class="assessment-container p-4 rounded-3 mb-4 position-relative" id="assessmentDetailsWrap" 
+                 style="background: #ffffff; display: <?= (!empty($active_lesson) && $active_lesson['type'] === 'assessment') ? 'block' : 'none' ?>;">
+                
+                <!-- Assessment Top Progress Bar -->
+                <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-4 flex-wrap gap-2">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="fw-semibold text-dark" style="font-size: 14px;">
+                            Assessment Progress: <span id="asmtProgressLabel">Question 1 of 1</span>
+                        </span>
+                        <div class="progress" style="width: 140px; height: 7px; background-color: #f1f5f9; border-radius: 4px;">
+                            <div class="progress-bar" id="asmtProgressBar" role="progressbar" style="width: 100%; background: linear-gradient(90deg, #f59e0b, #eab308);"></div>
+                        </div>
+                        <span class="text-muted small fw-bold" id="asmtPercentText">100%</span>
+                    </div>
+
+                    <div>
+                        <span class="badge bg-light text-muted border px-3 py-2 fw-normal" style="font-size: 12px;">
+                            <i class="bi bi-lock-fill me-1"></i> Run to Complete
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Assessment Title -->
+                <h3 class="fw-bold mb-3 text-dark" id="asmtTitleHeading">Assessment Title</h3>
+
+                <!-- Assessment Question HTML Content -->
+                <div class="p-3 rounded-3 mb-4 text-dark fs-6" id="asmtQuestionBody" style="background-color: #fafbfc; border: 1px solid #f1f5f9; line-height: 1.75;">
+                    Question instructions will load here...
+                </div>
+
+                <!-- Action Buttons: Download Files & Run Simulation -->
+                <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3" 
+                     style="background: linear-gradient(135deg, #fffbf0 0%, #fff7ed 100%); border: 1px solid #fed7aa;">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                        <a class="btn btn-outline-dark bg-white d-inline-flex align-items-center gap-2 py-2 px-3 fw-semibold shadow-sm" id="asmtDownloadBtn" href="#" target="_blank">
+                            <i class="bi bi-download"></i> Download Files
+                        </a>
+                        <a class="btn btn-success text-white d-inline-flex align-items-center gap-2 py-2 px-3 fw-semibold shadow-sm" id="asmtRunBtn" href="#" target="_blank">
+                            <i class="bi bi-play-fill fs-5"></i> Run Simulation
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 text-success fw-semibold small">
+                        <i class="bi bi-check-circle-fill"></i> <span>Status: Simulation Run Complete</span>
+                    </div>
+                </div>
+
+                <!-- Assessment Completion Option Box -->
+                <div class="p-4 rounded-3 mb-4 bg-white border" style="box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <h6 class="fw-bold text-dark mb-3">Assessment Completion Option</h6>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-file-earmark-text text-secondary fs-4"></i>
+                            <span class="text-secondary small fw-semibold" id="asmtUploadedFileNameDisplay">
+                                Uploaded Answer File [None]
+                            </span>
+                        </div>
+
+                        <div>
+                            <input type="file" id="asmtAnswerFileInput" style="display: none;" 
+                                   accept=".png,.jpg,.jpeg,.pdf,.doc,.docx,.xls,.xlsx,.zip,.csv,.txt" 
+                                   onchange="handleAssessmentFileUpload(this)">
+                            
+                            <!-- Dark Blue Upload Button matching screenshot -->
+                            <button type="button" class="btn text-white fw-semibold d-inline-flex align-items-center gap-2 px-4 py-2" 
+                                    id="btnAsmtUpload" style="background-color: #1e293b; border-color: #0f172a; border-radius: 6px;"
+                                    onclick="document.getElementById('asmtAnswerFileInput').click()">
+                                <i class="bi bi-cloud-arrow-up-fill fs-5"></i>
+                                <span id="btnAsmtUploadText">Upload answer and complete this assessment.</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="asmtUploadAlert" class="mt-3 small" style="display: none;"></div>
+                </div>
+
+                <!-- Footer Metadata (Company & Category) & Question Navigation -->
+                <div class="d-flex align-items-center justify-content-between pt-3 border-top flex-wrap gap-2 text-muted small fw-semibold">
+                    <div>
+                        Company: <span class="text-dark fw-bold" id="asmtCompanyText">XYZ Stores</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                        Category: <span class="text-dark fw-bold" id="asmtCategoryText">GSTR1</span>
+                    </div>
+                    
+                    <div class="d-flex align-items-center gap-2" id="asmtQuestionNavBtns" style="display: none !important;">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="btnAsmtPrevQ" onclick="prevAsmtQuestion()">
+                            <i class="bi bi-chevron-left"></i> Previous Question
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-primary" id="btnAsmtNextQ" onclick="nextAsmtQuestion()">
+                            Next Question <i class="bi bi-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -571,14 +670,16 @@
         var lesson = lessons[currentIndex];
         var stepNum = currentIndex + 1;
 
-        // 1. Differentiate Display Panels by Type (Video vs Question)
+        // 1. Differentiate Display Panels by Type (Video vs Question vs Assessment)
         var videoWrap = document.getElementById("videoPlayerWrap");
         var questionWrap = document.getElementById("questionDetailsWrap");
+        var assessmentWrap = document.getElementById("assessmentDetailsWrap");
         var globalTitleWrap = document.getElementById("globalTitleWrap");
 
         if (lesson.type === 'video') {
             videoWrap.style.display = "block";
             questionWrap.style.display = "none";
+            if (assessmentWrap) assessmentWrap.style.display = "none";
             globalTitleWrap.style.display = "block";
             
             // Dynamically initialize / load the clean player
@@ -587,16 +688,16 @@
             // Update global texts
             document.getElementById("lessonDisplayTitle").innerText = stepNum + ". " + lesson.title;
             document.getElementById("lessonDisplayDesc").innerText = lesson.description || "No description provided for this lesson.";
-        } else {
+        } else if (lesson.type === 'question') {
             // Simulation Question
             videoWrap.style.display = "none";
             destroyPlayers();
             questionWrap.style.display = "block";
+            if (assessmentWrap) assessmentWrap.style.display = "none";
             globalTitleWrap.style.display = "none"; // Hide bottom text since we show it nicely inside the dashboard panel
             
             // Update question display details
             document.getElementById("questionTitleMain").innerText = stepNum + ". " + lesson.title;
-            // document.getElementById("questionDesc").innerText = "This simulation category is " + lesson.category_id + ". Practice by downloading local task sheets or click Run to launch simulation.";
             document.getElementById("questionCompany").innerText = lesson.company_name;
             
             // Set Difficulty Badge color & text
@@ -629,6 +730,15 @@
                 downloadBtn.style.opacity = "1";
                 downloadBtn.style.pointerEvents = "auto";
             }
+        } else if (lesson.type === 'assessment') {
+            // Course Assessment
+            videoWrap.style.display = "none";
+            questionWrap.style.display = "none";
+            destroyPlayers();
+            if (assessmentWrap) assessmentWrap.style.display = "block";
+            globalTitleWrap.style.display = "none";
+
+            renderAssessmentQuestion();
         }
 
         // 2. Update Left Sidebar Active Highlight Styles
@@ -764,22 +874,40 @@
     }
 
     /**
-     * Automatically marks current lesson completed, and shifts to the next lesson
+     * Automatically marks current lesson completed (with green checkmark), and shifts to the next lesson
      */
     function nextLesson() {
         var lesson = lessons[currentIndex];
         
-        // If current lesson isn't completed yet, auto mark as complete first!
-        if (!lesson.completed) {
-            // For video, only mark complete if it has been fully watched.
-            // If they just click Next without finishing it, we proceed without auto-marking it completed.
-            if (lesson.type === 'video') {
-                proceedNextIndex();
-            } else {
-                toggleComplete(function() {
+        // If current lesson is not marked completed yet, auto mark as complete!
+        if (lesson && !lesson.completed && lesson.type !== 'assessment') {
+            // Set local state immediately for instant checkmark visual
+            lessons[currentIndex].completed = true;
+            
+            // Send completion progress to server
+            $.ajax({
+                type: "POST",
+                url: base_url + "/user/video-progress/toggle",
+                data: {
+                    video_id: lesson.id,
+                    item_type: lesson.type, // 'video' or 'question'
+                    completed: 1,
+                    package_id: packageId,
+                    course_id: courseId
+                },
+                success: function(response) {
+                    if (response && response.status === "success") {
+                        if (response.progress !== undefined) {
+                            animateProgressBar(response.progress);
+                        }
+                    }
                     proceedNextIndex();
-                });
-            }
+                },
+                error: function(err) {
+                    console.error("Error saving lesson progress on Next:", err);
+                    proceedNextIndex();
+                }
+            });
         } else {
             proceedNextIndex();
         }
@@ -820,6 +948,160 @@
         pBar.style.width = toPercent + "%";
         pBar.setAttribute("aria-valuenow", toPercent);
         pText.innerText = toPercent + "%";
+    }
+
+    var currentAsmtQuestionIndex = 0;
+
+    /**
+     * Renders active assessment question content, progress, and file upload states
+     */
+    function renderAssessmentQuestion() {
+        var lesson = lessons[currentIndex];
+        if (!lesson || lesson.type !== 'assessment' || !lesson.assessments || lesson.assessments.length === 0) return;
+
+        var totalQ = lesson.assessments.length;
+        if (currentAsmtQuestionIndex < 0) currentAsmtQuestionIndex = 0;
+        if (currentAsmtQuestionIndex >= totalQ) currentAsmtQuestionIndex = totalQ - 1;
+
+        var asmt = lesson.assessments[currentAsmtQuestionIndex];
+        var qNum = currentAsmtQuestionIndex + 1;
+        var percent = Math.round((qNum / totalQ) * 100);
+
+        // Update Progress Header
+        document.getElementById('asmtProgressLabel').innerText = 'Question ' + qNum + ' of ' + totalQ;
+        document.getElementById('asmtProgressBar').style.width = percent + '%';
+        document.getElementById('asmtPercentText').innerText = percent + '%';
+
+        // Update Title & Body
+        document.getElementById('asmtTitleHeading').innerText = asmt.title || ('<?= esc($course['course_name']) ?> Assessment: Question ' + qNum);
+        document.getElementById('asmtQuestionBody').innerHTML = asmt.question;
+
+        // Update Run & Download URLs
+        var runBtn = document.getElementById('asmtRunBtn');
+        var downloadBtn = document.getElementById('asmtDownloadBtn');
+        runBtn.setAttribute('href', asmt.run_url);
+
+        if (asmt.download_url && asmt.download_url !== '#') {
+            downloadBtn.setAttribute('href', asmt.download_url);
+            downloadBtn.style.display = 'inline-flex';
+        } else {
+            downloadBtn.style.display = 'none';
+        }
+
+        // Update Uploaded file status
+        var uploadedDisplay = document.getElementById('asmtUploadedFileNameDisplay');
+        if (asmt.submission && asmt.submission.answer_file) {
+            uploadedDisplay.innerHTML = '<span class="text-success fw-bold"><i class="bi bi-check2-circle me-1"></i> Uploaded Answer File [' + asmt.submission.answer_file + ']</span>';
+            document.getElementById('btnAsmtUploadText').innerText = 'Update Answer Document';
+        } else {
+            uploadedDisplay.innerHTML = '<span>Uploaded Answer File [None]</span>';
+            document.getElementById('btnAsmtUploadText').innerText = 'Upload answer and complete this assessment.';
+        }
+
+        // Update Company & Category metadata
+        document.getElementById('asmtCompanyText').innerText = asmt.company_name || 'N/A';
+        document.getElementById('asmtCategoryText').innerText = '<?= esc($course['course_name']) ?>';
+
+        // Question navigation if total questions > 1
+        var navBox = document.getElementById('asmtQuestionNavBtns');
+        if (totalQ > 1) {
+            navBox.style.setProperty('display', 'flex', 'important');
+            document.getElementById('btnAsmtPrevQ').disabled = (currentAsmtQuestionIndex === 0);
+            document.getElementById('btnAsmtNextQ').disabled = (currentAsmtQuestionIndex === totalQ - 1);
+        } else {
+            navBox.style.setProperty('display', 'none', 'important');
+        }
+    }
+
+    function prevAsmtQuestion() {
+        if (currentAsmtQuestionIndex > 0) {
+            currentAsmtQuestionIndex--;
+            renderAssessmentQuestion();
+        }
+    }
+
+    function nextAsmtQuestion() {
+        var lesson = lessons[currentIndex];
+        if (lesson && lesson.assessments && currentAsmtQuestionIndex < lesson.assessments.length - 1) {
+            currentAsmtQuestionIndex++;
+            renderAssessmentQuestion();
+        }
+    }
+
+    /**
+     * Handles file upload and AJAX submission of student's answer document
+     */
+    function handleAssessmentFileUpload(input) {
+        if (!input.files || input.files.length === 0) return;
+        var file = input.files[0];
+        var lesson = lessons[currentIndex];
+        if (!lesson || lesson.type !== 'assessment' || !lesson.assessments) return;
+
+        var asmt = lesson.assessments[currentAsmtQuestionIndex];
+        var formData = new FormData();
+        formData.append('answer_file', file);
+        formData.append('assessment_id', asmt.id);
+        formData.append('course_id', courseId);
+        formData.append('package_id', packageId);
+
+        var uploadBtn = document.getElementById('btnAsmtUpload');
+        var uploadAlert = document.getElementById('asmtUploadAlert');
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span> Uploading...';
+        uploadAlert.style.display = 'none';
+
+        $.ajax({
+            url: base_url + '/user/assessment/submit',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(res) {
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = '<i class="bi bi-cloud-arrow-up-fill fs-5"></i> <span id="btnAsmtUploadText">Update Answer Document</span>';
+
+                if (res.status === 'success') {
+                    uploadAlert.className = 'alert alert-success mt-3 py-2 small';
+                    uploadAlert.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> ' + res.message;
+                    uploadAlert.style.display = 'block';
+
+                    // Update local data
+                    asmt.submitted = true;
+                    asmt.submission = { answer_file: res.file_name, status: 'Pending Review' };
+                    renderAssessmentQuestion();
+
+                    // Check if all assessment questions in this category are completed
+                    var allDone = true;
+                    for (var i = 0; i < lesson.assessments.length; i++) {
+                        if (!lesson.assessments[i].submitted) allDone = false;
+                    }
+                    if (allDone) {
+                        lesson.completed = true;
+                        var badgeIcon = document.getElementById('badge-icon-' + currentIndex);
+                        if (badgeIcon) badgeIcon.className = 'bi bi-check-circle-fill text-success fs-5';
+                    }
+
+                    // Auto-advance to next question if available
+                    if (currentAsmtQuestionIndex < lesson.assessments.length - 1) {
+                        setTimeout(function() {
+                            nextAsmtQuestion();
+                        }, 1200);
+                    }
+                } else {
+                    uploadAlert.className = 'alert alert-danger mt-3 py-2 small';
+                    uploadAlert.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-1"></i> ' + (res.message || 'Upload failed.');
+                    uploadAlert.style.display = 'block';
+                }
+            },
+            error: function() {
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = '<i class="bi bi-cloud-arrow-up-fill fs-5"></i> <span>Upload answer and complete this assessment.</span>';
+                uploadAlert.className = 'alert alert-danger mt-3 py-2 small';
+                uploadAlert.innerHTML = 'Server error uploading file. Please try again.';
+                uploadAlert.style.display = 'block';
+            }
+        });
     }
 </script>
 

@@ -117,6 +117,12 @@ $routes->match( ['get','post'],'delete/(:num)','Admin/Institution::delete/$1', [
     $routes->match(['post', 'get'], 'courses/edit/(:num)', 'Admin\Courses::edit/$1', ['filter' => 'auth']);
     $routes->post('courses/delete', 'Admin\Courses::delete', ['filter' => 'auth']);
 
+    // Admin Assessments Routes
+    $routes->add('assessments', 'Admin\Assessments::index', ['filter' => 'auth']);
+    $routes->post('assessments/save', 'Admin\Assessments::save', ['filter' => 'auth']);
+    $routes->get('assessments/get/(:num)', 'Admin\Assessments::get_assessment/$1', ['filter' => 'auth']);
+    $routes->get('assessments/delete/(:num)', 'Admin\Assessments::delete/$1', ['filter' => 'auth']);
+
     $routes->add('coupons', 'Admin/Coupons::index', ['filter' => 'auth']);
     $routes->match(['post', 'get'], 'add-coupons', 'Admin/Coupons::add', ['filter' => 'auth']); 
     
@@ -311,6 +317,7 @@ $routes->group('user', function ($routes) {
     $routes->add('course-lessons/(:num)/(:num)', 'User\Dashboard::courseLessons/$1/$2', ['filter' => 'user_auth']);
     $routes->add('course-lessons/(:num)', 'User\Dashboard::courseLessons/$1', ['filter' => 'user_auth']);
     $routes->post('video-progress/toggle', 'User\Dashboard::toggleProgress', ['filter' => 'user_auth']);
+    $routes->post('assessment/submit', 'User\Dashboard::uploadAssessmentAnswer', ['filter' => 'user_auth']);
 
     $routes->add('settings', 'User/Dashboard::settings', ['filter' => 'user_auth']);
     
@@ -341,6 +348,9 @@ $routes->group('institution', function ($routes) {
     $routes->match(['get', 'post'], 'add-user', 'Institution/Students::user_import', ['filter' => 'inst_auth']);
     $routes->match(['get'], 'delete_user/(:num)', 'Institution\Students::delete_user/$1', ['filter' => 'inst_auth']);
     $routes->get('export-student-progress/(:num)', 'Institution\Students::export_student_progress/$1', ['filter' => 'inst_auth']);
+    $routes->get('student-progress-ajax/(:num)', 'Institution\Students::student_progress_ajax/$1', ['filter' => 'inst_auth']);
+    $routes->post('grade-assessment', 'Institution\Students::grade_assessment', ['filter' => 'inst_auth']);
+    $routes->get('export-csv', 'Institution\Students::export_csv', ['filter' => 'inst_auth']);
     
     // Reports
     $routes->get('reports', 'Institution\Reports::index', ['filter' => 'inst_auth']);

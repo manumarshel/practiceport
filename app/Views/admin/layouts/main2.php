@@ -18,7 +18,32 @@
     <!-- Core css -->
     <link href="<?=base_url(); ?>/public/assets/admin/css/app.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url(); ?>/public/assets/admin/css/style.css">
-
+    
+    <style>
+        @media (min-width: 992px) {
+            .side-nav {
+                position: fixed !important;
+                top: 70px !important;
+                left: 0 !important;
+                bottom: 0 !important;
+                width: 240px !important;
+                z-index: 1000 !important;
+                overflow-y: auto !important;
+            }
+            .header {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 1010 !important;
+            }
+            .page-container {
+                padding-left: 240px !important;
+                padding-top: 70px !important;
+                min-height: 100vh !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -105,158 +130,157 @@
         <!-- Header END -->
 
         <!-- Side Nav START -->
+        <?php
+            $uri = service('uri');
+            $seg1 = $uri->getTotalSegments() >= 1 ? $uri->getSegment(1) : '';
+            $seg2 = $uri->getTotalSegments() >= 2 ? $uri->getSegment(2) : '';
+            $seg3 = $uri->getTotalSegments() >= 3 ? $uri->getSegment(3) : '';
+            if (empty($seg2)) $seg2 = 'dashboard';
+        ?>
         <div class="side-nav">
             <div class="side-nav-inner">
                 <ul class="side-nav-menu scrollable">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'dashboard') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/dashboard') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-appstore"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-appstore"></i>
+                            </span>
                             <span class="title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'reports') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/reports') ?>">
-                                <span class="icon-holder">
-                                     <i class="anticon anticon-idcard"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-idcard"></i>
+                            </span>
                             <span class="title">Reports</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['users', 'user', 'add-user']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/users') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-team"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-team"></i>
+                            </span>
                             <span class="title">Users</span>
                         </a>
                     </li>
-<!--                    <li class="nav-item dropdown">-->
-<!--                        <a href="--><?//= base_url('admin/subscriptions') ?><!--">-->
-<!--                                    <span class="icon-holder">-->
-<!--                                        <i class="anticon anticon-idcard"></i>-->
-<!--                                    </span>-->
-<!--                            <span class="title">Subscriptions</span>-->
-<!--                        </a>-->
-<!--                    </li>-->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['questions', 'add-question']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/questions') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-file-unknown "></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-file-unknown"></i>
+                            </span>
                             <span class="title">Questions</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'courses') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/courses') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-book"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-book"></i>
+                            </span>
                             <span class="title">Courses</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['companies', 'add-company']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/companies') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-project"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-project"></i>
+                            </span>
                             <span class="title">Companies</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['packages', 'add-packages']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/packages') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-audit"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-audit"></i>
+                            </span>
                             <span class="title">Packages</span>
                         </a>
                     </li>
-<!--                    <li class="nav-item dropdown">-->
-<!--                        <a href="--><?//= base_url('admin/licenses') ?><!--">-->
-<!--                                <span class="icon-holder">-->
-<!--                                    <i class="anticon anticon-idcard"></i>-->
-<!--                                </span>-->
-<!--                            <span class="title">Licenses</span>-->
-<!--                        </a>-->
-<!--                    </li>-->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['ads', 'add-ads']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/ads') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-notification"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-notification"></i>
+                            </span>
                             <span class="title">Ads</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['videos', 'add-videos']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/videos') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-play-circle"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-play-circle"></i>
+                            </span>
                             <span class="title">Videos</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'video-tutorials' && $seg3 !== 'sequence') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/video-tutorials') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-video-camera"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-video-camera"></i>
+                            </span>
                             <span class="title">Video Tutorial</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'video-tutorials' && $seg3 === 'sequence') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/video-tutorials/sequence') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-ordered-list"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-ordered-list"></i>
+                            </span>
                             <span class="title">Course Sequence</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'assessments') ? 'active' : '' ?>">
+                        <a href="<?= base_url('admin/assessments') ?>">
+                            <span class="icon-holder">
+                                <i class="anticon anticon-form"></i>
+                            </span>
+                            <span class="title">Assessments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item <?= in_array($seg2, ['coupons', 'add-coupons']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/coupons') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-tags"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-tags"></i>
+                            </span>
                             <span class="title">Coupons</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['vat_users', 'add-vatuser']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/vat_users') ?>">
-                                <span class="icon-holder">
-                                   <i class="anticon anticon-team"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-team"></i>
+                            </span>
                             <span class="title">Vat users</span>
                         </a>
                     </li>
-                     <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['vat_companies', 'add-vat-company']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/vat_companies') ?>">
-                                <span class="icon-holder">
-                                   <i class="anticon anticon-team"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-bank"></i>
+                            </span>
                             <span class="title">Vat Reg Companies</span>
                         </a>
                     </li>
-                     <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['b2b_packages', 'b2b_package_add']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/b2b_packages') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-audit"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-folder-open"></i>
+                            </span>
                             <span class="title">B2B Packages</span>
                         </a>
                     </li>
-                     <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['institutions', 'institution']) ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/institutions') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-audit"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-solution"></i>
+                            </span>
                             <span class="title">Institutions</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 === 'settings') ? 'active' : '' ?>">
                         <a href="<?= base_url('admin/settings') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-lock"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-setting"></i>
+                            </span>
                             <span class="title">Settings</span>
                         </a>
                     </li>
@@ -308,6 +332,8 @@
 <script src="<?=base_url(); ?>/public/assets/admin/js/app.min.js"></script>
 <script src="<?=base_url(); ?>/public/assets/admin/js/main.js?version=<?=time(); ?>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+
+<?= $this->renderSection('page_js'); ?>
 
 </body>
 

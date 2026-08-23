@@ -62,12 +62,15 @@
                             
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <span class="text-muted fw-semibold" style="font-size: 13px;">Progress <?= $course['progress'] ?>%</span>
+                                <?php if (!empty($course['total_items'])): ?>
+                                    <span class="text-muted small" style="font-size: 12px;"><?= $course['completed_count'] ?> / <?= $course['total_items'] ?> completed</span>
+                                <?php endif; ?>
                             </div>
 
                             <!-- Progress Bar Container -->
-                            <div class="progress" style="height: 8px; background-color: #f0f2f5; border-radius: 4px;">
+                            <div class="progress" style="height: 9px; background-color: #e2e8f0; border-radius: 6px; overflow: hidden;">
                                 <div class="progress-bar" role="progressbar" 
-                                     style="width: <?= $course['progress'] ?>%; background-color: <?= $theme['color'] ?>; border-radius: 4px;" 
+                                     style="width: <?= max(0, min(100, $course['progress'])) ?>%; background-color: <?= $theme['color'] ?>; border-radius: 6px; transition: width 0.4s ease;" 
                                      aria-valuenow="<?= $course['progress'] ?>" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>

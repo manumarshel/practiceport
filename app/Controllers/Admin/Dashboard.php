@@ -22,14 +22,39 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        $data = [];
+        $db = \Config\Database::connect();
         $um = new UserModel();
         $cm = new CompanyModel();
         $qm = new QuestionModel();
+
         $data['company_count'] = $cm->countAll();
         $data['question_count'] = $qm->countAll();
-        $data['users'] = $um->orderBy('user_id', 'desc')->findAll(10);
         $data['users_count'] = $um->countAll();
+
+        // Count assessments and submissions
+        $data['assessments_count'] = $db->table('assessments')->countAllResults();
+        $data['submissions_count'] = $db->table('student_assessments')->countAllResults();
+        $data['institutions_count'] = $db->table('mst_institutions')->countAllResults();
+        $data['courses_count'] = $db->table('courses')->countAllResults();
+
+        // Fetch latest registered users with subscription info if available
+        $builder = $db->table('users u')
+            ->select('u.*, bp.title as package_name')
+            ->join('mst_subscriptions s', 's.user_id = u.user_id', 'left')
+            ->join('b2b_packages bp', 'bp.PKPackageID = s.package_id', 'left')
+            ->orderBy('u.user_id', 'desc')
+            ->limit(10);
+        $data['users'] = $builder->get()->getResultArray();
+
+        // Fetch recent student assessment submissions (activity feed)
+        $asmtBuilder = $db->table('student_assessments sa')
+            ->select('sa.*, u.first_name, u.last_name, u.email, c.course_name, a.title as assessment_title')
+            ->join('users u', 'u.user_id = sa.user_id', 'left')
+            ->join('assessments a', 'a.id = sa.assessment_id', 'left')
+            ->join('courses c', 'c.course_id = sa.course_id', 'left')
+            ->orderBy('sa.id', 'desc')
+            ->limit(8);
+        $data['recent_assessments'] = $asmtBuilder->get()->getResultArray();
 
         return view('admin/dashboard', $data);
     }

@@ -14,7 +14,52 @@
     <!-- Core css -->
     <link href="<?=base_url(); ?>/public/assets/user/css/app.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url(); ?>/public/assets/user/css/style.css">
-
+    
+    <style>
+        .side-nav-menu li.active > a {
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+        .side-nav-menu li.active > a .icon-holder {
+            color: #ffffff !important;
+        }
+        .side-nav-menu li.active > a .title {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+        .side-nav .side-nav-inner .side-nav-menu > li {
+            padding: 4px 12px;
+        }
+        .side-nav .side-nav-inner .side-nav-menu > li > a {
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        @media (min-width: 992px) {
+            .side-nav {
+                position: fixed !important;
+                top: 70px !important;
+                left: 0 !important;
+                bottom: 0 !important;
+                width: 240px !important;
+                z-index: 1000 !important;
+                overflow-y: auto !important;
+            }
+            .header {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 1010 !important;
+            }
+            .page-container {
+                padding-left: 240px !important;
+                padding-top: 70px !important;
+                min-height: 100vh !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -120,41 +165,37 @@
         <!-- Header END -->
 
         <!-- Side Nav START -->
+        <?php
+            $uri = service('uri');
+            $seg2 = $uri->getTotalSegments() >= 2 ? $uri->getSegment(2) : 'dashboard';
+        ?>
         <div class="side-nav">
             <div class="side-nav-inner">
                 <ul class="side-nav-menu scrollable">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= ($seg2 == 'dashboard' || $seg2 == '') ? 'active' : '' ?>">
                         <a href="<?= base_url('institution/dashboard') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-appstore"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-appstore"></i>
+                            </span>
                             <span class="title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['packages', 'packageStudent']) ? 'active' : '' ?>">
                         <a href="<?= base_url('institution/packages') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-audit"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-audit"></i>
+                            </span>
                             <span class="title">Packages</span>
                         </a>
                     </li>
-                     <li class="nav-item dropdown">
+                    <li class="nav-item <?= in_array($seg2, ['students', 'create-user', 'user-import', 'add-user']) ? 'active' : '' ?>">
                         <a href="<?= base_url('institution/students') ?>">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-lock"></i>
-                                </span>
+                            <span class="icon-holder">
+                                <i class="anticon anticon-team"></i>
+                            </span>
                             <span class="title">Students</span>
                         </a>
                     </li>
-                    <!--<li class="nav-item dropdown">-->
-                    <!--    <a href="<?= base_url('user/settings') ?>">-->
-                    <!--            <span class="icon-holder">-->
-                    <!--                <i class="anticon anticon-lock"></i>-->
-                    <!--            </span>-->
-                    <!--        <span class="title">Settings</span>-->
-                    <!--    </a>-->
-                    <!--</li>-->
                 </ul>
             </div>
         </div>

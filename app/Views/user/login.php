@@ -1,312 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Login - PracticePot</title>
- <!-- Favicon -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student Sign In | PracticePot Simulation</title>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?= base_url('public/assets/frontend/images/pp-fav.png') ?>">
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="<?= base_url('public/assets/user/css/custom.css') ?>" rel="stylesheet">
-<style>
- body {
-    background: #f5f5f5;
-    font-family: 'Segoe UI', sans-serif;
-}
 
-/* LEFT SECTION */
-.hero-left {
-    padding: 40px;
-}
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-.hero-left h1 {
-    font-size: 42px;
-    font-weight: 700;
-}
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.hero-left span {
-    color: #ff7a00;
-}
+        .auth-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            padding: 38px 34px;
+        }
 
-.hero-left p {
-    color: #666;
-    margin-top: 15px;
-    max-width: 500px;
-    font-size: 15px;
-}
+        .portal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #fff7ed;
+            color: #ea580c;
+            border: 1px solid #ffedd5;
+            margin-bottom: 14px;
+        }
 
-/* Feature */
-.feature {
-    display: flex;
-    align-items: center;
-    margin-top: 18px;
-}
+        .form-control {
+            height: 46px;
+            border-radius: 9px;
+            border: 1px solid #cbd5e1;
+            padding-left: 42px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
 
-.feature-icon {
-    width: 35px;
-    height: 35px;
-    background: #ffe5cc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-    color: #ff7a00;
-    font-size: 14px;
-}
+        .form-control:focus {
+            border-color: #ff7a00;
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+        }
 
-/* LOGIN CARD */
-.login-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.08);
-    width: 100%;
-    max-width: 420px;
-}
+        .input-icon-wrap {
+            position: relative;
+        }
 
-.login-card h3 {
-    font-weight: 700;
-}
+        .input-icon-wrap .prefix-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 16px;
+            z-index: 4;
+        }
 
-.login-btn {
-    background: #ff7a00;
-    border: none;
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-}
+        .field-icon {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            cursor: pointer;
+            z-index: 4;
+            font-size: 16px;
+            transition: color 0.2s ease;
+        }
 
-.login-btn:hover {
-    background: #e86d00;
-}
+        .field-icon:hover {
+            color: #334155;
+        }
 
-/* INPUT GROUP FIX */
-.input-group .btn {
-    border-left: 0;
-}
+        .btn-auth-submit {
+            background: linear-gradient(135deg, #ff7a00 0%, #ea580c 100%);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 9px;
+            font-size: 14.5px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+        }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 992px) {
-    .hero-left {
-        text-align: center;
-        padding: 20px;
-    }
+        .btn-auth-submit:hover {
+            background: linear-gradient(135deg, #e86d00 0%, #c2410c 100%);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+        }
 
-    .hero-left h1 {
-        font-size: 30px;
-    }
+        .feature-bullet {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
 
-    .hero-left p {
-        margin: 10px auto;
-    }
-}
+        .feature-bullet-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #fff7ed;
+            color: #ea580c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
 
-@media (max-width: 768px) {
-    .hero-left {
-        display: block !important; /* show content */
-        margin-bottom: 30px;
-    }
-
-    .row {
-        padding: 0 15px !important;
-    }
-
-    .login-card {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-left h1 {
-        font-size: 24px;
-    }
-
-    .login-card {
-        padding: 18px;
-    }
-}
-</style>
-
+        .footer-auth {
+            border-top: 1px solid #e2e8f0;
+            padding: 18px 40px;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
 </head>
 
 <body>
-    
- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div class="container">
 
-            <!-- Logo (Left) -->
-            <a class="navbar-brand" href="<?= base_url() ?>">
-                <img src="<?= base_url('public/assets/frontend/images/pp-logo.png') ?>" alt="Logo" height="70">
-            </a>
-
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menu + Button -->
-            <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
-
-                <!-- Center Menu -->
-                <!--<ul class="navbar-nav mx-auto text-center">-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">Explore</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">Internship</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">Simulation</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">Blog</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">For Enterprise</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">For Educators</a>-->
-                <!--    </li>-->
-                <!--    <li class="nav-item">-->
-                <!--        <a class="nav-link px-3" href="#">Support</a>-->
-                <!--    </li>-->
-                <!--</ul>-->
-
-                <!-- Right Button -->
-                <div class="ms-auto d-flex align-items-center">
-
-                    <!-- Login -->
-                    <a href="<?= base_url('user') ?>" class="nav-link fw-medium me-4 login-link">
-                        Login
-                    </a>
-
-                    <!-- Get Started Button -->
-                    <!--<a href="<?= base_url('user') ?>" class="btn get-started-btn">-->
-                    <!--    Get Started-->
-                    <!--</a>-->
-
-                </div>
-
-            </div>
-        </div>
-    </nav>
-<div class="container-fluid">
-<div class="row mb-5 g-4 px-3 px-md-5">
-
-    <!-- LEFT -->
-    <div class="col-lg-7 col-12 mt-4 mt-lg-5 hero-left">
+    <!-- TOP NAV -->
+    <header class="py-3 px-4 px-md-5 d-flex justify-content-between align-items-center">
+        <a href="<?= base_url() ?>">
+            <img src="<?= base_url('public/assets/frontend/images/pp-logo.png') ?>" alt="PracticePot" width="130">
+        </a>
         <div>
-            <h1>Welcome Back to <br><span>PracticePot</span></h1>
-
-            <p>
-                Continue your journey to master accounting and auditing through
-                practical simulations and real-world experience.
-            </p>
-
-            <div class="feature">
-                <div class="feature-icon">✔</div>
-                <div>Access 100+ simulations</div>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">✔</div>
-                <div>Track your learning progress</div>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">✔</div>
-                <div>Earn certificates and credentials</div>
-            </div>
+            <a href="<?= base_url() ?>" class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1 font-weight-semibold">
+                <i class="bi bi-box-arrow-left"></i> Back to Main Site
+            </a>
         </div>
-    </div>
+    </header>
 
-    <!-- RIGHT -->
-    <div class="col-lg-5 col-12 d-flex mt-4 mt-lg-5 justify-content-center">
+    <!-- MAIN BODY -->
+    <main class="container my-auto py-4">
+        <div class="row align-items-center justify-content-center">
+            
+            <!-- LEFT: HERO DESCRIPTION -->
+            <div class="col-lg-6 mb-4 mb-lg-0 pe-lg-4">
+                <div class="p-2">
+                    <h1 class="font-weight-bold text-dark mb-3" style="font-size: 32px; line-height: 1.25; font-weight: 800;">
+                        Master Practical Tax & Accounting <br><span style="color: #ff7a00;">Through Real Simulations</span>
+                    </h1>
+                    <p class="text-muted mb-4" style="font-size: 15px; line-height: 1.6;">
+                        Step into live enterprise portals. Practice real filings, solve real-world tax cases, and earn career-ready experience on PracticePot.
+                    </p>
 
-        <div class="login-card">
-
-            <h3>Login to Your Account</h3>
-            <p class="text-muted">Enter your credentials to access your learning dashboard</p>
-                                 <?php if (session()->get('success')): ?>
-                                    <div class="alert alert-success" role="alert">
-                                        <?= session()->get('success') ?>
-                                    </div>
-                                <?php endif; ?>
-            <form action="<?= base_url('user') ?>" method="post">
-                <div class="mb-3">
-                    <label>Email Address</label> 
-                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
-                </div>
-<div class="mb-3">
-    <label>Password</label>
-
-    <div class="input-group">
-        <input type="password" 
-               class="form-control" 
-               id="password" 
-               name="password" 
-               placeholder="Password">
-
-        <button class="btn btn-outline-secondary" 
-                type="button" 
-                id="togglePassword">
-            <i class="bi bi-eye text-dark" id="toggleIcon"></i>
-        </button>
-    </div>
-</div>
-
-                <div class="d-flex justify-content-between mb-3">
-                   <div>
-                        <input type="checkbox"> Remember me
+                    <div class="feature-bullet">
+                        <div class="feature-bullet-icon">
+                            <i class="bi bi-play-btn-fill"></i>
+                        </div>
+                        <div>
+                            <span class="fw-bold text-dark d-block">Structured Video Lessons & Walkthroughs</span>
+                            <small class="text-muted">High-definition step-by-step practical guides</small>
+                        </div>
                     </div>
-                    <a href="<?= base_url('user/forgot') ?>" style="color:#ff7a00;">Forgot Password?</a>
+
+                    <div class="feature-bullet">
+                        <div class="feature-bullet-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div>
+                            <span class="fw-bold text-dark d-block">Interactive Enterprise Portals</span>
+                            <small class="text-muted">GST, TDS, UAE VAT, ESIC, PF & Tally live simulation</small>
+                        </div>
+                    </div>
+
+                    <div class="feature-bullet">
+                        <div class="feature-bullet-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div>
+                            <span class="fw-bold text-dark d-block">Real-World Case Assessments</span>
+                            <small class="text-muted">Upload solution sheets and receive instructor grading</small>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <button class="login-btn">Login →</button>
+            <!-- RIGHT: SIGN IN CARD -->
+            <div class="col-lg-5 offset-lg-1 col-md-8">
+                <div class="auth-card">
+                    <div class="portal-badge">
+                        <i class="bi bi-person-fill"></i> Student Portal
+                    </div>
 
-                <!--<div class="text-center mt-4 mb-2 text-muted">Or continue with</div>-->
+                    <h3 class="font-weight-bold text-dark mb-1" style="font-size: 22px; letter-spacing: -0.3px; font-weight: 700;">Student Sign In</h3>
+                    <p class="text-muted mb-4" style="font-size: 13.5px;">Sign in to access your modules, simulations, and assessments.</p>
 
-                <!--<div class="d-flex justify-content-between">-->
-                <!--    <div class="social-btn">Google</div>-->
-                <!--    <div class="social-btn">Facebook</div>-->
-                <!--</div>-->
+                    <?php if (session()->getFlashdata('success') || session()->get('success')): ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <?= session()->getFlashdata('success') ?: session()->get('success') ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
 
-                <!--<div class="text-center mt-3">-->
-                <!--    Don't have an account?-->
-                <!--    <a href="#" style="color:#ff7a00;">Sign up</a>-->
-                <!--</div>-->
+                    <?php if (session()->getFlashdata('error')): ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <?= session()->getFlashdata('error') ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
 
-            </form>
+                    <?php if (isset($validation)): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $validation->listErrors() ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <form action="<?= base_url('user') ?>" method="post">
+                        <?= csrf_field() ?>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark small mb-1" for="email">Student Email Address</label>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-envelope prefix-icon"></i>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="student@example.com" value="<?= set_value('email') ?>" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="form-label fw-semibold text-dark small mb-0" for="password">Password</label>
+                            </div>
+                            <div class="input-icon-wrap">
+                                <i class="bi bi-lock prefix-icon"></i>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                                <i class="bi bi-eye field-icon toggle-password" data-toggle="#password"></i>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4" style="font-size: 13px;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label text-muted" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="<?= base_url('user/forgot') ?>" class="text-decoration-none fw-semibold" style="color: #ea580c;">Forgot Password?</a>
+                        </div>
+
+                        <div class="mb-0">
+                            <button type="submit" class="btn btn-auth-submit w-100 d-flex align-items-center justify-content-center gap-2">
+                                <span>Sign In to Learning Dashboard</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
         </div>
+    </main>
 
-    </div>
+    <!-- FOOTER -->
+    <footer class="footer-auth d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <span>&copy; <?= date('Y') ?> PracticePot. All rights reserved.</span>
+        <div>
+            <span class="text-muted">Secured Learning Portal</span>
+        </div>
+    </footer>
 
-</div>
-</div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".toggle-password").click(function() {
+                $(this).toggleClass("bi-eye bi-eye-slash");
+                var input = $($(this).attr("data-toggle"));
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
+</body>
 
-<script> 
-document.getElementById("togglePassword").addEventListener("click", function () {
-    let password = document.getElementById("password");
-    let icon = document.getElementById("toggleIcon");
-
-    if (password.type === "password") {
-        password.type = "text";
-        icon.classList.remove("bi-eye");
-        icon.classList.add("bi-eye-slash");
-    } else {
-        password.type = "password";
-        icon.classList.remove("bi-eye-slash");
-        icon.classList.add("bi-eye");
-    }
-}); 
-</script>
-<?php include('layout/footer.php'); ?>
- 
-
- 
+</html>

@@ -17,7 +17,32 @@
         <!-- Core css -->
         <link href="<?= base_url(); ?>/public/assets/admin/css/app.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?= base_url(); ?>/public/assets/admin/css/style.css">
-
+        
+        <style>
+            @media (min-width: 992px) {
+                .side-nav {
+                    position: fixed !important;
+                    top: 70px !important;
+                    left: 0 !important;
+                    bottom: 0 !important;
+                    width: 240px !important;
+                    z-index: 1000 !important;
+                    overflow-y: auto !important;
+                }
+                .header {
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    z-index: 1010 !important;
+                }
+                .page-container {
+                    padding-left: 240px !important;
+                    padding-top: 70px !important;
+                    min-height: 100vh !important;
+                }
+            }
+        </style>
     </head>
 
     <body>

@@ -1,137 +1,121 @@
 <?= $this->extend('institution/layouts/main'); ?>
 
 <?= $this->section('main_content'); ?>
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="page-header">
-                    <h2 class="header-title">User Import</h2>
-                  
-                </div>
-                <!-- <div class="d-flex justify-content-between align-items-center">
-                    <h5>Companies</h5>
-                    <div>
-                        <a href="javascript:void(0);" class="btn btn-sm btn-primary">Add New</a>
-                    </div>
-                </div> -->
+<div class="row justify-content-center">
+    <div class="col-lg-9 col-md-11">
+        <div class="card shadow-sm border-0" style="border-radius: 14px;">
+            <div class="card-body p-4 p-md-5">
                 
-                <div class="m-t-30">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php if (isset($validation)){ ?>
-                                <div class="col-12">
-                                    <div class="alert alert-danger" role="alert">
-                                        <?= $validation->listErrors() ?>
-                                    </div>
-                                </div>
-                             <?php }  ?>
-                                
-                                    <form action="add-user" method="post" class="form" enctype="multipart/form-data" id="questionForm">
- 
-                                   
-                                    <div class="form-group">
-                                        <label for="">Packages</label>
-                                        <select name="packages" id="packages" class="form-control" onchange="showDiv(this.value);">
-                                            <?php foreach($packages as $package){ ?>
-                                            
-                                            <option value="<?php echo $package->PKInstitutionPackageID; ?>"><?php echo $package->display_title; ?></option> 
-                                            
-                                            <?php }  ?>
-                                        </select>
-                                         <?php if(empty($packages)){?>
-                                    <span style="color:red;">No package assigned yet.</span>
-                                    <?php } ?>
-                                    </div>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h3 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Bulk Student Import</h3>
+                        <p class="text-muted mb-0" style="font-size: 13.5px;">Upload a CSV file to enroll multiple students at once.</p>
+                    </div>
+                    <a href="<?= base_url('institution/students') ?>" class="btn btn-sm btn-outline-secondary">
+                        <i class="anticon anticon-arrow-left mr-1"></i> Back to Students
+                    </a>
+                </div>
 
-                                    <!-- ✅ Instructions Box -->
-                                    <div class="alert alert-info border border-info rounded p-4 mb-4 mt-3" style="background-color:#f0f8ff;">
-                                        <h5 class="fw-bold mb-3">
-                                            <i class="fa fa-info-circle me-2"></i> How to Import Students via CSV
-                                        </h5>
+                <?php if(session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Error:</strong> <?= session()->getFlashdata('error'); ?>
+                    </div>
+                <?php endif; ?>
 
-                                        <ol class="mb-3 ps-3" style="line-height: 2;">
-                                            <li>Download the <strong>Sample CSV</strong> file using the button below.</li>
-                                            <li>Open the file in <strong>Microsoft Excel</strong> or <strong>Google Sheets</strong>.</li>
-                                            <li>Fill in the student details — <strong>do not change the column headers</strong>.</li>
-                                            <li>Save the file in <strong>.CSV format</strong> before uploading.</li>
-                                            <li>Select the correct <strong>Package</strong> from the dropdown above.</li>
-                                            <li>Upload the filled CSV file and click <strong>"Save &amp; Continue"</strong>.</li>
-                                        </ol>
+                <?php if(session()->getFlashdata('msg')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success:</strong> <?= session()->getFlashdata('msg'); ?>
+                    </div>
+                <?php endif; ?>
 
-                                        <hr class="my-3">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?= $validation->listErrors() ?>
+                    </div>
+                <?php endif; ?>
 
-                                        <p class="mb-2 fw-semibold">📋 Required CSV Columns:</p>
-                                        <div class="table-responsive">
-                                            <table class="table table-sm table-bordered mb-3" style="font-size:0.9rem;">
-                                                <thead class="table-primary">
-                                                    <tr>
-                                                        <th>Column Name</th>
-                                                        <th>Description</th>
-                                                        <th>Example</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><code>first_name</code></td>
-                                                        <td>Student's First Name</td>
-                                                        <td>Arun</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><code>last_name</code></td>
-                                                        <td>Student's Last Name</td>
-                                                        <td>Kumar</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><code>email</code></td>
-                                                        <td>Valid Email Address (must be unique)</td>
-                                                        <td>arun@example.com</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><code>phone</code></td>
-                                                        <td>10-digit Mobile Number (must be unique)</td>
-                                                        <td>9876543210</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                <form action="<?= base_url('institution/user-import') ?>" method="post" enctype="multipart/form-data">
+                    <?= csrf_field() ?>
 
-                                        <div class="alert alert-warning py-2 px-3 mb-3" style="font-size:0.88rem;">
-                                            <i class="fa fa-exclamation-triangle me-1"></i>
-                                            <strong>Important:</strong> Students who already exist in the system (same email or phone) will be <strong>skipped</strong> — no duplicates will be created.
-                                        </div>
+                    <div class="form-group mb-4">
+                        <label class="font-weight-semibold text-dark" for="packages">Select Target Package <span class="text-danger">*</span></label>
+                        <select name="packages" id="packages" class="form-control" required>
+                            <?php if (!empty($packages)): ?>
+                                <?php foreach ($packages as $pkg): ?>
+                                    <option value="<?= is_object($pkg) ? $pkg->PKInstitutionPackageID : $pkg['PKInstitutionPackageID'] ?>">
+                                        <?= esc(is_object($pkg) ? ($pkg->display_title ?? $pkg->title) : ($pkg['display_title'] ?? $pkg['title'])) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <option value="">No active packages available</option>
+                            <?php endif; ?>
+                        </select>
+                    </div>
 
-                                        <!-- Sample CSV Download Button -->
-                                        <a href="https://drive.google.com/uc?export=download&id=1IR5xpRACgU1PP0kA2ZrTXHH_hBC4ZOLZ"
-                                           target="_blank"
-                                           class="btn btn-success btn-sm">
-                                            <i class="fa fa-download me-1"></i> Download Sample CSV
-                                        </a>
-                                    </div>
-                                    <!-- ✅ End Instructions Box -->
-                                   
-                                    <!----- modification on 23-9-24 by geethu  ---------------->
-                                    
-                                    
-                                    <div class="form-group">
-                                        <label for="">User CSV File</label>
-                                        <div class="custom-file1">
-                                             
-                                            <input type="file" name="user_import" class=" " id="user_import"  accept=".csv">
-                                            
-                                        </div>
-                                        <p class="upload-info"></p>
-                                    </div>
-                                    <!--<button type="submit" name="submit" value="submit" class="btn btn-primary btn-tone">Save</button>-->
-                                    <button type="submit" name="submit" value="submit_continue" class="btn btn-primary">Save & Continue</button>
-                                </form>
+                    <!-- Instructions Card -->
+                    <div class="p-4 mb-4 rounded" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+                        <h6 class="font-weight-bold text-dark mb-2">
+                            <i class="anticon anticon-info-circle text-primary mr-1"></i> Instructions for CSV Import
+                        </h6>
+                        <ol class="text-muted small pl-3 mb-3" style="line-height: 1.8;">
+                            <li>Prepare a CSV file formatted with the column headers below.</li>
+                            <li>Ensure all email addresses are valid and unique.</li>
+                            <li>Default password assigned to imported students is <code>12345678</code>.</li>
+                        </ol>
+
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered bg-white mb-0" style="font-size: 12.5px;">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th>first_name</th>
+                                        <th>last_name</th>
+                                        <th>email</th>
+                                        <th>phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arun</td>
+                                        <td>Kumar</td>
+                                        <td>arun@example.com</td>
+                                        <td>9876543210</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
+
+                    <div class="form-group mb-4">
+                        <label class="font-weight-semibold text-dark" for="user_import">Select CSV File <span class="text-danger">*</span></label>
+                        <div class="custom-file">
+                            <input type="file" name="user_import" class="custom-file-input" id="user_import" accept=".csv" required>
+                            <label class="custom-file-label" for="user_import">Choose CSV file...</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0 pt-2 border-top">
+                        <button type="submit" class="btn btn-primary px-4 py-2" style="background-color: #1976d2; border-color: #1976d2;">
+                            <i class="anticon anticon-upload mr-1"></i> Upload & Import Students
+                        </button>
+                        <a href="<?= base_url('institution/students') ?>" class="btn btn-default ml-2">Cancel</a>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
 </div>
- 
-<?= $this->endSection(); ?>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var fileInput = document.getElementById('user_import');
+        if (fileInput) {
+            fileInput.addEventListener('change', function(e) {
+                var fileName = e.target.files[0] ? e.target.files[0].name : 'Choose CSV file...';
+                var label = document.querySelector('label[for="user_import"]');
+                if (label) label.textContent = fileName;
+            });
+        }
+    });
+</script>
+<?= $this->endSection(); ?>

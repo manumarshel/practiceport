@@ -45,7 +45,7 @@ class Dashboard extends BaseController
         if ($user_enroll_type == "1") {
             $builder = $db->table('mst_subscriptions');
             // B2B: Use PKPackageID and PackageName (prefer custom_title)
-            $builder->select('b2b_packages.PKPackageID as package_id, COALESCE(NULLIF(b2b_packages.custom_title, ""), b2b_packages.title) as package_name');
+            $builder->select('b2b_packages.PKPackageID as package_id, COALESCE(NULLIF(b2b_packages.custom_title, ""), b2b_packages.title) as package_name, b2b_packages.duration, mst_subscriptions.start_date, mst_subscriptions.end_date');
             $builder->join('b2b_packages', 'b2b_packages.PKPackageID = mst_subscriptions.package_id');
             $builder->where('mst_subscriptions.user_id', $userId);
             $builder->where('mst_subscriptions.start_date <= CURDATE()');
@@ -54,7 +54,7 @@ class Dashboard extends BaseController
         } else {
             $builder = $db->table('mst_subscriptions');
             // B2C: Use package_id and title (prefer custom_title)
-            $builder->select('mst_packages.package_id as package_id, COALESCE(NULLIF(mst_packages.custom_title, ""), mst_packages.title) as package_name');
+            $builder->select('mst_packages.package_id as package_id, COALESCE(NULLIF(mst_packages.custom_title, ""), mst_packages.title) as package_name, mst_packages.duration, mst_subscriptions.start_date, mst_subscriptions.end_date');
             $builder->join('mst_packages', 'mst_packages.package_id = mst_subscriptions.package_id');
             $builder->where('mst_subscriptions.user_id', $userId);
             $builder->where('mst_subscriptions.start_date <= CURDATE()');
@@ -63,9 +63,59 @@ class Dashboard extends BaseController
         }
 
         $packages = $builder->get()->getResultArray();
+        $uvpm = new UserVideoProgressModel();
 
-        $data['packages'] = $packages;
-        $data['title'] = 'Dashboard';
+        $totalCompletedVideos = $uvpm->where('user_id', $userId)->where('video_tutorial_id IS NOT NULL')->countAllResults();
+        $totalCompletedSimulations = $uvpm->where('user_id', $userId)->where('question_id IS NOT NULL')->countAllResults();
+        $totalTasksDone = $totalCompletedVideos + $totalCompletedSimulations;
+
+        // Calculate progress for each package
+        foreach ($packages as &$pkg) {
+            $pId = $pkg['package_id'];
+            if ($user_enroll_type == "1") {
+                $courseCount = $db->table('b2b_package_course_mapping')->where('PKPackageID', $pId)->countAllResults();
+            } else {
+                $courseCount = $db->table('package_course_mapping')->where('PKPackageID', $pId)->countAllResults();
+            }
+            $pkg['course_count'] = $courseCount > 0 ? $courseCount : 6;
+
+            $packageItems = $db->table('package_lessons_mapping')->where('package_id', $pId)->countAllResults();
+            $packageCompleted = $uvpm->where('user_id', $userId)->where('package_id', $pId)->countAllResults();
+            
+            $pkg['progress'] = $packageItems > 0 ? round(($packageCompleted / $packageItems) * 100) : 0;
+            $pkg['total_items'] = $packageItems;
+            $pkg['completed_items'] = $packageCompleted;
+        }
+
+        // Fetch recent assessment submissions for this user
+        $asmtSubmissions = $db->table('student_assessments sa')
+            ->select('sa.*, c.course_name, a.title as assessment_title, comp.name as company_name')
+            ->join('courses c', 'c.course_id = sa.course_id', 'left')
+            ->join('assessments a', 'a.id = sa.assessment_id', 'left')
+            ->join('companies comp', 'comp.company_id = a.company_id', 'left')
+            ->where('sa.user_id', $userId)
+            ->orderBy('sa.id', 'DESC')
+            ->limit(6)
+            ->get()->getResultArray();
+
+        // Fetch recent learning activity stream for this user
+        $recentActivity = $db->table('user_video_progress uvp')
+            ->select('uvp.*, vt.title as video_title, mq.question as question_title, c.course_name')
+            ->join('video_tutorials vt', 'vt.id = uvp.video_tutorial_id', 'left')
+            ->join('mst_questions mq', 'mq.question_id = uvp.question_id', 'left')
+            ->join('courses c', 'c.course_id = uvp.course_id', 'left')
+            ->where('uvp.user_id', $userId)
+            ->orderBy('uvp.id', 'DESC')
+            ->limit(8)
+            ->get()->getResultArray();
+
+        $data['packages']                   = $packages;
+        $data['total_completed_videos']     = $totalCompletedVideos;
+        $data['total_completed_simulations']= $totalCompletedSimulations;
+        $data['total_tasks_done']           = $totalTasksDone;
+        $data['assessment_submissions']     = $asmtSubmissions;
+        $data['recent_activity']            = $recentActivity;
+        $data['title']                      = 'Student Dashboard';
         
         return view('user/dashboard', $data);
     }
@@ -109,14 +159,36 @@ class Dashboard extends BaseController
         foreach ($courses as &$course) {
             $courseId = $course['course_id'];
             
-            $completedVideoIds = $uvpm->where('user_id', $userId)->where('package_id', $packageId)->where('course_id', $courseId)->where('video_tutorial_id IS NOT NULL')->findColumn('video_tutorial_id') ?: [];
-            $completedQuestionIds = $uvpm->where('user_id', $userId)->where('package_id', $packageId)->where('course_id', $courseId)->where('question_id IS NOT NULL')->findColumn('question_id') ?: [];
+            $completedVideoIds = $uvpm->where('user_id', $userId)
+                                      ->where('course_id', $courseId)
+                                      ->where('video_tutorial_id IS NOT NULL')
+                                      ->groupStart()
+                                          ->where('package_id', $packageId)
+                                          ->orWhere('package_id IS NULL')
+                                          ->orWhere('package_id', 0)
+                                      ->groupEnd()
+                                      ->findColumn('video_tutorial_id') ?: [];
+
+            $completedQuestionIds = $uvpm->where('user_id', $userId)
+                                         ->where('course_id', $courseId)
+                                         ->where('question_id IS NOT NULL')
+                                         ->groupStart()
+                                             ->where('package_id', $packageId)
+                                             ->orWhere('package_id IS NULL')
+                                             ->orWhere('package_id', 0)
+                                         ->groupEnd()
+                                         ->findColumn('question_id') ?: [];
 
             // Get mapped lessons for this package and course
             $sequenceBuilder = $db->table('package_lessons_mapping');
             $sequenceBuilder->where('course_id', $courseId);
             $sequenceBuilder->where('package_id', $packageId);
-            $sequenceBuilder->where('package_type', $user_enroll_type == "1" ? 'b2b' : 'normal');
+            if ($user_enroll_type == "1") {
+                $sequenceBuilder->groupStart()
+                    ->where('package_type', 'b2b')
+                    ->orWhere('package_type', 'normal')
+                    ->groupEnd();
+            }
             $sequenceEntries = $sequenceBuilder->get()->getResultArray();
             
             $totalVideos = 0;
@@ -137,12 +209,27 @@ class Dashboard extends BaseController
                         }
                     }
                 }
+                $totalItems = count($sequenceEntries);
+            } else {
+                $allVideos = $db->table('video_tutorials')->where('course_id', $courseId)->where('status', 1)->get()->getResultArray();
+                $allQuestions = $db->table('mst_questions')->where('category', $courseId)->where('active', 1)->get()->getResultArray();
+                $totalVideos = count($allVideos);
+                $totalQuestions = count($allQuestions);
+                $totalItems = $totalVideos + $totalQuestions;
+                
+                foreach ($allVideos as $v) {
+                    if (in_array($v['id'], $completedVideoIds)) $completedCount++;
+                }
+                foreach ($allQuestions as $q) {
+                    if (in_array($q['question_id'], $completedQuestionIds)) $completedCount++;
+                }
             }
             
-            $totalItems = count($sequenceEntries);
             $course['progress'] = $totalItems > 0 ? round(($completedCount / $totalItems) * 100) : 0;
             $course['total_videos'] = $totalVideos;
             $course['total_questions'] = $totalQuestions;
+            $course['completed_count'] = $completedCount;
+            $course['total_items'] = $totalItems;
         }
 
         $data['courses'] = $courses;
@@ -644,12 +731,89 @@ class Dashboard extends BaseController
             }
         }
 
-        // Determine active item: first uncompleted item, or first item
+        // Fallback: If no sequence is configured, load all videos then questions
+        if (empty($items)) {
+            foreach ($formattedVideos as $v) {
+                $items[] = $v;
+                if ($v['completed']) $completedCount++;
+            }
+            foreach ($formattedQuestions as $q) {
+                $items[] = $q;
+                if ($q['completed']) $completedCount++;
+            }
+        }
+
+        // 9. Fetch Assessments for this Course/Category
+        $assessmentsBuilder = $db->table('assessments');
+        $assessmentsBuilder->select('assessments.*, companies.name as company_name, courses.course_name');
+        $assessmentsBuilder->join('companies', 'companies.company_id = assessments.company_id', 'left');
+        $assessmentsBuilder->join('courses', 'courses.course_id = assessments.course_id', 'left');
+        $assessmentsBuilder->where('assessments.course_id', $courseId);
+        $assessmentsBuilder->where('assessments.status', 1);
+        $assessmentsBuilder->orderBy('assessments.id', 'ASC');
+        $courseAssessments = $assessmentsBuilder->get()->getResultArray();
+
+        if (!empty($courseAssessments)) {
+            // Check student submissions for these assessments
+            $subBuilder = $db->table('student_assessments');
+            $subBuilder->where('user_id', $userId);
+            $subBuilder->where('course_id', $courseId);
+            $userSubs = $subBuilder->get()->getResultArray();
+            
+            $subsMap = [];
+            foreach ($userSubs as $sub) {
+                $subsMap[$sub['assessment_id']] = $sub;
+            }
+
+            $allSubmitted = true;
+            foreach ($courseAssessments as &$asmt) {
+                $asmt['submitted'] = isset($subsMap[$asmt['id']]);
+                $asmt['submission'] = isset($subsMap[$asmt['id']]) ? $subsMap[$asmt['id']] : null;
+                if (!$asmt['submitted']) {
+                    $allSubmitted = false;
+                }
+
+                $run = base_url() . '/simulation/dashboard/' . $asmt['id'];
+                if ($courseId == "8") $run = base_url() . '/eway-load/' . $asmt['id'];
+                if ($courseId == "3") $run = base_url() . '/efiling-load/' . $asmt['id'];
+                if ($courseId == "9") $run = base_url() . '/esi-load/' . $asmt['id'];
+                if ($courseId == "10") $run = base_url() . '/pf-load/' . $asmt['id'];
+                if ($courseId == "11") $run = base_url() . '/vat-load/' . $asmt['id'];
+                if ($courseId == "12") $run = base_url() . '/user/accounting/' . $asmt['id'];
+
+                $asmt['run_url'] = $run;
+                $asmt['download_url'] = !empty($asmt['download_file']) ? base_url() . '/public/assets/uploads/questions/' . $asmt['download_file'] : '#';
+            }
+
+            // Append Assessment as the last lesson in the category
+            $items[] = [
+                'id' => 999999,
+                'type' => 'assessment',
+                'title' => 'Assessment',
+                'description' => 'Course Assessment & Practical Evaluation',
+                'completed' => $allSubmitted,
+                'assessments' => $courseAssessments
+            ];
+            if ($allSubmitted) $completedCount++;
+        }
+
+        // Determine active item: check if specific lesson requested or first uncompleted item
         $activeItem = null;
-        foreach ($items as $item) {
-            if (!$item['completed']) {
-                $activeItem = $item;
-                break;
+        if (!empty($itemId)) {
+            foreach ($items as $item) {
+                if ($item['id'] == $itemId || ($itemId == 999999 && $item['type'] === 'assessment')) {
+                    $activeItem = $item;
+                    break;
+                }
+            }
+        }
+
+        if ($activeItem === null) {
+            foreach ($items as $item) {
+                if (!$item['completed']) {
+                    $activeItem = $item;
+                    break;
+                }
             }
         }
         if ($activeItem === null && !empty($items)) {
@@ -667,6 +831,68 @@ class Dashboard extends BaseController
         $data['title'] = $course['course_name'] . ' - Lessons';
 
         return view('user/course_lessons', $data);
+    }
+
+    public function uploadAssessmentAnswer()
+    {
+        $userId = $this->data['user_info']['user_id'];
+        if (empty($userId)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Unauthorized.']);
+        }
+
+        $assessmentId = $this->request->getPost('assessment_id');
+        $courseId = $this->request->getPost('course_id');
+        $packageId = $this->request->getPost('package_id');
+        $file = $this->request->getFile('answer_file');
+
+        if (empty($assessmentId) || empty($courseId) || !$file || !$file->isValid()) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Please select a valid document to upload.']);
+        }
+
+        $allowedExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'zip', 'csv', 'txt'];
+        $ext = strtolower($file->getClientExtension());
+        if (!in_array($ext, $allowedExtensions)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Invalid file format. Allowed types: ' . implode(', ', $allowedExtensions)]);
+        }
+
+        $uploadDir = FCPATH . 'public/assets/uploads/assessments/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $originalName = $file->getClientName();
+        $newName = time() . '_' . $file->getRandomName();
+        $file->move($uploadDir, $newName);
+
+        $db = Database::connect();
+        $userRecord = $db->table('users')->where('user_id', $userId)->get()->getRowArray();
+        $institutionId = isset($userRecord['institutionID']) ? intval($userRecord['institutionID']) : 0;
+
+        $studentAssessmentModel = new \App\Models\StudentAssessmentModel();
+        $existing = $studentAssessmentModel->where('user_id', $userId)->where('assessment_id', $assessmentId)->first();
+
+        $submissionData = [
+            'user_id'        => $userId,
+            'institution_id' => $institutionId,
+            'package_id'     => $packageId,
+            'course_id'      => $courseId,
+            'assessment_id'  => $assessmentId,
+            'answer_file'    => $newName,
+            'status'         => 'Pending Review',
+            'submitted_at'   => date('Y-m-d H:i:s')
+        ];
+
+        if ($existing) {
+            $studentAssessmentModel->update($existing['id'], $submissionData);
+        } else {
+            $studentAssessmentModel->insert($submissionData);
+        }
+
+        return $this->response->setJSON([
+            'status'    => 'success',
+            'message'   => 'Assessment answer submitted successfully!',
+            'file_name' => $originalName
+        ]);
     }
 
     public function toggleProgress()

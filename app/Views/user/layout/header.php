@@ -13,6 +13,55 @@
     <link href="<?= base_url('public/assets/user/css/new_custom.css') ?>" rel="stylesheet">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+        @media (min-width: 992px) {
+            .sidebar {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 16.666667% !important;
+                height: 100vh !important;
+                z-index: 1020;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .main-content-col {
+                margin-left: 16.666667% !important;
+                width: 83.333333% !important;
+                min-height: 100vh;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .sidebar {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 25% !important;
+                height: 100vh !important;
+                z-index: 1020;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .main-content-col {
+                margin-left: 25% !important;
+                width: 75% !important;
+                min-height: 100vh;
+            }
+        }
+        .dashboard-header {
+            position: sticky;
+            top: 0;
+            z-index: 1010;
+        }
+    </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var path = window.location.pathname;
@@ -43,14 +92,14 @@
 <div class="container-fluid">
     <div class="row min-vh-100">
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR (FIXED ON LEFT) -->
         <div class="col-lg-2 col-md-3 sidebar d-flex flex-column p-0">
 
             <!-- Logo Area -->
-            <div class="p-4 border-bottom">
-                <a href="<?= base_url(); ?>"> <img
-                            src="<?= base_url() ; ?>/public/assets/frontend/images/pp-logo.png" alt="Logo"
-                            style="height:65px;"></a>
+            <div class="px-4 border-bottom d-flex align-items-center bg-white" style="height: 72px;">
+                <a href="<?= base_url(); ?>" class="d-inline-flex align-items-center">
+                    <img src="<?= base_url() ; ?>/public/assets/frontend/images/pp-logo.png" alt="Practicepot Logo" style="height: 42px; width: auto; object-fit: contain;">
+                </a>
             </div>
 
             <!-- Top Menu -->
@@ -97,39 +146,50 @@
             <!-- Bottom Menu -->
             <div class="p-3 border-top sidebar-bottom">
 
-
             </div>
 
         </div>
 
-        <!-- MAIN CONTENT -->
-        <div class="col-lg-10 col-md-9 p-4">
+        <!-- MAIN CONTENT (SCROLLABLE RIGHT SECTION) -->
+        <div class="col-lg-10 col-md-9 p-0 main-content-col" style="background-color: #f8fafc; min-height: 100vh;">
 
             <!-- TOP BAR -->
-            <div class="dashboard-header">
+            <div class="dashboard-header bg-white px-4 border-bottom d-flex justify-content-between align-items-center" style="height: 72px;">
 
-                <div class="d-flex justify-content-between align-items-start">
+                <!-- LEFT SIDE TITLE/BRANDING -->
+                <div class="header-left d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1.5" style="font-size: 13px;">
+                        <i class="bi bi-mortarboard-fill text-warning"></i>
+                        <span>Student Learning Portal</span>
+                    </span>
+                </div>
 
-                    <!-- LEFT SIDE -->
-                    <div class="header-left">
-
-                        <!-- Search Box -->
-                        <!--<div class="search-box mb-4">-->
-                        <!--    <i class="bi bi-search"></i>-->
-                        <!--    <input type="text" placeholder="Search simulations">-->
-                        <!--</div>-->
-
+                <!-- RIGHT SIDE USER PROFILE & LOGOUT -->
+                <div class="d-flex align-items-center gap-3">
+                    
+                    <div class="d-flex align-items-center gap-2.5">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center fw-bold shadow-sm" 
+                             style="width: 40px; height: 40px; font-size: 15px; background: linear-gradient(135deg, #ff7a00, #ea580c);">
+                            <?= strtoupper(substr($user_info['first_name'] ?? 'U', 0, 1) . substr($user_info['last_name'] ?? '', 0, 1)) ?>
+                        </div>
+                        <div class="text-end d-none d-sm-block">
+                            <div class="fw-bold text-dark" style="font-size: 14px; line-height: 1.2;">
+                                <?= esc(($user_info['first_name'] ?? '') . ' ' . ($user_info['last_name'] ?? '')) ?>
+                            </div>
+                            <small class="text-muted" style="font-size: 12px;"><?= esc($user_info['email'] ?? '') ?></small>
+                        </div>
                     </div>
 
-                    <!-- RIGHT SIDE -->
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="vr mx-1 text-secondary opacity-25" style="height: 28px;"></div>
 
-                        <div class="text-end">
-                            <div class="fw-semibold"><?php if (isset($user_info['first_name']) && isset($user_info['last_name'])) echo $user_info['first_name'] . ' ' . $user_info['last_name']; ?></div>
-                            <small class="text-muted"><?php if (isset($user_info['email'])) echo $user_info['email']; ?></small>
-                        </div> 
+                    <!-- Header Default Logout Button -->
+                    <a href="<?= base_url('user/logout'); ?>" class="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1.5 fw-semibold px-3 py-1.5" style="border-radius: 8px; font-size: 13px;">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
 
-                    </div> 
                 </div> 
-
             </div>
+
+            <!-- Page Container Wrapper -->
+            <div class="p-4">

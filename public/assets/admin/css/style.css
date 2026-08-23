@@ -1,22 +1,411 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-body{
-	font-family: 'DM Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8fafc !important;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.5;
 }
-.hide{
-	display: none !important;
+
+.hide {
+    display: none !important;
 }
+
 h4.form-title {
-    font-size: 17px;
-    margin-bottom: 25px;
-    margin-top: 20px;
-    color: #53535f;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    color: #1e293b;
 }
-.table th{
-    /*text-align: center;*/
+
+/* =======================================================
+   MODERN SIDEBAR STYLES & ACTIVE MENU HIGHLIGHT
+   ======================================================= */
+.side-nav {
+    background: #ffffff !important;
+    border-right: 1px solid #eef2f6 !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02) !important;
+    z-index: 1001;
 }
+
+.side-nav-inner {
+    padding-top: 15px;
+}
+
+.side-nav-menu {
+    padding: 6px 10px !important;
+}
+
+.side-nav-menu li.nav-item {
+    margin-bottom: 3px !important;
+}
+
+.side-nav-menu li.nav-item > a {
+    padding: 8px 14px !important;
+    height: 38px !important;
+    line-height: 22px !important;
+    border-radius: 8px !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.side-nav-menu li.nav-item > a:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    transform: translateX(2px);
+}
+
+.side-nav-menu li.nav-item > a .icon-holder {
+    width: 24px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+    font-size: 15px !important;
+    margin-right: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #64748b !important;
+    transition: all 0.2s ease;
+}
+
+.side-nav-menu li.nav-item > a .title {
+    font-size: 13px !important;
+    letter-spacing: 0.1px;
+    font-weight: 500;
+}
+
+/* ACTIVE MENU ITEM HIGHLIGHT */
+.side-nav-menu li.nav-item.active > a {
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+    font-weight: 600 !important;
+}
+
+.side-nav-menu li.nav-item.active > a .icon-holder,
+.side-nav-menu li.nav-item.active > a .icon-holder i,
+.side-nav-menu li.nav-item.active > a .title {
+    color: #ffffff !important;
+}
+
+/* =======================================================
+   HEADER & TOPBAR STYLES
+   ======================================================= */
+.header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eef2f6 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03) !important;
+    height: 70px !important;
+    z-index: 1000 !important;
+}
+
+.header .logo {
+    height: 70px !important;
+    line-height: 70px !important;
+    border-right: 1px solid #eef2f6 !important;
+}
+
+.header .nav-wrap {
+    height: 70px !important;
+}
+
+/* =======================================================
+   PAGE CONTAINER & MAIN CONTENT - NO OVERLAP
+   ======================================================= */
+.page-container {
+    background-color: #f8fafc !important;
+    min-height: 100vh;
+}
+
+/* Top padding MUST be 90px+ so nothing overlaps the fixed 70px header! */
+.page-container .main-content {
+    padding: 92px 30px 40px 30px !important;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header .header-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.breadcrumb-dash .breadcrumb-item {
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+/* =======================================================
+   MODERN METRIC STAT CARDS (3 in a Row Layout)
+   ======================================================= */
+.stat-card-modern {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e2e8f0;
+    transition: height 0.2s ease;
+}
+
+.stat-card-blue::before { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+.stat-card-green::before { background: linear-gradient(90deg, #059669, #10b981); }
+.stat-card-orange::before { background: linear-gradient(90deg, #ea580c, #f97316); }
+.stat-card-purple::before { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+.stat-card-rose::before { background: linear-gradient(90deg, #e11d48, #f43f5e); }
+.stat-card-indigo::before { background: linear-gradient(90deg, #4f46e5, #6366f1); }
+
+.stat-card-modern:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.stat-card-modern:hover::before {
+    height: 6px;
+}
+
+.stat-card-modern .stat-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.stat-card-modern .stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    margin-bottom: 0;
+}
+
+.stat-card-modern .stat-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card-blue .stat-icon-wrap { background: #eff6ff; color: #2563eb; }
+.stat-card-green .stat-icon-wrap { background: #ecfdf5; color: #059669; }
+.stat-card-orange .stat-icon-wrap { background: #fff7ed; color: #ea580c; }
+.stat-card-purple .stat-icon-wrap { background: #f5f3ff; color: #7c3aed; }
+.stat-card-indigo .stat-icon-wrap { background: #eef2ff; color: #4f46e5; }
+.stat-card-rose .stat-icon-wrap { background: #fff1f2; color: #e11d48; }
+
+/* =======================================================
+   CARDS, TABLES, BADGES & BUTTONS
+   ======================================================= */
+.card {
+    background: #ffffff !important;
+    border: 1px solid #edf2f7 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02) !important;
+    margin-bottom: 24px;
+}
+
+.card .card-body {
+    padding: 24px 26px;
+}
+
+.card-header-clean {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-header-clean h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0;
+}
+
+/* Modern Tables */
+.table {
+    color: #334155 !important;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    border-top: none !important;
+    color: #64748b !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    padding: 12px 16px !important;
+}
+
+.table tbody td {
+    padding: 13px 16px !important;
+    vertical-align: middle !important;
+    border-top: 1px solid #f1f5f9 !important;
+    font-size: 13.5px !important;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/* User Avatars */
+.user-avatar-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 7px 16px !important;
+    font-size: 13px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    color: #2563eb !important;
+    border-color: #bfdbfe !important;
+    background-color: #eff6ff !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.btn-sm {
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+}
+
+/* Soft Badges */
+.badge-soft {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-soft-primary { background: #eff6ff; color: #2563eb; }
+.badge-soft-success { background: #ecfdf5; color: #059669; }
+.badge-soft-warning { background: #fffbeb; color: #d97706; }
+.badge-soft-danger { background: #fef2f2; color: #dc2626; }
+.badge-soft-info { background: #f0fdfa; color: #0d9488; }
+
+/* Modals */
+.modal-content {
+    border-radius: 14px !important;
+    border: none !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eef2f6 !important;
+    padding: 18px 24px !important;
+    background-color: #ffffff;
+}
+
+.modal-header .modal-title {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+}
+
+.modal-body {
+    padding: 24px !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #eef2f6 !important;
+    padding: 16px 24px !important;
+    background-color: #f8fafc;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid #eef2f6 !important;
+    background: #ffffff !important;
+    padding: 16px 30px !important;
+    font-size: 12.5px;
+    color: #64748b;
+}
+
 .gst-cards a {
     margin-bottom: 15px;
 }
+
 table.gst3b-payment input {
     min-width: 80px;
 }

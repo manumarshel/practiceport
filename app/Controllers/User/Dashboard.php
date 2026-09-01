@@ -211,7 +211,7 @@ class Dashboard extends BaseController
                 }
                 $totalItems = count($sequenceEntries);
             } else {
-                $allVideos = $db->table('video_tutorials')->where('course_id', $courseId)->where('status', 1)->get()->getResultArray();
+                $allVideos = $db->table('video_tutorials')->where('category_id', $courseId)->get()->getResultArray();
                 $allQuestions = $db->table('mst_questions')->where('category', $courseId)->where('active', 1)->get()->getResultArray();
                 $totalVideos = count($allVideos);
                 $totalQuestions = count($allQuestions);
